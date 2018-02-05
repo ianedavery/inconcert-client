@@ -1,16 +1,54 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {clearAuth} from '../actions/auth';
+import {clearAuthToken} from '../local-storage';
 import {Link} from 'react-router-dom';
 
 import './Navigation.css';
 
-export default function Navigation(props) {
-	return (
-    	<nav className='navigation'>
-      		<p><Link to='/'>inConcert</Link></p>
-      		<ul>
-        		<li className='nav-list-item-one'><Link to='/login'>login</Link></li>
-        		<li><Link to='/register'>register</Link></li>
-      		</ul>
-    	</nav>
-	);
+export class Navigation extends React.Component {
+
+	logOut() {
+		this.props.dispatch(clearAuth());
+		clearAuthToken();
+	}
+
+	render() {
+
+		let logOut;
+		let logIn;
+		let register;
+
+		if(this.props.loggedIn) {
+			logOut = (
+				<li onClick={() => this.logOut()}>log out</li>
+			);
+		}
+
+		if(!(this.props.loggedIn)) {
+			logIn = (
+				<li className='nav-list-item-one'><Link to='/login'>login</Link></li>
+			);
+			register = (
+				<li><Link to='/register'>register</Link></li>
+			);
+		}
+
+		return (
+	    	<nav className='navigation'>
+	      		<p><Link to='/'>inConcert</Link></p>
+	      		<ul>
+	        		{logOut}
+	        		{logIn}
+	        		{register}
+	      		</ul>
+	    	</nav>
+		);
+	}
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(Navigation);

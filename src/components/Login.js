@@ -1,21 +1,22 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
-export default function Login(props) {
-	return (	
-    	<main>
-	      	<form name='login-form' id='login-form'>
-		        <fieldset form='login-form'>
-		          <legend>login</legend>
+import LoginForm from './LoginForm';
 
-		          <label for='username' aria-label='username'></label>
-		          <input type='text' name='username' id='username' form='login-form' placeholder='username' />
-
-		          <label for='password' aria-label='password'></label>
-		          <input type='text' name='password' id='password' form='login-form' placeholder='password' />
-
-		        </fieldset>
-		        <button form='login-form' type='submit' name='login-submit-button'>login</button>
-	      	</form>
-      	</main>
+export function Login(props) {
+	if(props.loggedIn) {
+		return (
+			<Redirect to='/dashboard' />
+		);
+	}
+	return (
+		<LoginForm />
 	);
 }
+
+const mapStateToProps = state => ({
+	loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(Login);
