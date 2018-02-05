@@ -43,14 +43,14 @@ export class App extends React.Component {
     render() {
     return (
       	<Router>
-      		<body>
-  	    		<Navigation />
-	      		<Route exact path='/' component={LandingPage} />
-            <Route path='/dashboard' component={Dashboard} />
-	      		<Route path='/login' component={Login} />
-	      		<Route path='/register' component={Register} />
-        		</body>
-        	</Router> 
+            <div>
+      	    	<Navigation />
+    	      	<Route exact path='/' component={LandingPage} />
+                <Route path='/dashboard' component={Dashboard} />
+    	      	<Route path='/login' component={Login} />
+    	      	<Route path='/register' component={Register} />
+            </div>
+        </Router> 
     );
   }
 }

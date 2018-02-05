@@ -18,14 +18,14 @@ export class RegistrationForm extends React.Component {
 	render() {
 		return (
 			<form className='registration-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-				<label htmlFor='username'>username</label>
-				<Field component={Input} type='text' name='username' validate={[required, nonEmpty, isTrimmed]} autoFocus />
+				<label htmlFor='username' aria-label='username'></label>
+				<Field component={Input} type='text' name='username' validate={[required, nonEmpty, isTrimmed]} />
 
-				<label htmlFor='password'>password</label>
-				<Field component={Input} type='text' name='password' validate={[required, isTrimmed]} />
+				<label htmlFor='password' aria-label='password'></label>
+				<Field component={Input} type='password' name='password' validate={[required, isTrimmed]}autocomplete='off' />
 
-				<label htmlFor='confirm-password'>confirm</label>
-				<Field component={Input} type='text' name='confirm-password' validate={[required, nonEmpty, matchesPassword]} />
+				<label htmlFor='confirm' aria-label='confirm password'></label>
+				<Field component={Input} type='password' name='confirm' validate={[required, nonEmpty, matchesPassword]} autocomplete='off' />
 
 				<button type='submit' disabled={this.props.pristine || this.props.submitting}>signup</button>
 			</form>
