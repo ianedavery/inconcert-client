@@ -1,24 +1,22 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {Link, Redirect} from 'react-router-dom';
 
-export default function Register(props) {
+import RegistrationForm from './RegistrationForm';
+
+export function Register(props) {
+	if(props.loggedIn) {
+		return (
+			<Redirect to='/dashboard' />
+		);
+	}
 	return (
-	    <main role='main' id='main'>
-	      <form name='registration-form' id='registration-form'>
-	        <fieldset form='registration-form'>
-	          <legend>register</legend>
-
-	          <label for='username' aria-label='username'></label>
-	          <input type='text' name='username' id='username' form='registration-form' placeholder='username' />
-
-	          <label for='password' aria-label='password'></label>
-	          <input type='text' name='password' id='password' form='registration-form' placeholder='password' />
-
-	          <label for='confirm-password' aria-label='confirm password'></label>
-	          <input type='text' name='confirm-password' id='confirm-password' form='registration-form' placeholder='confirm password' />
-
-	        </fieldset>
-	        <button form='registration-form' type='submit' name='registration-submit-button'>signup</button>
-	      </form>
-	    </main>
+		<RegistrationForm />
 	);
 }
+
+const mapStateToProps = state => ({
+	loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(Register);
