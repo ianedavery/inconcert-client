@@ -18,7 +18,6 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     return fetch(`${API_BASE_URL}/protected`, {
         method: 'GET',
         headers: {
-            // Provide our auth token as credentials
             Authorization: `Bearer ${authToken}`
         }
     })

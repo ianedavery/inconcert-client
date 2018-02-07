@@ -6,8 +6,8 @@ export default function Main(props) {
 	return (
 	    <main role-='main' className='main'>
 	      <header role='banner' className='header'>
-	        <h1>inConcert</h1>
-	        <h2>Never miss the next show.</h2>
+	        <h1>RecipieBox</h1>
+	        <h2>All your recipies. In one place.</h2>
 	      </header>
 	      <section className='first-section'>
 	        <h3>Search for live shows in your area</h3>
