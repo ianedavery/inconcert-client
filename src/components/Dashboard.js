@@ -1,32 +1,17 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import RequiresLogin from './RequiresLogin';
-import {fetchProtectedData} from '../actions/protected-data';
+import {Link} from 'react-router-dom';
 
 export class Dashboard extends React.Component {
-	componentDidMount() {
-		this.props.dispatch(fetchProtectedData());
-	}
+
 	render() {
 		return (
             <div className="dashboard">
-                <div className="dashboard-username">
-                    Username: {this.props.username}
-                </div>
-                <div className="dashboard-protected-data">
-                    Recipies: {this.props.protectedData}
-                </div>
+            	<button><Link to='/recipielist'>Your Recipies</Link></button>
+            	<button><Link to ='/addrecipie'>Add a Recipie</Link></button>
             </div>
 		)
 	}
 }
 
-const mapStateToProps = state => {
-	
-	return {
-		username: state.auth.currentUser.username,
-		protectedData: state.protectedData.data
-	};
-};
-
-export default RequiresLogin()(connect(mapStateToProps)(Dashboard));
+export default RequiresLogin()(Dashboard);

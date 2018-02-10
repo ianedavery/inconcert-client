@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 import Footer from './Footer';
 import Main from './Main';
@@ -21,4 +22,4 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(LandingPage);
+export default withRouter(connect(mapStateToProps)(LandingPage));
