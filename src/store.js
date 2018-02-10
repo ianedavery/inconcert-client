@@ -4,13 +4,15 @@ import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
 import recipiesReducer from './reducers/recipies';
+import liveSearchReducer from './reducers/liveSearch';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
 const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
-        recipies: recipiesReducer
+        recipies: recipiesReducer,
+        searchTerm: liveSearchReducer
     }),
     applyMiddleware(thunk)
 );
