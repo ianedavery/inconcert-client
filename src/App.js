@@ -1,13 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {BrowserRouter as Router, Route, withRouter} from 'react-router-dom';
+import {BrowserRouter as Router, Route, withRouter, Switch} from 'react-router-dom';
 
 import Dashboard from './components/Dashboard';
 import LandingPage from './components/LandingPage';
 import Login from './components/Login';
 import Navigation from './components/Navigation';
 import Register from './components/Register';
+import RecipieList from './components/RecipieList';
+import AddRecipie from './components/AddRecipie';
+
 
 import {refreshAuthToken} from './actions/auth';
 
@@ -45,10 +48,14 @@ export class App extends React.Component {
       	<Router>
             <div>
       	    	<Navigation />
-    	      	<Route exact path='/' component={LandingPage} />
-                <Route path='/dashboard' component={Dashboard} />
-    	      	<Route path='/login' component={Login} />
-    	      	<Route path='/register' component={Register} />
+                <Switch>
+        	      	<Route exact path='/' component={LandingPage} />
+                    <Route path='/dashboard' component={Dashboard} />
+        	      	<Route path='/login' component={Login} />
+        	      	<Route path='/register' component={Register} />
+                    <Route path='/recipielist' component={RecipieList} />
+                    <Route path='/addrecipie' component={AddRecipie} />
+                </Switch>
             </div>
         </Router> 
     );
