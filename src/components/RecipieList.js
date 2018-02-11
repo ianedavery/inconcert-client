@@ -31,6 +31,9 @@ export class RecipieList extends React.Component {
 
 		recipieList(this.props.recipies);
 
+		const filteredResults = () => nameArray.filter(name => name === this.props.searchTerm);
+		console.log(filteredResults(nameArray));
+
 		const names = nameArray.map((name, index) => (
 			<li key={index}>
 				{name}
@@ -52,11 +55,15 @@ export class RecipieList extends React.Component {
 	}
 }
 
+RecipieList.defaultProps = {
+	searchTerm: []
+}
+
 const mapStateToProps = state => {
 	if(state.recipies.recipies[0]) {
 		return {
 			recipies: state.recipies.recipies,
-			searchTerm: state.searchTerm.searchTerm
+			searchTerm: state.searchTerm.searchTerm.searchTerm
 		};
 	}
 	else {
