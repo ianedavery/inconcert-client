@@ -40,6 +40,12 @@ export class RecipieList extends React.Component {
 			</li>
 		));
 
+		const filteredNames = filteredResults(nameArray).map((name, index) => (
+			<li key={index}>
+				{name}
+			</li>
+		));
+
 		return (
 			<div>
 
