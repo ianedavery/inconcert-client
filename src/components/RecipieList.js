@@ -40,7 +40,7 @@ export class RecipieList extends React.Component {
 
 		const filteredResults = () => nameArray.filter(name => name === this.props.searchTerm);
 
-		const filteredNames = filteredResults().map((name, index) => (
+		const filteredNames = filteredResults(nameArray).map((name, index) => (
 			<li key={index}>
 				{name}
 			</li>
