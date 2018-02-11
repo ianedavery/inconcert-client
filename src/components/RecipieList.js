@@ -5,6 +5,7 @@ import {fetchRecipies} from '../actions/recipies';
 import {recipiesSearchTerm} from '../actions/liveSearch';
 import './RecipieList.css';
 
+import NameList from './NameList';
 import SearchForm from './SearchForm';
 
 export class RecipieList extends React.Component {
@@ -31,14 +32,13 @@ export class RecipieList extends React.Component {
 
 		recipieList(this.props.recipies);
 
-		const filteredResults = () => nameArray.filter(name => name === this.props.searchTerm);
-		console.log(filteredResults(nameArray));
-
 		const names = nameArray.map((name, index) => (
 			<li key={index}>
 				{name}
 			</li>
 		));
+
+		const filteredResults = () => nameArray.filter(name => name === this.props.searchTerm);
 
 		const filteredNames = filteredResults(nameArray).map((name, index) => (
 			<li key={index}>
@@ -48,21 +48,15 @@ export class RecipieList extends React.Component {
 
 		return (
 			<div>
-
 		        <SearchForm onChange={searchTerm => this.recipiesSearchTerm({searchTerm})} />
-
-				<main>
-		            <ul className="recipie-list">
-		                {names}
-		            </ul>
-	            </main>
+				<NameList names={this.props.searchTerm === '' ? names : filteredNames} />
             </div>
 		)
 	}
 }
 
 RecipieList.defaultProps = {
-	searchTerm: []
+	searchTerm: ''
 }
 
 const mapStateToProps = state => {
