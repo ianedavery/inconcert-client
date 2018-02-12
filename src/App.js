@@ -56,7 +56,7 @@ export class App extends React.Component {
         	      	<Route path='/register' component={Register} />
                     <Route path='/recipielist' component={RecipieList} />
                     <Route path='/addrecipie' component={AddRecipie} />
-                    <Route path='recipiedetails/:recipieId' component={RecipieDetails} />
+                    <Route path='/:recipieId' component={RecipieDetails} />
                 </Switch>
             </div>
         </Router> 

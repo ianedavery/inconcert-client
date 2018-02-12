@@ -1,18 +1,18 @@
-import {FETCH_RECIPIES_SUCCESS, FETCH_RECIPIES_ERROR} from '../actions/recipies';
+import {FETCH_RECIPIE_DETAILS_SUCCESS, FETCH_RECIPIE_DETAILS_ERROR} from '../actions/recipieDetails';
 
 const initialState = {
-    recipies: 'placeholder',
+    recipie: '',
     error: null
 };
 
 export default function reducer(state = initialState, action) {
-    if (action.type === FETCH_RECIPIES_SUCCESS) {
+    if (action.type === FETCH_RECIPIE_DETAILS_SUCCESS) {
         return Object.assign({}, state, {
-            recipies: action.recipies,
+            recipie: action.recipie,
             error: null
         });
-    } 
-    else if (action.type === FETCH_RECIPIES_ERROR) {
+    }
+    else if (action.type === FETCH_RECIPIE_DETAILS_ERROR) {
         return Object.assign({}, state, {
             error: action.error
         });
