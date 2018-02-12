@@ -10,6 +10,7 @@ import Navigation from './components/Navigation';
 import Register from './components/Register';
 import RecipieList from './components/RecipieList';
 import AddRecipie from './components/AddRecipie';
+import RecipieDetails from './components/RecipieDetails';
 
 
 import {refreshAuthToken} from './actions/auth';
@@ -55,6 +56,7 @@ export class App extends React.Component {
         	      	<Route path='/register' component={Register} />
                     <Route path='/recipielist' component={RecipieList} />
                     <Route path='/addrecipie' component={AddRecipie} />
+                    <Route path='recipiedetails/:recipieId' component={RecipieDetails} />
                 </Switch>
             </div>
         </Router> 

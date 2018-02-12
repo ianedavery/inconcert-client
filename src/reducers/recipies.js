@@ -7,6 +7,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
     if (action.type === FETCH_RECIPIES_SUCCESS) {
+        console.log(action.recipies);
         return Object.assign({}, state, {
             recipies: action.recipies,
             error: null
