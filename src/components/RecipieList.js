@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import RequiresLogin from './RequiresLogin';
 import {fetchRecipies} from '../actions/recipies';
 import {recipiesSearchTerm} from '../actions/liveSearch';
+import {Link} from 'react-router-dom';
 import './RecipieList.css';
 
 import NameList from './NameList';
@@ -10,7 +11,7 @@ import SearchForm from './SearchForm';
 
 export class RecipieList extends React.Component {
 
-	componentDidMount() {
+	componentWillMount() {
 		this.props.dispatch(fetchRecipies());
 	}
 
@@ -20,29 +21,27 @@ export class RecipieList extends React.Component {
 
 	render() {
 
-		let recipies = this.props.recipies;
+		let newArray = [];
 
-		let nameArray = [];
-
-		function recipieList(arr) {
-			for(let i=0; i<arr.length; i++) {
-				nameArray.push(recipies[i].name);
+		function fuzz(array) {
+			for(let i=0; i<array.length; i++) {
+				newArray.push({id: array[i].id, name: array[i].name});
 			}
 		}
 
-		recipieList(this.props.recipies);
+		fuzz(this.props.recipies);
 
-		const names = nameArray.map((name, index) => (
+		const names = newArray.map((listing, index) => (
 			<li key={index}>
-				{name}
+				<Link to={listing.id === undefined ? '#' : '/recipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
 		));
 
-		const filteredResults = () => nameArray.filter(name => name === this.props.searchTerm);
+		const filteredResults = () => newArray.filter(recipie => recipie.name === this.props.searchTerm);
 
-		const filteredNames = filteredResults(nameArray).map((name, index) => (
+		const filteredNames = filteredResults().map((listing, index) => (
 			<li key={index}>
-				{name}
+				<Link to={listing.id === undefined ? '#' : '/recipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
 		));
 
