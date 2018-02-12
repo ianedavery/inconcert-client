@@ -2,8 +2,9 @@ import React from 'react';
 import RequiresLogin from './RequiresLogin';
 
 export function RecipieDetails(props) {
+	console.log(props.match.params.recipiedetails.recipieId);
 	return (
-        <div>{props.match.params.recipieId}</div>
+        <div></div>
 	)
 }
 
