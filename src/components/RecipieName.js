@@ -2,11 +2,17 @@ import React from 'react';
 import RequiresLogin from './RequiresLogin';
 import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
+import {deleteRecipie} from '../actions/deleteRecipie';
 
 export class RecipieName extends React.Component {
 
 	componentWillMount() {
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
+	}
+
+	deleteRecipie(id) {
+		this.props.dispatch(deleteRecipie(this.props.id));
+		this.props.history('/recipielist');
 	}
 
 	render() {
@@ -36,6 +42,7 @@ export class RecipieName extends React.Component {
 		        	<h3>Instructions</h3>
 		        	<p>{this.props.recipie.instructions}</p>
 	        	</section>
+	        	<button type='button' onClick={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}>Delete Recipie</button>
 	        </div>
 		)
 	}
