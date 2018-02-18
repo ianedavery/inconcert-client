@@ -8,7 +8,7 @@ export class AddRecipie extends React.Component {
 	render() {
 		return (
             <div>
-            	<AddRecipieForm />
+            	<AddRecipieForm history={this.props.history.push} />
             </div>
 		)
 	}
