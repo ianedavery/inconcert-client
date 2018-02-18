@@ -22,7 +22,7 @@ export class RegistrationForm extends React.Component {
 				<Field component={Input} type='text' name='username' validate={[required, nonEmpty, isTrimmed]} />
 
 				<label htmlFor='password' aria-label='password'></label>
-				<Field component={Input} type='password' name='password' validate={[required, isTrimmed]}autocomplete='off' />
+				<Field component={Input} type='password' name='password' validate={[required, nonEmpty, isTrimmed]}autocomplete='off' />
 
 				<label htmlFor='confirm' aria-label='confirm password'></label>
 				<Field component={Input} type='password' name='confirm' validate={[required, nonEmpty, matchesPassword]} autocomplete='off' />
