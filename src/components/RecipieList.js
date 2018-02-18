@@ -13,6 +13,7 @@ export class RecipieList extends React.Component {
 
 	componentWillMount() {
 		this.props.dispatch(fetchRecipies());
+		this.props.dispatch(recipiesSearchTerm(''));
 	}
 
 	recipiesSearchTerm(searchTerm) {
