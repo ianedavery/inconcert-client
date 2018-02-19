@@ -4,10 +4,14 @@ import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {deleteRecipie} from '../actions/deleteRecipie';
 
+import EditRecipieForm from './EditRecipieForm';
+
 export class RecipieName extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {isEditing: false},
+	constructor(props, context) {
+		super(props, context);
+		this.state = {
+			isEditing: false
+		},
 		this.toggleEdit = this.toggleEdit.bind(this)
 	}
 
@@ -31,10 +35,12 @@ export class RecipieName extends React.Component {
 		if(this.state.isEditing) {
 			return(
 				<div>
-					<div>
-						edit recipie
-					</div>
-					<button type='button' onClick={this.toggleEdit}>cancel</button>
+					<EditRecipieForm  
+						toggle={this.toggleEdit} 
+						name={this.props.recipie.name}
+						instructions={this.props.recipie.instructions}
+						ingredients={[...this.props.recipie.ingredients]} 
+					/>
 				</div>
 			)
 		}
