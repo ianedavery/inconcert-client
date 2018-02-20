@@ -39,7 +39,7 @@ export class RecipieName extends React.Component {
 						toggle={this.toggleEdit} 
 						name={this.props.recipie.name}
 						instructions={this.props.recipie.instructions}
-						ingredients={[...this.props.recipie.ingredients]} 
+						ingredients={this.props.recipie.ingredients} 
 					/>
 				</div>
 			)
