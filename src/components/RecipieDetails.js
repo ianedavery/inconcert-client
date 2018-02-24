@@ -7,7 +7,7 @@ export class RecipieDetails extends React.Component {
 
 	render() {
 		return (
-			<RecipieName  id={this.props.location.pathname.slice(16)} history={this.props.history.push} />
+			<RecipieName id={this.props.location.pathname.slice(16)} history={this.props.history.push} />
 		)
 	}
 }

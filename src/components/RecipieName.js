@@ -7,11 +7,11 @@ import {deleteRecipie} from '../actions/deleteRecipie';
 import EditRecipieForm from './EditRecipieForm';
 
 export class RecipieName extends React.Component {
-	constructor(props, context) {
-		super(props, context);
+	constructor(props) {
+		super(props);
 		this.state = {
 			isEditing: false
-		},
+		}
 		this.toggleEdit = this.toggleEdit.bind(this)
 	}
 
@@ -39,7 +39,8 @@ export class RecipieName extends React.Component {
 						toggle={this.toggleEdit} 
 						name={this.props.recipie.name}
 						instructions={this.props.recipie.instructions}
-						ingredients={this.props.recipie.ingredients} 
+						ingredients={this.props.recipie.ingredients}
+						id={this.props.id}
 					/>
 				</div>
 			)
