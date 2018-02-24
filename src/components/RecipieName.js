@@ -4,7 +4,22 @@ import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {deleteRecipie} from '../actions/deleteRecipie';
 
+import EditRecipieForm from './EditRecipieForm';
+
 export class RecipieName extends React.Component {
+	constructor(props, context) {
+		super(props, context);
+		this.state = {
+			isEditing: false
+		},
+		this.toggleEdit = this.toggleEdit.bind(this)
+	}
+
+	toggleEdit() {
+		this.setState({
+			isEditing: !this.state.isEditing
+		})
+	}
 
 	componentWillMount() {
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
@@ -16,6 +31,19 @@ export class RecipieName extends React.Component {
 	}
 
 	render() {
+
+		if(this.state.isEditing) {
+			return(
+				<div>
+					<EditRecipieForm  
+						toggle={this.toggleEdit} 
+						name={this.props.recipie.name}
+						instructions={this.props.recipie.instructions}
+						ingredients={this.props.recipie.ingredients} 
+					/>
+				</div>
+			)
+		}
 
 		let newArray = this.props.recipie.ingredients;
 
@@ -43,6 +71,7 @@ export class RecipieName extends React.Component {
 		        	<p>{this.props.recipie.instructions}</p>
 	        	</section>
 	        	<button type='button' onClick={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}>Delete Recipie</button>
+	        	<button type='button' onClick={this.toggleEdit}>edit</button>
 	        </div>
 		)
 	}
