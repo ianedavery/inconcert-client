@@ -15,7 +15,7 @@ export const editRecipieError = error => ({
 
 export const editRecipie = (id, data) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/recipies/` +  `${id}`, {
+    return fetch(`${API_BASE_URL}/recipies/` +  id, {
         method: 'put',
         headers: {
             Authorization: `Bearer ${authToken}`,
