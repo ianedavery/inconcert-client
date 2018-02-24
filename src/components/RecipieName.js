@@ -71,7 +71,7 @@ export class RecipieName extends React.Component {
 		        	<h3>Instructions</h3>
 		        	<p>{this.props.recipie.instructions}</p>
 	        	</section>
-	        	<button type='button' onClick={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}>Delete Recipie</button>
+	        	<button type='submit' onClick={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}>Delete Recipie</button>
 	        	<button type='button' onClick={this.toggleEdit}>edit</button>
 	        </div>
 		)
