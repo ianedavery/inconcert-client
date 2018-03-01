@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
 import recipiesReducer from './reducers/recipies';
+import publicRecipiesReducer from './reducers/publicRecipies';
 import liveSearchReducer from './reducers/liveSearch';
 import recipieDetailsReducer from './reducers/recipieDetails';
 import deleteRecipieReducer from './reducers/deleteRecipie';
@@ -16,7 +17,8 @@ const store = createStore(
         recipies: recipiesReducer,
         searchTerm: liveSearchReducer,
         recipie: recipieDetailsReducer,
-        deleteRecipie: deleteRecipieReducer
+        deleteRecipie: deleteRecipieReducer,
+        publicRecipies: publicRecipiesReducer
     }),
     applyMiddleware(thunk)
 );
