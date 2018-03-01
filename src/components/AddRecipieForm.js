@@ -1,6 +1,5 @@
 import React from 'react';
 import {Field, reduxForm, FieldArray} from 'redux-form';
-import Input from './Input';
 import Input2 from './Input2';
 import RequiresLogin from './RequiresLogin';
 import {required, nonEmpty} from '../validators';
