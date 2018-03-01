@@ -9,9 +9,10 @@ import Login from './components/Login';
 import Navigation from './components/Navigation';
 import Register from './components/Register';
 import RecipieList from './components/RecipieList';
+import PublicRecipieList from './components/PublicRecipieList';
 import AddRecipie from './components/AddRecipie';
 import RecipieDetails from './components/RecipieDetails';
-
+import PublicRecipieDetails from './components/PublicRecipieDetails';
 
 import {refreshAuthToken} from './actions/auth';
 
@@ -55,8 +56,10 @@ export class App extends React.Component {
         	      	<Route path='/login' component={Login} />
         	      	<Route path='/register' component={Register} />
                     <Route path='/recipielist' component={RecipieList} />
+                    <Route path='/publicrecipielist' component={PublicRecipieList} />
                     <Route path='/addrecipie' component={AddRecipie} />
-                    <Route path='/:recipieId' component={RecipieDetails} />
+                    <Route path='/recipiedetails/:recipieId' component={RecipieDetails} />
+                    <Route path='/publicrecipiedetails/:recipieId' component={PublicRecipieDetails} />
                 </Switch>
             </div>
         </Router> 
