@@ -16,6 +16,8 @@ import PublicRecipieDetails from './components/PublicRecipieDetails';
 
 import {refreshAuthToken} from './actions/auth';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export class App extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.loggedIn && !this.props.loggedIn) {

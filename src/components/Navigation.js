@@ -31,7 +31,7 @@ export class Navigation extends React.Component {
 				<li className='nav-list-item-one'><Link to='/login'>login</Link></li>
 			);
 			register = (
-				<li><Link to='/register'>register</Link></li>
+				<li className='nav-list-item-two'><Link to='/register'>register</Link></li>
 			);
 		}
 
@@ -41,6 +41,7 @@ export class Navigation extends React.Component {
 	      		<ul>
 	        		{logOut}
 	        		{logIn}
+	        		{' '}
 	        		{register}
 	      		</ul>
 	    	</nav>

@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 
+import './LandingPage.css';
+
 export function LandingPage(props) {
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
@@ -15,12 +17,12 @@ export function LandingPage(props) {
 		        	<h2>All your recipies. In one place.</h2>
 		      	</header>
 				<section className='first-section'>
-					<h3>Search for live shows in your area</h3>
-					<p>Map out upcoming live music events based on your location.</p>
+					<h3>Never misplace another recipie</h3>
+					<p>All of your recipies available to you in one place all the time.</p>
 				</section>
 				<section className='second-section'>
-					<h3>Add events to your calendar.</h3>
-					<p>When you find an event you want to attend, add it to your calendar so you don't miss it.</p>
+					<h3>Share you recipies to the public.</h3>
+					<p>Make your recipies public so others can taste the deliciouness and rate it.</p>
 				</section>
 	    	</main>	
 		    <footer role='contentinfo' className='footer'>
