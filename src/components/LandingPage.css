@@ -13,12 +13,13 @@ main {
 }
 
 .header {
-	padding: 100px 20px 20px 20px;
-	background-image: url('images/katie-smith-104748-unsplash.jpg');
+	padding: 250px 20px 20px 20px;
+	background-image: url('images/castiron.jpg');
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
+  	background-position: right 35% bottom 45%;
 	height: 100%;
 }
 
