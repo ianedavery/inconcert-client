@@ -4,8 +4,9 @@
 	right: 0;
 	left: 0;
 	padding: 20px;
-	background-color: #5A0300;
+	background-color: #F1F1F3;
 	font-family: 'Old Standard TT', serif;
+	font-weight: 600;
 }
 
 .navigation ul {
@@ -30,10 +31,10 @@
 
 .navigation ul li a, .navigation p a {
 	text-decoration: none;
-	color: white;
+	color: #5A0300;
 }
 
 .nav-list-item-one::after {
 	content: ' |';
-	color: white;
+	color: #5A0300;
 }

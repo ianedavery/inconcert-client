@@ -13,23 +13,22 @@ export function LandingPage(props) {
 		<div>
 		    <main role-='main' className='main'>
 		      	<header role='banner' className='header'>
-		        	<h1>RecipieBox</h1>
-		        	<h2>All your recipies. In one place.</h2>
+		        	<h1>All your recipies.<br /> One app.</h1>
 		      	</header>
 				<section className='first-section'>
-					<h3>Never misplace another recipie</h3>
+					<h2>Never misplace another recipie</h2>
 					<p>All of your recipies available to you in one place all the time.</p>
 				</section>
 				<section className='second-section'>
-					<h3>Share you recipies to the public.</h3>
+					<h2>Share you recipies to the public.</h2>
 					<p>Make your recipies public so others can taste the deliciouness and rate it.</p>
 				</section>
+				<section className='footer'>
+		      		<address>
+		       			 Created by: Ian Avery
+		      		</address>
+	      		</section>
 	    	</main>	
-		    <footer role='contentinfo' className='footer'>
-	      		<address>
-	       			 Created by: Ian Avery
-	      		</address>
-	    	</footer>
 		</div>
 	);
 }

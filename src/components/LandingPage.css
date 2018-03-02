@@ -1,5 +1,10 @@
-.main {
-	width: 100%;
+html, div, main, body {
+	height: 100%;
+}
+
+main {
+	font-family: 'Fanwood Text', serif;
+	color: #F1F1F3;
 }
 
 .header, .first-section, .second-section, .footer {
@@ -8,14 +13,21 @@
 }
 
 .header {
-	padding: 80px 20px 20px 20px;
+	padding: 100px 20px 20px 20px;
+	background-image: url('images/katie-smith-104748-unsplash.jpg');
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	height: 100%;
 }
 
 .first-section, .second-section, .footer {
 	padding: 40px 20px 40px 20px;
+	color: black;
 }
 
-.first-section {
+/*.first-section {
 	background-color: #B2B2B2;	
 }
 
@@ -25,4 +37,4 @@
 
 .footer {
 	background-color: #EDEDED;
-}
+}*/
