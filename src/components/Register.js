@@ -4,6 +4,8 @@ import {Redirect} from 'react-router-dom';
 
 import RegistrationForm from './RegistrationForm';
 
+import './Register.css';
+
 export function Register(props) {
 	if(props.loggedIn) {
 		return (
@@ -11,7 +13,7 @@ export function Register(props) {
 		);
 	}
 	return (
-		<RegistrationForm />
+		<RegistrationForm className='registration-form' />
 	);
 }
 

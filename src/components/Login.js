@@ -4,6 +4,8 @@ import {Redirect} from 'react-router-dom';
 
 import LoginForm from './LoginForm';
 
+import './Login.css';
+
 export function Login(props) {
 	if(props.loggedIn) {
 		return (

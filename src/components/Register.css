@@ -1,0 +1,46 @@
+*:focus {
+    outline: none;
+}
+
+.registration-form {
+	padding: 220px 60px 20px 60px;
+	height: 100%;
+	background-image: url('images/lukas-blazek-261682-unsplash.jpg');
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	background-position: right 15px;
+	height: 100%;
+	font-family: 'Fanwood Text', serif;
+	font-size: 24px;
+}
+
+div .form-input {
+	height: 20px;
+}
+
+input::-webkit-input-placeholder, button {
+	color: black;
+}
+
+button {
+	background-color: transparent;
+	border: 0 solid;
+  	-webkit-box-shadow: 2px 2px 1px 1px #6E6E6E;
+  	-moz-box-shadow:    2px 2px 1px 1px #6E6E6E;
+  	box-shadow:         2px 2px 1px 1px #6E6E6E;
+} 
+
+input {
+	width: 100%;
+	border: 0 solid;
+	border-bottom: 1px solid black;
+	background: transparent;
+}
+
+.button-container {
+	height: 30px;
+	margin-top: 40px;
+	text-align: center;
+}

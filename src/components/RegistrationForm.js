@@ -27,7 +27,10 @@ export class RegistrationForm extends React.Component {
 				<label htmlFor='confirm' aria-label='confirm password'></label>
 				<Field component={Input} type='password' name='confirm' validate={[required, nonEmpty, matchesPassword]} autocomplete='off' />
 
-				<button type='submit' disabled={this.props.pristine || this.props.submitting}>signup</button>
+				<div className='button-container'>	
+					<button type='submit' disabled={this.props.pristine || this.props.submitting}>signup</button>
+				</div>
+
 			</form>
 		);
 	}
