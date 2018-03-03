@@ -22,7 +22,7 @@ export class Navigation extends React.Component {
 
 		if(this.props.loggedIn) {
 			logOut = (
-				<li onClick={() => this.logOut()}>log out</li>
+				<li className='logout' onClick={() => this.logOut()}>logout</li>
 			);
 		}
 

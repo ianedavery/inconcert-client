@@ -29,7 +29,7 @@
 	font-size: 20px;
 }
 
-.navigation ul li a, .navigation p a {
+.navigation ul li a, .navigation p a, .logout {
 	text-decoration: none;
 	color: #5A0300;
 }

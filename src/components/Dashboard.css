@@ -1,52 +1,39 @@
-*:focus {
-    outline: none;
-}
-
-.login-form {
-	padding: 220px 60px 20px 60px;
-	height: 100%;
+.dashboard {
+	padding: 220px 20px 0 20px;
+	text-align: center;
 	background-image: url('images/lukas-blazek-261682-unsplash.jpg');
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
   	background-position: right 15px;
+	height: 100%;
 	font-family: 'Fanwood Text', serif;
-	font-size: 24px;
 }
 
-div .form-input {
-	height: 20px;
+.dashboard .button-container {
+	padding-bottom: 60px;
 }
 
-input::-webkit-input-placeholder, button {
-	color: black;
-}
-
-button {
+.dashboard .button-container button {
+	width: 250px;
+	height: 60px;
+	border-top: 1px solid #F1F1F3;
+	border-left: 1px solid #F1F1F3;  
 	background-color: transparent;
-	border: 0 solid;
   	-webkit-box-shadow: 2px 2px 1px 1px #6E6E6E;
   	-moz-box-shadow:    2px 2px 1px 1px #6E6E6E;
   	box-shadow:         2px 2px 1px 1px #6E6E6E;
-} 
-
-input {
-	width: 100%;
-	border: 0 solid;
-	border-bottom: 1px solid black;
-	background: transparent;
 }
 
-.button-container {
-	height: 30px;
-	margin-top: 40px;
-	text-align: center;
+button a {
+	color: #5A0300;
+	font-size: 40px;
+	opacity: .70;
 }
 
 @media screen and (min-width: 768px) {
-	.login-form {
-		padding: 220px 400px 20px 400px;
-		font-size: 32px;
+	.dashboard {
+		padding: 150px 20px 0 20px;
 	}
 }

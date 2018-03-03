@@ -38,16 +38,16 @@ export class RecipieList extends React.Component {
 			</li>
 		));
 
-		const filteredResults = () => newArray.filter(recipie => recipie.name === this.props.searchTerm);
+		const filteredResults = newArray[0].name === undefined ? console.log('hang tight') : newArray.filter(item => item.name.includes(this.props.searchTerm));
 
-		const filteredNames = filteredResults().map((listing, index) => (
+		const filteredNames = filteredResults === undefined ? console.log('hang tight') : filteredResults.map((listing, index) => (
 			<li key={index}>
 				<Link to={listing.id === undefined ? '#' : '/recipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
 		));
 
 		return (
-			<div>
+			<div className='your-recipies'>
 		        <SearchForm onChange={searchTerm => this.recipiesSearchTerm({searchTerm})} />
 				<NameList names={this.props.searchTerm === '' ? names : filteredNames} />
             </div>
