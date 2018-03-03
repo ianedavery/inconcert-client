@@ -44,6 +44,9 @@ export class EditRecipieForm extends React.Component {
 	}
 
 	render() {
+
+		console.log(this.state.ingredients);
+
 		const ingredient = this.props.ingredients.map((ingredients, index) => (
 			<div key={index}>
 				<label>ingredient</label>
@@ -55,13 +58,13 @@ export class EditRecipieForm extends React.Component {
 		))
 		return(
 			<div>
-				<form>
+				<form id='edit-form'>
 					<legend>edit recipie</legend>
 					<label>recipie name</label>
 					<input type='text' defaultValue={this.state.name} onChange={e => this.updateName(e.target.value)} />
 
 					<label>instructions</label>
-					<input type='text' defaultValue={this.state.instructions} onChange={e => this.updateInstructions(e.target.value)} />
+					<textarea type='text' defaultValue={this.state.instructions} onChange={e => this.updateInstructions(e.target.value)} />
 
 					{ingredient}
 					<button type='submit' onClick={(id, data) => this.handleClick(id, data)}>edit</button>

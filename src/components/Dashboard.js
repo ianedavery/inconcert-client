@@ -8,16 +8,16 @@ export class Dashboard extends React.Component {
 
 	render() {
 		return (
-            <div className="dashboard">
-            	<div className='button-container'>
-            		<button><Link to='/recipielist'>Your Recipies</Link></button>
-            	</div>
-            	<div className='button-container'>
-            		<button><Link to='/publicrecipielist'>Public Recipies</Link></button>
-            	</div>
-            	<div className='button-container'>
-            		<button><Link to ='/addrecipie'>Add a Recipie</Link></button>
-            	</div>
+            <div className='dashboard'>
+            	<div>
+            		<Link to='/recipielist'>Your Recipies</Link>
+        		</div>
+        		<div>
+            		<Link to='/publicrecipielist'>Public Recipies</Link>
+        		</div>
+        		<div>
+            		<Link to ='/addrecipie'>Add a Recipie</Link>
+        		</div>
             </div>
 		)
 	}

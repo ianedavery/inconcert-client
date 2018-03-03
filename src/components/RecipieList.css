@@ -1,7 +1,39 @@
 .your-recipies {
-	padding: 220px 20px 0 20px;
+	padding: 240px 40px 0 40px;
+	background-image: url('images/lukas-blazek-261682-unsplash.jpg');
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	background-position: right 15px;
+	height: 100%;
+	font-family: 'Fanwood Text', serif;
+	font-size: 28px;
 }
 
-ul {
-	list-style-type: none;
+input::-moz-placeholder {
+	color: black;
+	opacity: 1;
 }
+
+input:-moz-placeholder {
+	color: black;
+	opacity: 1;
+}
+
+.recipie-list {
+	list-style-type: none;
+	padding-top: 20px;
+}
+
+.listed-recipie a {
+	color: #5A0300;
+	opacity: .8;
+}
+
+.listed-recipie a:hover {
+	text-decoration: none;
+	color: #5A0300;
+	opacity: 1;
+}
+

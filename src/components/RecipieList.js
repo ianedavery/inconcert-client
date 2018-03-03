@@ -4,6 +4,7 @@ import RequiresLogin from './RequiresLogin';
 import {fetchRecipies} from '../actions/recipies';
 import {recipiesSearchTerm} from '../actions/liveSearch';
 import {Link} from 'react-router-dom';
+
 import './RecipieList.css';
 
 import NameList from './NameList';
@@ -33,14 +34,14 @@ export class RecipieList extends React.Component {
 		fuzz(this.props.recipies);
 
 		const names = newArray.map((listing, index) => (
-			<li key={index}>
+			<li key={index} className='listed-recipie'>
 				<Link to={listing.id === undefined ? '#' : '/recipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
 		));
 
-		const filteredResults = newArray[0].name === undefined ? console.log('hang tight') : newArray.filter(item => item.name.includes(this.props.searchTerm));
+		const filteredResults = newArray[0].name === undefined ? console.log('cookin\'') : newArray.filter(item => item.name.includes(this.props.searchTerm));
 
-		const filteredNames = filteredResults === undefined ? console.log('hang tight') : filteredResults.map((listing, index) => (
+		const filteredNames = filteredResults === undefined ? console.log('cookin\'') : filteredResults.map((listing, index) => (
 			<li key={index}>
 				<Link to={listing.id === undefined ? '#' : '/recipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
@@ -48,7 +49,7 @@ export class RecipieList extends React.Component {
 
 		return (
 			<div className='your-recipies'>
-		        <SearchForm onChange={searchTerm => this.recipiesSearchTerm({searchTerm})} />
+		        <SearchForm className='search-form' onChange={searchTerm => this.recipiesSearchTerm({searchTerm})} />
 				<NameList names={this.props.searchTerm === '' ? names : filteredNames} />
             </div>
 		)

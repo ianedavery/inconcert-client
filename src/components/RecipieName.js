@@ -8,6 +8,8 @@ import {privateRecipie} from '../actions/makeRecipiePrivate';
 
 import EditRecipieForm from './EditRecipieForm';
 
+import './RecipieName.css';
+
 export class RecipieName extends React.Component {
 	constructor(props) {
 		super(props);
@@ -65,7 +67,7 @@ export class RecipieName extends React.Component {
 		if (newArray !== undefined) {
 			ingredient = newArray.map((ingredients, index) => (
 				<li key={index}>
-					{ingredients.ingredient} {ingredients.measurement}
+					{ingredients.measurement} {ingredients.ingredient}
 				</li>
 			));
 		}
@@ -86,16 +88,14 @@ export class RecipieName extends React.Component {
 		}
 
 		return (
-			<div>
+			<div className='recipie-details'>
 				<section>
-		        	<h2>{this.props.recipie.name}</h2>
+		        	<h1>{this.props.recipie.name}</h1>
 	        	</section>
 	        	<section>
-	        		<h3>Ingredients</h3>
 	        		<ul>{ingredient}</ul>
         		</section>
 		        <section>
-		        	<h3>Instructions</h3>
 		        	<p>{this.props.recipie.instructions}</p>
 	        	</section>
 	        	<button type='submit' onClick={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}>Delete Recipie</button>

@@ -1,5 +1,5 @@
 .dashboard {
-	padding: 220px 20px 0 20px;
+	padding: 260px 20px 0 20px;
 	text-align: center;
 	background-image: url('images/lukas-blazek-261682-unsplash.jpg');
   	-webkit-background-size: cover;
@@ -11,29 +11,25 @@
 	font-family: 'Fanwood Text', serif;
 }
 
-.dashboard .button-container {
-	padding-bottom: 60px;
-}
-
-.dashboard .button-container button {
-	width: 250px;
+.dashboard div {
+	padding-bottom: 100px;
 	height: 60px;
-	border-top: 1px solid #F1F1F3;
-	border-left: 1px solid #F1F1F3;  
-	background-color: transparent;
-  	-webkit-box-shadow: 2px 2px 1px 1px #6E6E6E;
-  	-moz-box-shadow:    2px 2px 1px 1px #6E6E6E;
-  	box-shadow:         2px 2px 1px 1px #6E6E6E;
+	display: block;
+	font-size: 40px;
 }
 
-button a {
+.dashboard div a {
+	text-decoration: none;
 	color: #5A0300;
-	font-size: 40px;
-	opacity: .70;
+	opacity: .8;
+}
+
+.dashboard div a:hover {
+	opacity: 1;
 }
 
 @media screen and (min-width: 768px) {
 	.dashboard {
-		padding: 150px 20px 0 20px;
+		padding: 200px 20px 0 20px;
 	}
 }
