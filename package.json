@@ -12,6 +12,7 @@
     "immutability-helper": "^2.6.5",
     "jwt-decode": "^2.2.0",
     "react": "^16.2.0",
+    "react-burger-menu": "^2.3.0",
     "react-dom": "^16.2.0",
     "react-media": "^1.8.0",
     "react-redux": "^5.0.6",
