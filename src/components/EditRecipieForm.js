@@ -32,14 +32,14 @@ export class EditRecipieForm extends React.Component {
 		})
 	}
 
-	addNewIngredient(ingredient) {
+	/*addNewIngredient(ingredient) {
 		let newArr = this.state.ingredients.slice();
 		newArr.push({ingredient: ingredient});
 		this.setState({ingredients: newArr})
 		/*this.setState({
 			ingredients: Object.assign({}, this.state.ingredients, {ingredient: ingredient})
-		})*/
-	}
+		})
+	}*/
 
 	updateMeasurement(_id, measurement) {
 	    this.setState({
@@ -54,7 +54,7 @@ export class EditRecipieForm extends React.Component {
 
 	render() {
 
-		let newIngredient = this.refs.newingredient;
+		//let newIngredient = this.refs.newingredient;
 
 		const ingredient = this.props.ingredients.map((ingredients, index) => (
 			<div key={index}>
@@ -77,10 +77,10 @@ export class EditRecipieForm extends React.Component {
 
 					{ingredient}
 
-					<label>ingredient</label>
-					<input ref='newingredient' type='text' /*onChange={e => this.addNewIngredient(e.target.value)}*/ />
+					{/*<label>ingredient</label>
+					<input ref='newingredient' type='text' onChange={e => this.addNewIngredient(e.target.value)} />*/}
 
-					<button type='submit' onClick={(id, data) => this.handleClick(id, data)} onClick={this.addNewIngredient(newIngredient)}>edit</button>
+					<button type='submit' onClick={(id, data) => this.handleClick(id, data)} /*onClick={this.addNewIngredient(newIngredient)}*/>edit</button>
 				</form>
 				
 				<button type='button' onClick={this.props.toggle}>cancel</button>

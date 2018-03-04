@@ -7,6 +7,7 @@ import {publicRecipie} from '../actions/makeRecipiePublic';
 import {privateRecipie} from '../actions/makeRecipiePrivate';
 
 import EditRecipieForm from './EditRecipieForm';
+import BottomNav from './BottomNav';
 
 import './RecipieName.css';
 
@@ -45,6 +46,16 @@ export class RecipieName extends React.Component {
 	}
 
 	render() {
+
+		window.addEventListener('scroll', bringmenu);
+
+		function bringmenu() {
+    		if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        		document.getElementById('bottom-nav').style.bottom = "-100%";
+    		} else {
+        		document.getElementById('bottom-nav').style.bottom = "0";
+    		}
+		}
 
 		if(this.state.isEditing) {
 			return(
@@ -89,6 +100,7 @@ export class RecipieName extends React.Component {
 
 		return (
 			<div className='recipie-details'>
+		{/*<img src={'images/edit.png'} width={120} height={120} mode='fit' />*/}
 				<section>
 		        	<h1>{this.props.recipie.name}</h1>
 	        	</section>
@@ -98,10 +110,11 @@ export class RecipieName extends React.Component {
 		        <section>
 		        	<p>{this.props.recipie.instructions}</p>
 	        	</section>
-	        	<button type='submit' onClick={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}>Delete Recipie</button>
+	        	<BottomNav edit={this.toggleEdit} />
+	        	{/*<button type='submit' onClick={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}>Delete Recipie</button>
 	        	<button type='button' onClick={this.toggleEdit}>edit</button>
 	        	{makePublic}
-	        	{makePrivate}
+	        	{makePrivate}*/}
 	        </div>
 		)
 	}
