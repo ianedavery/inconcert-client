@@ -1,0 +1,78 @@
+.bm-burger-button {
+  position: fixed;
+  width: 40px;
+  height: 36px;
+  right: 36px;
+  top: 21px;
+}
+
+.bm-burger-bars {
+  background: #5A0300;
+  border-radius: 5px;
+  height: 15% !important;
+}
+
+.bm-cross-button button {
+  box-shadow: 0 0 0 0 #6E6E6E !important;
+}
+
+.bm-cross {
+  background: #F1F1F3;
+}
+
+.bm-menu-wrap {
+	top: 0;
+	width: 200px !important;
+}
+
+.bm-menu {
+  background: #5A0300;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  opacity: .97;
+}
+
+.bm-overlay {
+  opacity: 0 !important;
+}
+
+.menu-item:hover {
+	cursor: pointer;
+}
+
+.search, .edit, .delete, .public, .private, .logout-icon {
+	width: 75px;
+	height: 75px;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	margin-bottom: 44px;
+  	margin-right: auto;
+  	margin-left: auto;
+}
+
+.search {
+	background-image: url('images/search.png');
+}
+
+.edit {
+	background-image: url('images/edit.png');
+}
+
+.delete {
+	background-image: url('images/delete.png');
+}
+
+.public {
+	background-image: url('images/share.png');
+
+}
+
+.private {
+	background-image: url('images/noshare.png');
+}
+
+.logout-icon {
+	background-image: url('images/logout-256.png');	
+}

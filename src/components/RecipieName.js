@@ -3,9 +3,11 @@ import RequiresLogin from './RequiresLogin';
 import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {deleteRecipie} from '../actions/deleteRecipie';
+import Media from "react-media";
 
 import EditRecipieForm from './EditRecipieForm';
 import BottomNav from './BottomNav';
+import AltNavigation from './AltNavigation';
 
 import './RecipieName.css';
 
@@ -78,6 +80,15 @@ export class RecipieName extends React.Component {
 
 		return (
 			<div className='recipie-details'>
+				<Media
+					query='(min-width: 768px)'
+					render={() => <AltNavigation search={e => this.handleSearchButtonClick(e)}
+												 edit={this.toggleEdit}
+												 delete={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}} 
+						 	        			 id={this.props.id}
+	        			   						 public={this.props.recipie.public} 
+												 />}
+				/>
 				<section>
 		        	<h1>{this.props.recipie.name}</h1>
 	        	</section>
@@ -91,7 +102,8 @@ export class RecipieName extends React.Component {
 	        			   delete={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}
 	        			   search={e => this.handleSearchButtonClick(e)}
 	        			   id={this.props.id}
-	        			   public={this.props.recipie.public} />
+	        			   public={this.props.recipie.public} 
+	        			   />
 	        </div>
 		)
 	}
