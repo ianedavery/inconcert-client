@@ -58,6 +58,7 @@ export class PublicRecipieName extends React.Component {
 	                	size={24}
 	                	color2={'#ffd700'} />
             	</section>
+            	<div className='bottom-nav' id='bottom-nav' />
 	        </div>
 		)
 	}

@@ -39,3 +39,8 @@
 	font-size: 20px;
 	margin-bottom: 8px;
 }
+
+.public-recipie-details .bottom-nav {
+	height: 0;
+	width: 0;
+}
