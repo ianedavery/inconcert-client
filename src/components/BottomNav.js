@@ -18,9 +18,6 @@ export class BottomNav extends React.Component {
 
 	render() {
 
-		console.log(this.props.id);
-		console.log(this.props.public);
-
 		let makePublic;
 		let makePrivate;
 

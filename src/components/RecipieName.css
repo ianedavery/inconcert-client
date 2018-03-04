@@ -94,5 +94,9 @@
 	}
 	.recipie-details section ul {
 		font-size: 24px;
+	}
+	.bottom-nav {
+		height: 0;
+		width: 0;
 	}	
 }

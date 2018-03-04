@@ -27,3 +27,8 @@ main {
 	padding: 40px 20px 40px 20px;
 	color: black;
 }
+
+.main .bottom-nav {
+	height: 0;
+	width: 0;
+}

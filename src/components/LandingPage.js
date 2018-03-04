@@ -28,7 +28,8 @@ export function LandingPage(props) {
 		       			 Created by: Ian Avery
 		      		</address>
 	      		</section>
-	    	</main>	
+		    	<div className='bottom-nav' id='bottom-nav' />
+	    	</main>
 		</div>
 	);
 }
