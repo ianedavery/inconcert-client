@@ -36,21 +36,53 @@
   	left: 0;
 	background-color: #5A0300;
   	-webkit-transition: bottom 1s;
-  	transition: bottom 1s
+  	transition: bottom 1s;
 }
 
-.bottom-nav div {
-	width: 30px;
-	height: 30px;
-	background-image: url('images/edit.png');
+.bottom-nav .edit, .bottom-nav .delete, .bottom-nav .search, .bottom-nav .public, .bottom-nav .private {
+	width: 25px;
+	height: 25px;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
   	border: 0;
-  	margin-left: 25%;
-  	margin-top: 5px;
-  	margin-bottom: 5px;
+  	position: absolute;
+}
+
+.bottom-nav .edit {
+	background-image: url('images/edit.png');
+  	margin-left: 20%;
+  	margin-top: 7.5px;
+  	margin-bottom: 7.5px;
+}
+
+.bottom-nav .delete {
+	background-image: url('images/delete.png');
+  	margin-left: 60%;
+  	margin-top: 7.5px;
+  	margin-bottom: 7.5px;
+}
+
+.bottom-nav .search {
+	background-image: url('images/search.png');
+  	margin-left: 40%;
+  	margin-top: 7.5px;
+  	margin-bottom: 7.5px;
+}
+
+.bottom-nav .public {
+	background-image: url('images/share.png');
+  	margin-left: 80%;
+  	margin-top: 7.5px;
+  	margin-bottom: 7.5px;
+}
+
+.bottom-nav .private {
+	background-image: url('images/noshare.png');
+  	margin-left: 80%;
+  	margin-top: 7.5px;
+  	margin-bottom: 7.5px;
 }
 
 @media screen and (min-width: 768px) {

@@ -3,8 +3,6 @@ import RequiresLogin from './RequiresLogin';
 import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {deleteRecipie} from '../actions/deleteRecipie';
-import {publicRecipie} from '../actions/makeRecipiePublic';
-import {privateRecipie} from '../actions/makeRecipiePrivate';
 
 import EditRecipieForm from './EditRecipieForm';
 import BottomNav from './BottomNav';
@@ -30,19 +28,14 @@ export class RecipieName extends React.Component {
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
 	}
 
-	deleteRecipie(id) {
-		this.props.dispatch(deleteRecipie(this.props.id));
+	handleSearchButtonClick(e) {
+		e.preventDefault();
 		this.props.history('/recipielist');
 	}
 
-	publicRecipie(id) {
-		this.props.dispatch(publicRecipie(this.props.id));
-		this.props.dispatch(fetchRecipieDetails(this.props.id));
-	}
-
-	privateRecipie(id) {
-		this.props.dispatch(privateRecipie(this.props.id));
-		this.props.dispatch(fetchRecipieDetails(this.props.id));
+	deleteRecipie(id) {
+		this.props.dispatch(deleteRecipie(this.props.id));
+		this.props.history('/recipielist');
 	}
 
 	render() {
@@ -51,7 +44,7 @@ export class RecipieName extends React.Component {
 
 		function bringmenu() {
     		if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-        		document.getElementById('bottom-nav').style.bottom = "-100%";
+        			document.getElementById('bottom-nav').style.bottom = "-100%";
     		} else {
         		document.getElementById('bottom-nav').style.bottom = "0";
     		}
@@ -83,24 +76,8 @@ export class RecipieName extends React.Component {
 			));
 		}
 
-		let makePublic;
-		let makePrivate;
-
-		if(this.props.recipie.public === false) {
-			makePublic = (
-				<button type='button' onClick={id => this.publicRecipie(id)}>Make Public</button>
-			);
-		}
-
-		if(this.props.recipie.public === true) {
-			makePrivate = (
-				<button type='button' onClick={id => this.privateRecipie(id)}>Make Private</button>
-			);
-		}
-
 		return (
 			<div className='recipie-details'>
-		{/*<img src={'images/edit.png'} width={120} height={120} mode='fit' />*/}
 				<section>
 		        	<h1>{this.props.recipie.name}</h1>
 	        	</section>
@@ -110,11 +87,11 @@ export class RecipieName extends React.Component {
 		        <section>
 		        	<p>{this.props.recipie.instructions}</p>
 	        	</section>
-	        	<BottomNav edit={this.toggleEdit} />
-	        	{/*<button type='submit' onClick={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}>Delete Recipie</button>
-	        	<button type='button' onClick={this.toggleEdit}>edit</button>
-	        	{makePublic}
-	        	{makePrivate}*/}
+	        	<BottomNav edit={this.toggleEdit}
+	        			   delete={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}
+	        			   search={e => this.handleSearchButtonClick(e)}
+	        			   id={this.props.id}
+	        			   public={this.props.recipie.public} />
 	        </div>
 		)
 	}
