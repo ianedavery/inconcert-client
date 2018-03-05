@@ -1,0 +1,61 @@
+.add-recipe {
+	padding: 100px 30px 0 30px;
+	font-family: 'Fanwood Text', serif;
+	box-sizing: border-box;
+	font-size: 20px;
+}
+
+.form-input  {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	line-height: 0;
+}
+
+.form-input input {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+}
+
+.add-recipe-form label, .add-recipe-form-button-container {
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+
+.remove-ingredients-button-container, .add-ingredients-button-container {
+	display: inline-block;
+} 
+
+.add-recipe-form .main-label {
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.measurement-field .measurement-label {
+	margin-top: 20px;
+	font-weight: 600;
+}
+
+.ingredient-field .ingredient-label {
+	margin-top: 10px;
+	font-weight: 600;
+}
+
+.field-container {
+	height: 100%;
+}
+
+.remove-ingredients-button-container {
+	padding-top: 20px;
+}
+
+.form-error {
+	position: absolute;
+	top: 10px;
+}
+
+.add-recipe .bottom-nav {
+	height: 0;
+	width: 0;
+}

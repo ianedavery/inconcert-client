@@ -19,7 +19,7 @@ div .form-input {
 	height: 20px;
 }
 
-input::-webkit-input-placeholder, button {
+.login-form input::-webkit-input-placeholder {
 	color: black;
 }
 
@@ -31,7 +31,7 @@ button {
   	box-shadow:         2px 2px 1px 1px #6E6E6E;
 } 
 
-input {
+.login-form input {
 	width: 100%;
 	border: 0 solid;
 	border-bottom: 1px solid black;

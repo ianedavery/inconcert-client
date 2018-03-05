@@ -21,15 +21,15 @@ export class LandingPage extends React.Component {
 			<div>
 			    <main role-='main' className='main'>
 			      	<header role='banner' className='header'>
-			        	<h1>All your recipies.<br />One app.</h1>
+			        	<h1>All your recipes.<br />One app.</h1>
 			      	</header>
 					<section className='first-section'>
-						<h2>Never misplace another recipie</h2>
-						<p>All of your recipies available to you in one place all the time.</p>
+						<h2>Never misplace another recipe</h2>
+						<p>All of your recipe available to you in one place all the time.</p>
 					</section>
 					<section className='second-section'>
-						<h2>Share you recipies to the public.</h2>
-						<p>Make your recipies public so others can taste the deliciouness and rate it.</p>
+						<h2>Share you recipe to the public.</h2>
+						<p>Make your recipe public so others can taste the deliciouness and rate it.</p>
 					</section>
 					<section className='footer'>
 			      		<address>

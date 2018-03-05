@@ -37,7 +37,7 @@ export class Navigation extends React.Component {
 
 		return (
 	    	<nav className='navigation'>
-	      		<p><Link to='/'>RecipieBox</Link></p>
+	      		<p><Link to='/'>RecipeBox</Link></p>
 	      		<ul>
 	        		{logOut}
 	        		{logIn}

@@ -10,13 +10,13 @@ export class Dashboard extends React.Component {
 		return (
             <div className='dashboard'>
             	<div>
-            		<Link to='/recipielist'>Your Recipies</Link>
+            		<Link to='/recipielist'>Your Recipes</Link>
         		</div>
         		<div>
-            		<Link to='/publicrecipielist'>Public Recipies</Link>
+            		<Link to='/publicrecipielist'>Public Recipes</Link>
         		</div>
         		<div>
-            		<Link to ='/addrecipie'>Add a Recipie</Link>
+            		<Link to ='/addrecipie'>Add a Recipe</Link>
         		</div>
             </div>
 		)

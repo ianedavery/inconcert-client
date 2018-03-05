@@ -20,7 +20,7 @@ div .form-input {
 	height: 20px;
 }
 
-input::-webkit-input-placeholder, button {
+input::-webkit-input-placeholder {
 	color: black;
 }
 

@@ -16,36 +16,43 @@ export class AddRecipieForm extends React.Component {
 	render() {
 
 		const renderIngredient = ({fields}) => (
-		    <div>
-		        <div>
+		    <div className='add-ingredients-container'>
 		            {fields.map((ingredient, index) => (
-		                    <div key={index}>
-		                        <Field name={`${ingredient}.ingredient`} type='text' component={Input2} label={`Ingredient ${index + 1}`} validate={[required, nonEmpty]} />
-		                        <Field name={`${ingredient}.measurement`} type='text' component={Input2} label={`Measurement ${index + 1}`} validate={[required, nonEmpty]} />
-		                    	<button onClick={() => fields.remove(index)}>-</button>
+		                    <div className='field-container' key={index}>
+		                    	<div className='ingredient-field'>
+		                    		<label className='ingredient-label'>Ingredient {index + 1}</label>
+		                        	<Field name={`${ingredient}.ingredient`} type='text' component={Input2} validate={[required, nonEmpty]} />
+		                        </div>
+		                        <div className='measurement-field'>
+		                        	<label className='measurement-label'>Measurement {index + 1}</label>
+		                        	<Field name={`${ingredient}.measurement`} type='text' component={Input2} validate={[required, nonEmpty]} />
+		                    	</div>
+		                    	<div className='remove-ingredients-button-container'>
+		                    		<button onClick={() => fields.remove(index)}>-</button>
+		                    	</div>
 		                    </div>
 		                )
 		            )}
-		        </div>
-		        <div>
-
+	        	<div className='add-ingredients-button-container'>
 		            <button type='button' onClick={() => fields.push()}>+</button>
 		        </div>
 	    	</div>
 		);
 
 		return (
-			<form onSubmit={this.props.handleSubmit(recipie => this.onSubmit(recipie))}>
-				<label htmlFor='recipie-name' aria-label='recipie name'>recipie name</label>
+			<form className='add-recipe-form' onSubmit={this.props.handleSubmit(recipie => this.onSubmit(recipie))}>
+				<label className='main-label' htmlFor='recipie-name' aria-label='recipie name'>Recipe Name</label>
 				<Field component={Input2} type='text' name='name' validate={[required, nonEmpty]} />
 
-				<label htmlFor='ingredients' aria-label='ingredient'>ingredients</label>
+				<label className='main-label' htmlFor='ingredients' aria-label='ingredient'>Ingredients</label>
 				<FieldArray component={renderIngredient} type='text' name='ingredients' />
 
-				<label htmlFor='instructions' aria-label='instructions'>instructions</label>
-				<Field component={Input2} type='text' name='instructions' validate={[required, nonEmpty]} />
+				<label className='main-label' htmlFor='instructions' aria-label='instructions'>Instructions</label>
+				<Field component='textarea' type='text' rows='3' cols='30' name='instructions' />
 
-				<button type='submit' disabled={this.props.pristine || this.props.submitting}>add recipie</button>
+				<div className='add-recipe-form-button-container'>
+					<button type='submit' disabled={this.props.pristine || this.props.submitting}>Add Recipe</button>
+				</div>
 			</form>
 		)
 	}
