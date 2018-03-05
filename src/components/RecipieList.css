@@ -37,3 +37,7 @@ input:-moz-placeholder {
 	opacity: 1;
 }
 
+.your-recipies .bottom-nav {
+	height: 0;
+	width: 0;
+}

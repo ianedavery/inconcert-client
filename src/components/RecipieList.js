@@ -51,6 +51,7 @@ export class RecipieList extends React.Component {
 			<div className='your-recipies'>
 		        <SearchForm className='search-form' onChange={searchTerm => this.recipiesSearchTerm({searchTerm})} />
 				<NameList names={this.props.searchTerm === '' ? names : filteredNames} />
+				<div className='bottom-nav' id='bottom-nav' />
             </div>
 		)
 	}

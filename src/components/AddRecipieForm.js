@@ -47,8 +47,8 @@ export class AddRecipieForm extends React.Component {
 				<label className='main-label' htmlFor='ingredients' aria-label='ingredient'>Ingredients</label>
 				<FieldArray component={renderIngredient} type='text' name='ingredients' />
 
-				<label className='main-label' htmlFor='instructions' aria-label='instructions'>Instructions</label>
-				<Field component='textarea' type='text' rows='3' cols='30' name='instructions' />
+				<label className='main-label instructions-label' htmlFor='instructions' aria-label='instructions'>Instructions</label>
+				<Field className='textarea' component='textarea' type='text' rows='3' cols='25' name='instructions' />
 
 				<div className='add-recipe-form-button-container'>
 					<button type='submit' disabled={this.props.pristine || this.props.submitting}>Add Recipe</button>

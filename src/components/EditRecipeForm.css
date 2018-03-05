@@ -1,0 +1,78 @@
+body {
+	box-sizing: border-box;
+}
+
+.edit-form {
+	padding: 90px 30px 0 30px;
+	font-family: 'Fanwood Text', serif;
+	box-sizing: border-box;
+	font-size: 20px;
+	box-sizing: border-box;
+}
+
+legend {
+	margin-top: 20px;
+	font-weight: 700;
+}
+
+.edit-form .main-legend {
+	margin-bottom: 4px;
+	text-align: center;
+	margin-top: 0;
+}
+
+.edit-form label {
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+
+.edit-form input {
+	padding-bottom: 0;
+	padding-top: 0;
+	height: 27px; 
+}
+
+.ingredients-container label {
+	font-size: 20px;
+	margin-top: 5px;
+}
+
+.ingredients-container .measurement-label {
+	margin-top: 10px;
+}
+
+.ingredients-label {
+	margin-top: 20px;
+}
+
+.instructions-label, textarea {
+	display: block;
+}
+
+.instructions-label {
+	margin-top: 30px;
+}
+
+textarea {
+	width: 100%;
+}
+
+.edit-button {
+	float: left;
+}
+
+.edit-button-container {
+	margin-top: 10px;
+}
+
+.cancel-edit-button-container {
+	height: 40px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.edit-form .bottom-nav {
+	height: 0;
+	width: 0;
+}

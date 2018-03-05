@@ -28,7 +28,7 @@
 	white-space: pre-wrap;
 }
 
-.bottom-nav {
+.recipie-details .bottom-nav {
 	height: 40px;
   	position: fixed;
   	bottom: 0;
@@ -39,7 +39,11 @@
   	transition: bottom 1s;
 }
 
-.bottom-nav .edit, .bottom-nav .delete, .bottom-nav .search, .bottom-nav .public, .bottom-nav .private {
+.recipie-details .bottom-nav .edit,
+.recipie-details .bottom-nav .delete,
+.recipie-details .bottom-nav .search,
+.recipie-details .bottom-nav .public,
+.recipie-details .bottom-nav .private {
 	width: 25px;
 	height: 25px;
   	-webkit-background-size: cover;
@@ -50,35 +54,35 @@
   	position: absolute;
 }
 
-.bottom-nav .edit {
+.recipie-details .bottom-nav .edit {
 	background-image: url('images/edit.png');
   	margin-left: 20%;
   	margin-top: 7.5px;
   	margin-bottom: 7.5px;
 }
 
-.bottom-nav .delete {
+.recipie-details .bottom-nav .delete {
 	background-image: url('images/delete.png');
   	margin-left: 60%;
   	margin-top: 7.5px;
   	margin-bottom: 7.5px;
 }
 
-.bottom-nav .search {
+.recipie-details .bottom-nav .search {
 	background-image: url('images/search.png');
   	margin-left: 40%;
   	margin-top: 7.5px;
   	margin-bottom: 7.5px;
 }
 
-.bottom-nav .public {
+.recipie-details .bottom-nav .public {
 	background-image: url('images/share.png');
   	margin-left: 80%;
   	margin-top: 7.5px;
   	margin-bottom: 7.5px;
 }
 
-.bottom-nav .private {
+.recipie-details .bottom-nav .private {
 	background-image: url('images/noshare.png');
   	margin-left: 80%;
   	margin-top: 7.5px;
@@ -95,7 +99,7 @@
 	.recipie-details section ul {
 		font-size: 24px;
 	}
-	.bottom-nav {
+	.recipie-details .bottom-nav {
 		height: 0;
 		width: 0;
 	}	

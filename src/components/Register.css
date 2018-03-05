@@ -24,7 +24,7 @@ input::-webkit-input-placeholder {
 	color: black;
 }
 
-button {
+.registration-form .button-container button {
 	background-color: transparent;
 	border: 0 solid;
   	-webkit-box-shadow: 2px 2px 1px 1px #6E6E6E;
