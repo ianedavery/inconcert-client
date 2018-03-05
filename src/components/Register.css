@@ -5,8 +5,7 @@
 .registration-form {
 	padding: 220px 60px 20px 60px;
 	height: 100%;
-	background-image: url('images/lukas-blazek-261682-unsplash.jpg');
-	background-repeat: no-repeat;
+	background: url('images/lukas-blazek-261682-unsplash.jpg') no-repeat;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -48,7 +47,7 @@ input {
 
 @media screen and (min-width: 768px) {
 	.registration-form {
-		padding: 220px 400px 20px 400px;
+		padding: 220px 250px 20px 250px;
 		font-size: 32px;
 	}
 }

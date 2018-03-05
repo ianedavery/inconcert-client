@@ -14,8 +14,7 @@ main {
 
 .header {
 	padding: 250px 20px 20px 20px;
-	background-image: url('images/castiron.jpg');
-	background-repeat: no-repeat;
+	background: url('images/castiron.jpg') no-repeat;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
