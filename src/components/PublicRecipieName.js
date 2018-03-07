@@ -24,6 +24,7 @@ export class PublicRecipieName extends React.Component {
 	render() {
 
 		let average = this.props.recipie.rating/this.props.recipie.numberOfRatings;
+
 		let roundedAverage = Math.max( Math.round(average * 10) / 10, 2.8 ).toFixed(1);
 
 		let newArray = this.props.recipie.ingredients;
@@ -42,7 +43,7 @@ export class PublicRecipieName extends React.Component {
 			<div className='public-recipie-details'>
 				<section className='name'>
 		        	<h1>{this.props.recipie.name}</h1>
-		        	<p>Average rating: {roundedAverage}</p>
+		        	<p>Average rating: {isNaN(average) ? 'Not yet rated' : roundedAverage}</p>
 	        	</section>
 	        	<section>
 	        		<ul>{ingredient}</ul>
