@@ -1,5 +1,5 @@
 .your-recipies, .public-recipies {
-	padding: 240px 40px 0 40px;
+	padding: 260px 40px 0 40px;
 	background-image: url('images/lukas-blazek-261682-unsplash-rescaled.jpg');
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
@@ -40,4 +40,10 @@ input:-moz-placeholder {
 .your-recipies .bottom-nav {
 	height: 0;
 	width: 0;
+}
+
+@media screen and (min-height: 812px) {
+	.your-recipies, .public-recipies {
+		padding: 320px 40px 0 40px;
+	}
 }

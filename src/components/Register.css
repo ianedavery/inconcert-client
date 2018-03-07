@@ -3,7 +3,7 @@
 }
 
 .registration-form {
-	padding: 220px 60px 20px 60px;
+	padding: 240px 60px 20px 60px;
 	height: 100%;
 	background: url('images/lukas-blazek-261682-unsplash-rescaled.jpg') no-repeat;
   	-webkit-background-size: cover;
@@ -49,5 +49,11 @@ input {
 	.registration-form {
 		padding: 220px 250px 20px 250px;
 		font-size: 32px;
+	}
+}
+
+@media screen and (min-height: 812px) {
+	.registration-form {
+		padding: 320px 60px 20px 60px;
 	}
 }
