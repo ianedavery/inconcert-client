@@ -16,6 +16,14 @@
 	font-size: 24px;
 }
 
+.registration-form .password, .registration-form .confirm {
+	margin-top: 20px;
+}
+
+.registration-form .password, .registration-form .username, .registration-form .confirm {
+	font-weight: 600;
+}
+
 div .form-input {
 	height: 20px;
 }
