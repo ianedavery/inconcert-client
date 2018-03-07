@@ -26,12 +26,12 @@ input:-moz-placeholder {
 	padding-top: 20px;
 }
 
-.listed-recipie a {
+.listed-recipie a, .filtered-result {
 	color: #5A0300;
 	opacity: .8;
 }
 
-.listed-recipie a:hover {
+.listed-recipie a:hover, .filtered-result:hover {
 	text-decoration: none;
 	color: #5A0300;
 	opacity: 1;

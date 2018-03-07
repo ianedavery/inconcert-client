@@ -44,7 +44,7 @@ export class PublicRecipieList extends React.Component {
 
 		const filteredNames = filteredResults === undefined ? console.log('cookin\'') : filteredResults.map((listing, index) => (
 			<li key={index}>
-				<Link to={listing.id === undefined ? '#' : '/publicrecipiedetails/' + listing.id}>{listing.name}</Link>
+				<Link className='filtered-result' to={listing.id === undefined ? '#' : '/publicrecipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
 		));
 
