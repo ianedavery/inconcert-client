@@ -13,9 +13,8 @@ export class AddRecipieForm extends React.Component {
 		this.props.history('/recipielist');
 	}
 
-	render() {
-
-		const renderIngredient = ({fields}) => (
+	renderIngredient = ({fields}) => {
+		return (
 		    <div className='add-ingredients-container'>
 		            {fields.map((ingredient, index) => (
 		                    <div className='field-container' key={index}>
@@ -37,7 +36,10 @@ export class AddRecipieForm extends React.Component {
 		            <button type='button' onClick={() => fields.push()}>+</button>
 		        </div>
 	    	</div>
-		);
+    	);
+	}
+
+	render() {
 
 		return (
 			<form className='add-recipe-form' onSubmit={this.props.handleSubmit(recipie => this.onSubmit(recipie))}>
@@ -45,7 +47,7 @@ export class AddRecipieForm extends React.Component {
 				<Field component={Input2} type='text' name='name' validate={[required, nonEmpty]} />
 
 				<label className='main-label' htmlFor='ingredients' aria-label='ingredient'>Ingredients</label>
-				<FieldArray component={renderIngredient} type='text' name='ingredients' />
+				<FieldArray component={this.renderIngredient} type='text' name='ingredients' />
 
 				<label className='main-label instructions-label' htmlFor='instructions' aria-label='instructions'>Instructions</label>
 				<Field className='textarea' component='textarea' type='text' rows='3' cols='25' name='instructions' />
