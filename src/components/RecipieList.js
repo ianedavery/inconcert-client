@@ -39,7 +39,7 @@ export class RecipieList extends React.Component {
 			</li>
 		));
 
-		const filteredResults = newArray[0].name === undefined ? console.log('cookin\'') : newArray.filter(item => item.name.includes(this.props.searchTerm));
+		const filteredResults = newArray[0].name === undefined ? console.log('cookin\'') : newArray.filter(item => item.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
 
 		const filteredNames = filteredResults === undefined ? console.log('cookin\'') : filteredResults.map((listing, index) => (
 			<li key={index}>
