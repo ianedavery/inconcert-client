@@ -6,7 +6,7 @@ export class PublicRecipieDetails extends React.Component {
 
 	render() {
 		return (
-			<PublicRecipieName id={this.props.location.pathname.slice(22)} />
+			<PublicRecipieName id={this.props.location.pathname.slice(22)} history={this.props.history.push} />
 		)
 	}
 }

@@ -4,6 +4,9 @@ import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {rateRecipie} from '../actions/rateRecipie';
 import ReactStars from 'react-stars';
+import Media from 'react-media';
+
+import PublicRecipeBottomNav from './PublicRecipeBottomNav';
 
 import './PublicRecipieName.css';
 
@@ -21,7 +24,22 @@ export class PublicRecipieName extends React.Component {
         }));
     }
 
+	handleSearchButtonClick(e) {
+		e.preventDefault();
+		this.props.history('/publicrecipielist');
+	}
+
 	render() {
+
+		window.addEventListener('scroll', bringmenu);
+
+		function bringmenu() {
+    		if (document.documentElement.scrollTop > 0) {
+        			document.getElementById('bottom-nav').style.bottom = "-100%";
+    		} else {
+        		document.getElementById('bottom-nav').style.bottom = "0";
+    		}
+		}
 
 		let average = this.props.recipie.rating/this.props.recipie.numberOfRatings;
 
@@ -41,6 +59,10 @@ export class PublicRecipieName extends React.Component {
 
 		return (
 			<div className='public-recipie-details'>
+				<Media
+					query='(min-width: 768px)'
+					render={() => <div className='top-nav-search' onClick={e => this.handleSearchButtonClick(e)} />}
+				/>
 				<section className='name'>
 		        	<h1>{this.props.recipie.name}</h1>
 		        	<p>Average rating: {isNaN(average) ? 'Not yet rated' : roundedAverage}</p>
@@ -59,7 +81,7 @@ export class PublicRecipieName extends React.Component {
 	                	size={24}
 	                	color2={'#ffd700'} />
             	</section>
-            	<div className='bottom-nav' id='bottom-nav' />
+	        	<PublicRecipeBottomNav search={e => this.handleSearchButtonClick(e)} />
 	        </div>
 		)
 	}

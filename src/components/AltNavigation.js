@@ -13,7 +13,7 @@ export class AltNavigation extends React.Component {
 
 		return (
 	    	<nav className='navigation' id='alt-navigation'>
-	      		<p><Link to='/'>RecipieBox</Link></p>
+	      		<p><Link to='/'>RecipeBox</Link></p>
         		 <HamburgerMenu search={this.props.search}
         		 				edit={this.props.edit}
         		 				delete={this.props.delete}

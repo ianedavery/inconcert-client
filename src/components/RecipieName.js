@@ -3,7 +3,7 @@ import RequiresLogin from './RequiresLogin';
 import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {deleteRecipie} from '../actions/deleteRecipie';
-import Media from "react-media";
+import Media from 'react-media';
 
 import EditRecipieForm from './EditRecipieForm';
 import BottomNav from './BottomNav';
