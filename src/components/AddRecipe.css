@@ -71,7 +71,28 @@
 	width: 100%;
 }
 
+.add-recipe-button {
+	width: 100%;
+	background-color: #5A0300;
+	color: #FFFFFF;
+	border: 2px solid #FFFFFF;
+	font-size: 22px;
+}
+
+.add-recipe-form-button-container {
+	margin-top: 20px;
+}
+
 .add-recipe .bottom-nav {
 	height: 0;
 	width: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.add-recipe {
+		padding: 110px 150px 0 150px;
+	}
+	.add-recipe-button {
+		font-size: 30px;
+	}
 }

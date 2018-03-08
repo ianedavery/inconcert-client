@@ -61,7 +61,10 @@ export class PublicRecipieName extends React.Component {
 			<div className='public-recipie-details'>
 				<Media
 					query='(min-width: 768px)'
-					render={() => <div className='top-nav-search' onClick={e => this.handleSearchButtonClick(e)} />}
+					render={() => <div className='top-nav-search-container'>
+						          	  <div className='top-nav-search' onClick={e => this.handleSearchButtonClick(e)} />
+								  	  <div className='top-nav-search-divider'>{' | '}</div>
+						  		  </div>}
 				/>
 				<section className='name'>
 		        	<h1>{this.props.recipie.name}</h1>

@@ -28,6 +28,11 @@
 	opacity: 1;
 }
 
+.dashboard .bottom-nav {
+	height: 0;
+	width: 0;
+}
+
 @media screen and (min-width: 768px) {
 	.dashboard {
 		padding: 200px 20px 0 20px;

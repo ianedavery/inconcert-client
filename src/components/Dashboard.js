@@ -18,6 +18,7 @@ export class Dashboard extends React.Component {
         		<div>
             		<Link to ='/addrecipie'>Add a Recipe</Link>
         		</div>
+                <div className='bottom-nav' id='bottom-nav' />
             </div>
 		)
 	}

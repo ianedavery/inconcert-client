@@ -46,7 +46,7 @@ export class RecipieName extends React.Component {
 
 		function bringmenu() {
     		if (document.documentElement.scrollTop > 0) {
-        			document.getElementById('bottom-nav').style.bottom = "-100%";
+    			document.getElementById('bottom-nav').style.bottom = "-100%";
     		} else {
         		document.getElementById('bottom-nav').style.bottom = "0";
     		}

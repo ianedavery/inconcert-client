@@ -3,9 +3,14 @@
 	font-family: 'Fanwood Text', serif;	
 }
 
+.top-nav-search-container {
+	height: 0;
+	width: 0;
+}
+
 .top-nav-search {
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	background-image: url('images/burgandysearch.png');
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
@@ -13,13 +18,20 @@
   	background-size: cover;
   	border: 0;
 	position: fixed;
-	top: 25px;
+	top: 27px;
 	right: 90px;
-
 }
 
 .top-nav-search:hover {
 	cursor: pointer;
+}
+
+.top-nav-search-divider {
+	position: fixed;
+	top: 25px;
+	right: 80px;	
+	color: #5A0300;
+	font-weight: 600;
 }
 
 .public-recipie-details section h1 {
@@ -78,7 +90,7 @@
   	-o-background-size: cover;
   	background-size: cover;
   	border: 0;
-  	margin-left: 46%;
+  	margin-left: 48%;
   	position: absolute;
   	margin-top: 7.5px;
   	margin-bottom: 7.5px;

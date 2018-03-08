@@ -53,7 +53,7 @@ export class AddRecipieForm extends React.Component {
 				<Field className='textarea' component='textarea' type='text' rows='3' cols='25' name='instructions' />
 
 				<div className='add-recipe-form-button-container'>
-					<button type='submit' disabled={this.props.pristine || this.props.submitting}>Add Recipe</button>
+					<button className='add-recipe-button' type='submit' disabled={this.props.pristine || this.props.submitting}>Add Recipe</button>
 				</div>
 			</form>
 		)

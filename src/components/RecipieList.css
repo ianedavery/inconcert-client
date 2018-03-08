@@ -41,8 +41,8 @@ input:-moz-placeholder {
 	width: 0;
 }
 
-@media screen and (min-height: 812px) {
+@media screen and (min-width: 768px) {
 	.your-recipies, .public-recipies {
-		padding: 320px 40px 0 40px;
+		padding: 110px 150px 0 150px;
 	}
 }

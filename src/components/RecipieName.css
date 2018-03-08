@@ -56,21 +56,21 @@
 
 .recipie-details .bottom-nav .edit {
 	background-image: url('images/edit.png');
-  	margin-left: 20%;
+  	margin-left: 15%;
   	margin-top: 7.5px;
   	margin-bottom: 7.5px;
 }
 
 .recipie-details .bottom-nav .delete {
 	background-image: url('images/delete.png');
-  	margin-left: 60%;
+  	margin-left: 59%;
   	margin-top: 7.5px;
   	margin-bottom: 7.5px;
 }
 
 .recipie-details .bottom-nav .search {
 	background-image: url('images/search.png');
-  	margin-left: 40%;
+  	margin-left: 37%;
   	margin-top: 7.5px;
   	margin-bottom: 7.5px;
 }

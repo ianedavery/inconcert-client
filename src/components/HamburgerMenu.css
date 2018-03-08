@@ -41,15 +41,15 @@
 }
 
 .search, .edit, .delete, .public, .private, .logout-icon {
-	width: 75px;
-	height: 75px;
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-  	margin-bottom: 44px;
-  	margin-right: auto;
-  	margin-left: auto;
+	width: 60px;
+	height: 60px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin-bottom: 55px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .search {

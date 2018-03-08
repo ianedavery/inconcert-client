@@ -88,7 +88,7 @@ export class EditRecipieForm extends React.Component {
 					</div>
 				</form>
 				<div className='cancel-edit-button-container'>
-					<button type='button' onClick={this.props.toggle}>cancel</button>
+					<button className='cancel-button' type='button' onClick={this.props.toggle}>cancel</button>
 		    	</div>
 		    	<div className='bottom-nav' id='bottom-nav' />
 			</div>
