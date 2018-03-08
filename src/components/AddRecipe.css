@@ -10,6 +10,7 @@
 	margin: 0;
 	position: relative;
 	line-height: 0;
+	z-index: -1;
 }
 
 .form-input input {
@@ -38,12 +39,19 @@
 }
 
 .ingredient-field .ingredient-label {
-	margin-top: 5px;
+	margin-top: 20px;
 	font-weight: 600;
 }
 
 .field-container {
 	height: 100%;
+}
+
+.remove-ingredients-button, .add-ingredients-button {
+	background-color: #5A0300;
+	color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+	font-size: 22px;
 }
 
 .remove-ingredients-button-container {

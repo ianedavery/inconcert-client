@@ -27,13 +27,13 @@ export class AddRecipieForm extends React.Component {
 		                        	<Field name={`${ingredient}.measurement`} type='text' component={Input2} validate={[required, nonEmpty]} />
 		                    	</div>
 		                    	<div className='remove-ingredients-button-container'>
-		                    		<button onClick={() => fields.remove(index)}>-</button>
+		                    		<button className='remove-ingredients-button' onClick={() => fields.remove(index)}>-</button>
 		                    	</div>
 		                    </div>
 		                )
 		            )}
 	        	<div className='add-ingredients-button-container'>
-		            <button type='button' onClick={() => fields.push()}>+</button>
+		            <button className='add-ingredients-button' type='button' onClick={() => fields.push()}>+</button>
 		        </div>
 	    	</div>
     	);
