@@ -10,8 +10,11 @@
 	margin: 0;
 	position: relative;
 	line-height: 0;
-	z-index: -1;
 }
+
+/*.add-recipe-form .form-input {
+	z-index: -1;
+}*/
 
 .form-input input {
 	position: absolute;

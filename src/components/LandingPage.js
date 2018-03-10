@@ -24,12 +24,19 @@ export class LandingPage extends React.Component {
 			        	<h1>All your recipes.<br />One app.</h1>
 			      	</header>
 					<section className='first-section'>
-						<h2>Never misplace another recipe</h2>
-						<p>All of your recipe available to you in one place all the time.</p>
+						<h2>Never lose another recipe</h2>
+						<p>Add your recipes so they are always available to you in one place.</p>
+						<img src={require('./images/recipescreenshot.png')} alt='recipe screenshot' />
 					</section>
 					<section className='second-section'>
 						<h2>Share you recipe to the public.</h2>
-						<p>Make your recipe public so others can taste the deliciouness and rate it.</p>
+						<p>Make your recipe public so others can taste the deliciouness.</p>
+						<img src={require('./images/share.png')} alt='share icon' />
+					</section>
+					<section className='third-section'>
+						<h2>Rate public recipes.</h2>
+						<p>And let others rate your public recipes.</p>
+						<img src={require('./images/fivestars.png')} alt='five stars' />
 					</section>
 					<section className='footer'>
 			      		<address>

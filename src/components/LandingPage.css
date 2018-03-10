@@ -7,7 +7,7 @@ main {
 	color: #F1F1F3;
 }
 
-.header, .first-section, .second-section, .footer {
+.header, .first-section, .second-section, .third-section, .footer {
 	text-align: center;
 	width: 100%;
 }
@@ -23,9 +23,77 @@ main {
 	height: 100%;
 }
 
-.first-section, .second-section, .footer {
-	padding: 40px 20px 40px 20px;
+/*.recipe-screenshot-container {
+	background-image: url('images/recipescreenshot.png');
+	height: 400px;
+	width: 225px;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}*/
+
+.first-section {
+	padding: 40px 20px 50px 20px;
+	background: url('images/keith-misner-308-unsplash.jpg') no-repeat;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	color: #FFFFFF;
+  	border-bottom: 3px solid #FFFFFF;
+  	border-top: 3px solid #FFFFFF; 
+}
+
+.first-section h2, .second-section h2, .third-section h2 {
+	font-size: 32px;
+	margin-bottom: 5px;
+}
+
+.first-section p, .second-section p, .third-section p {
+	font-size: 24px;
+}
+
+.first-section img {
+	height: 300px;
+	width: auto;
+}
+
+.second-section {
+	padding: 40px 20px 20px 20px;
+	background: url('images/britt-felton-63861-unsplash.jpg') no-repeat;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	color: #FFFFFF;
+	border-bottom: 3px solid #FFFFFF;
+}
+
+.second-section img {
+	height: 75px;
+	width: auto;
+}
+
+.third-section {
+	padding: 40px 20px 20px 20px;
+	background: url('images/jon-moore-399489-unsplash.jpg') no-repeat;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	color: #FFFFFF;
+}
+
+.third-section img {
+	height: 50px;
+	width: auto;
+}
+
+.footer {
+	padding: 20px 20px 10px 20px;
 	color: black;
+	font-size: 18px;
 }
 
 .main .bottom-nav {
