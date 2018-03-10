@@ -71,7 +71,7 @@ export class EditRecipieForm extends React.Component {
 			<div className='edit-form'>
 				<form id='edit-form'>
 					<legend className='main-legend'>Edit Recipe</legend>
-					<label>Recipe Name</label>
+					<label className='name-label'>Recipe Name</label>
 					<input type='text' defaultValue={this.state.name} onChange={e => this.updateName(e.target.value)} />
 
 					<label className='ingredients-label'>Ingredients</label>

@@ -33,9 +33,13 @@ legend {
 	height: 27px; 
 }
 
+.edit-form .name-label, .edit-form .instructions-label {
+	margin-bottom: 20px;
+}
+
 .ingredients-container label {
 	font-size: 20px;
-	margin-top: 20px;
+	margin-top: 27px;
 }
 
 .ingredients-container .measurement-label {
@@ -43,7 +47,7 @@ legend {
 }
 
 .ingredients-label {
-	margin-top: 28px;
+	margin-top: 35px;
 }
 
 .instructions-label, textarea {
@@ -51,7 +55,7 @@ legend {
 }
 
 .instructions-label {
-	margin-top: 28px;
+	margin-top: 35px;
 }
 
 textarea {

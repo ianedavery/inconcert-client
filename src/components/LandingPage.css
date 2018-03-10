@@ -23,16 +23,6 @@ main {
 	height: 100%;
 }
 
-/*.recipe-screenshot-container {
-	background-image: url('images/recipescreenshot.png');
-	height: 400px;
-	width: 225px;
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-}*/
-
 .first-section {
 	padding: 40px 20px 50px 20px;
 	background: url('images/keith-misner-308-unsplash.jpg') no-repeat;
@@ -60,7 +50,7 @@ main {
 }
 
 .second-section {
-	padding: 40px 20px 20px 20px;
+	padding: 40px 20px 40px 20px;
 	background: url('images/britt-felton-63861-unsplash.jpg') no-repeat;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
@@ -76,7 +66,7 @@ main {
 }
 
 .third-section {
-	padding: 40px 20px 20px 20px;
+	padding: 40px 20px 40px 20px;
 	background: url('images/jon-moore-399489-unsplash.jpg') no-repeat;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
@@ -99,4 +89,29 @@ main {
 .main .bottom-nav {
 	height: 0;
 	width: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.first-section img {
+		height: 400px;
+		width: auto;
+	}
+	.first-sub-container {
+		float: left;
+		width: 50%;
+	}
+	.first-sub, .second-sub {
+		display: inline-block;
+	}
+	.first-section .first-sub h2 {
+		width: 100%;
+		font-size: 45px;
+		padding-top: 80px;
+		padding-left: 40px;
+	}
+	.first-section .first-sub p {
+		font-size: 28px;
+		padding-top: 20px;
+		padding-left: 20px;
+	}
 }

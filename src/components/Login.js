@@ -13,7 +13,12 @@ export function Login(props) {
 		);
 	}
 	return (
-		<LoginForm />
+		<div>
+			<LoginForm />
+			<div className='test-user-container'>
+				<p className='test-user'>Test User<br />username: 123<br />password: 456</p>
+			</div>
+		</div>
 	);
 }
 

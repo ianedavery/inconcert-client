@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, FieldArray} from 'redux-form';
-import Input2 from './Input2';
+import Input from './Input';
 import RequiresLogin from './RequiresLogin';
 import {required, nonEmpty} from '../validators';
 import {addRecipie} from '../actions/addRecipie';
@@ -20,11 +20,11 @@ export class AddRecipieForm extends React.Component {
 		                    <div className='field-container' key={index}>
 		                    	<div className='ingredient-field'>
 		                    		<label className='ingredient-label'>Ingredient {index + 1}</label>
-		                        	<Field name={`${ingredient}.ingredient`} type='text' component={Input2} validate={[required, nonEmpty]} />
+		                        	<Field name={`${ingredient}.ingredient`} type='text' component={Input} validate={[required, nonEmpty]} />
 		                        </div>
 		                        <div className='measurement-field'>
 		                        	<label className='measurement-label'>Measurement {index + 1}</label>
-		                        	<Field name={`${ingredient}.measurement`} type='text' component={Input2} validate={[required, nonEmpty]} />
+		                        	<Field name={`${ingredient}.measurement`} type='text' component={Input} validate={[required, nonEmpty]} />
 		                    	</div>
 		                    	<div className='remove-ingredients-button-container'>
 		                    		<button className='remove-ingredients-button' onClick={() => fields.remove(index)}>-</button>
@@ -44,7 +44,7 @@ export class AddRecipieForm extends React.Component {
 		return (
 			<form className='add-recipe-form' onSubmit={this.props.handleSubmit(recipie => this.onSubmit(recipie))}>
 				<label className='main-label' htmlFor='recipie-name' aria-label='recipie name'>Recipe Name</label>
-				<Field component={Input2} type='text' name='name' validate={[required, nonEmpty]} />
+				<Field component={Input} type='text' name='name' validate={[required, nonEmpty]} />
 
 				<label className='main-label' htmlFor='ingredients' aria-label='ingredient'>Ingredients</label>
 				<FieldArray component={this.renderIngredient} type='text' name='ingredients' />
