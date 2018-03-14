@@ -61,6 +61,10 @@
   	margin-bottom: 7.5px;
 }
 
+.recipie-details .bottom-nav .edit a {
+	
+}
+
 .recipie-details .bottom-nav .delete {
 	background-image: url('images/delete.png');
   	margin-left: 59%;

@@ -2,7 +2,7 @@ body {
 	box-sizing: border-box;
 }
 
-.edit-form {
+.edit-recipe-form {
 	padding: 110px 40px 0 40px;
 	font-family: 'Fanwood Text', serif;
 	box-sizing: border-box;
@@ -15,25 +15,25 @@ legend {
 	font-weight: 700;
 }
 
-.edit-form .main-legend {
+.edit-recipe-form .main-legend {
 	margin-bottom: 20px;
 	text-align: center;
 	margin-top: 0;
 }
 
-.edit-form label {
+.edit-recipe-form label {
 	font-size: 24px;
 	font-weight: 700;
 	margin-bottom: 0;
 }
 
-.edit-form input {
+.edit-recipe-form input {
 	padding-bottom: 0;
 	padding-top: 0;
 	height: 27px; 
 }
 
-.edit-form .name-label, .edit-form .instructions-label {
+.edit-recipe-form .name-label, .edit-recipe-form .instructions-label {
 	margin-bottom: 20px;
 }
 
@@ -74,6 +74,10 @@ textarea {
 	font-size: 22px;
 }
 
+.cancel-button:hover, .edit-button:hover {
+	cursor: pointer;
+}
+
 .edit-button-container {
 	margin-top: 20px;
 }
@@ -84,13 +88,13 @@ textarea {
 	margin-top: 10px;
 }
 
-.edit-form .bottom-nav {
+.edit-recipe-form .bottom-nav {
 	height: 0;
 	width: 0;
 }
 
 @media screen and (min-width: 768px) {
-	.edit-form {
+	.edit-recipe-form {
 		padding: 110px 150px 0 150px;
 	}
 	.cancel-button, .edit-button {
