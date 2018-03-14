@@ -15,6 +15,11 @@
 	font-size: 24px;
 }
 
+.form-error {
+	padding-top: 180px;
+	font-weight: 600;
+}
+
 .login-form .password, .login-form .username {
 	font-weight: 600;
 }
@@ -50,6 +55,10 @@ div .form-input {
 	height: 30px;
 	margin-top: 40px;
 	text-align: center;
+}
+
+.login-button:hover {
+	cursor: pointer;
 }
 
 .test-user-container {

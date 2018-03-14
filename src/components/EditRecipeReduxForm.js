@@ -27,22 +27,23 @@ export class EditRecipeReduxForm extends React.Component {
 		return (
 		    <div className='add-ingredients-container'>
 		            {fields.map((ingredient, index) => (
-		                    <div key={index} className='ingredients-container'>
-
-		                        	<label className='measurement-label'>Measurement {index + 1}</label>
-		                        	<Field name={`${ingredient}.measurement`} type='text' component='input' autoFocus />
-		                    		
-		                    		<label>Ingredient {index + 1}</label>
-		                        	<Field name={`${ingredient}.ingredient`} type='text' component='input' />
-		                        	
-		                    	<div>
-		                    		<button type='button' onClick={() => fields.remove(index)}>-</button>
+		                    <div key={index} className='field-container'>
+		                    		<div className='ingredient-field'>
+		                    			<label className='ingredient-label'>Ingredient {index + 1}</label>
+		                        		<Field name={`${ingredient}.ingredient`} type='text' component='input' />
+		                        	</div>
+		                        	<div className='measurement-field'>
+		                        		<label className='measurement-label'>Measurement {index + 1}</label>
+		                        		<Field name={`${ingredient}.measurement`} type='text' component='input' autoFocus />
+		                    		</div>
+		                    	<div className='remove-ingredients-button-container'>
+		                    		<button className='remove-ingredients-button' type='button' onClick={() => fields.remove(index)}>-</button>
 		                    	</div>
 		                    </div>
 		                )
 		            )}
-	        	<div>
-		            <button type='button' onClick={() => fields.push()}>+</button>
+	        	<div className='add-ingredients-button-container'>
+		            <button className='add-ingredients-button' type='button' onClick={() => fields.push()}>+</button>
 		        </div>
 	    	</div>
     	);
@@ -54,14 +55,16 @@ export class EditRecipeReduxForm extends React.Component {
 			<div className='edit-recipe-form'>
 				<form onSubmit={this.props.handleSubmit((recipie) => this.onSubmit(recipie))}>
 					<legend className='main-legend'>Edit Recipe</legend>
-					<label className='name-label'>Recipe Name</label>
+					<label className='name-label main-label'>Recipe Name</label>
 					<Field component='input' type='text' name='name' />
-
-					<label className='ingredients-label'>Ingredients</label>
-					<FieldArray component={this.renderIngredients.bind(this)} type='text' name='ingredients' />
-
-					<label className='instructions-label'>Instructions</label>
-					<Field component='textarea' type='text' name='instructions' />
+ 					
+ 					<div className='edit-recipe-ingredient-container'>
+						<label className='ingredients-label main-label'>Ingredients</label>
+						<FieldArray component={this.renderIngredients.bind(this)} type='text' name='ingredients' />
+					</div>
+					
+					<label className='instructions-label main-label'>Instructions</label>
+					<Field className='textarea' component='textarea' type='text' name='instructions' />
 
 					<div className='edit-button-container'>
 						<button className='edit-button' type='submit' disabled={this.props.pristine || this.props.submitting}>edit recipe</button>

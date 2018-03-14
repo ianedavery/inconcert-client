@@ -1,72 +1,44 @@
-body {
-	box-sizing: border-box;
-}
-
 .edit-recipe-form {
-	padding: 110px 40px 0 40px;
+	padding: 100px 30px 0 30px;
 	font-family: 'Fanwood Text', serif;
 	box-sizing: border-box;
 	font-size: 20px;
-	box-sizing: border-box;
 }
 
-legend {
-	margin-top: 20px;
-	font-weight: 700;
-}
-
-.edit-recipe-form .main-legend {
-	margin-bottom: 20px;
+.edit-recipe-form form legend {
 	text-align: center;
-	margin-top: 0;
+	font-weight: 700;
+	font-size: 34px;
 }
 
 .edit-recipe-form label {
-	font-size: 24px;
-	font-weight: 700;
+	margin-top: 30px;
 	margin-bottom: 0;
 }
 
-.edit-recipe-form input {
-	padding-bottom: 0;
-	padding-top: 0;
-	height: 27px; 
+.recipe-ingredient-container .ingredients-label {
+	margin-top: 55px;
 }
 
-.edit-recipe-form .name-label, .edit-recipe-form .instructions-label {
-	margin-bottom: 20px;
-}
-
-.ingredients-container label {
-	font-size: 20px;
-	margin-top: 27px;
-}
-
-.ingredients-container .measurement-label {
+.edit-button-container {
 	margin-top: 10px;
+ }
+
+.edit-recipe-form form .main-label {
+	font-weight: 700;
+	font-size: 24px;
 }
 
-.ingredients-label {
-	margin-top: 35px;
-}
-
-.instructions-label, textarea {
-	display: block;
-}
-
-.instructions-label {
-	margin-top: 35px;
-}
-
-textarea {
-	width: 100%;
+.measurement-field .measurement-label, .ingredient-field .ingredient-label {
+	margin-top: 20px;
+	font-weight: 600;
 }
 
 .edit-button {
 	float: left;
 }
 
-.cancel-button, .edit-button {
+.edit-button, .cancel-button {
 	width: 50%;
 	background-color: #5A0300;
 	color: #FFFFFF;
@@ -74,18 +46,13 @@ textarea {
 	font-size: 22px;
 }
 
-.cancel-button:hover, .edit-button:hover {
+.edit-button:hover, .cancel-button:hover {
 	cursor: pointer;
 }
 
-.edit-button-container {
+.edit-button-container, .cancel-edit-button-container {
 	margin-top: 20px;
-}
-
-.cancel-edit-button-container {
-	height: 40px;
 	margin-bottom: 20px;
-	margin-top: 10px;
 }
 
 .edit-recipe-form .bottom-nav {

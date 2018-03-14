@@ -43,11 +43,16 @@ export class AddRecipieForm extends React.Component {
 
 		return (
 			<form className='add-recipe-form' onSubmit={this.props.handleSubmit(recipie => this.onSubmit(recipie))}>
-				<label className='main-label' htmlFor='recipie-name' aria-label='recipie name'>Recipe Name</label>
-				<Field component={Input} type='text' name='name' validate={[required, nonEmpty]} />
+				
+				<div className='recipe-name-container'>
+					<label className='main-label' htmlFor='recipie-name' aria-label='recipie name'>Recipe Name</label>
+					<Field component={Input} type='text' name='name' validate={[required, nonEmpty]} />
+				</div>
 
-				<label className='main-label' htmlFor='ingredients' aria-label='ingredient'>Ingredients</label>
-				<FieldArray component={this.renderIngredient} type='text' name='ingredients' />
+				<div className='recipe-ingredient-container'>
+					<label className='main-label ingredients-label' htmlFor='ingredients' aria-label='ingredient'>Ingredients</label>
+					<FieldArray component={this.renderIngredient} type='text' name='ingredients' />
+				</div>
 
 				<label className='main-label instructions-label' htmlFor='instructions' aria-label='instructions'>Instructions</label>
 				<Field className='textarea' component='textarea' type='text' rows='3' cols='25' name='instructions' />

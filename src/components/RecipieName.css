@@ -93,6 +93,10 @@
   	margin-bottom: 7.5px;
 }
 
+.public:hover, .private:hover, .delete:hover, .search:hover {
+	cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
 	.recipie-details {
 		padding: 120px 60px 0 60px;
