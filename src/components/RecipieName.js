@@ -30,6 +30,10 @@ export class RecipieName extends React.Component {
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
 	}
 
+	componentDidMount () {
+  		window.scrollTo(0, 0)
+	}
+
 	handleSearchButtonClick(e) {
 		e.preventDefault();
 		this.props.history('/recipielist');
