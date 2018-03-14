@@ -13,20 +13,20 @@ export const editRecipieError = error => ({
     error
 });
 
-export const editRecipie = (id, data) => (dispatch, getState) => {
+export const editRecipie = (recipie) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/recipies/` +  id, {
+    return fetch(`${API_BASE_URL}/recipies/` + recipie.id, {
         method: 'put',
         headers: {
             Authorization: `Bearer ${authToken}`,
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(recipie)
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then((recipie) => dispatch(editRecipieSuccess(recipie)))
+        .then((editRecipie) => dispatch(editRecipieSuccess(editRecipie)))
         .catch(err => {
             dispatch(editRecipieError(err));
         });

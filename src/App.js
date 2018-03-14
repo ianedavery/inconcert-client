@@ -13,6 +13,7 @@ import PublicRecipieList from './components/PublicRecipieList';
 import AddRecipie from './components/AddRecipie';
 import RecipieDetails from './components/RecipieDetails';
 import PublicRecipieDetails from './components/PublicRecipieDetails';
+import EditRecipeReduxForm from './components/EditRecipeReduxForm';
 
 import {refreshAuthToken} from './actions/auth';
 
@@ -62,6 +63,7 @@ export class App extends React.Component {
                     <Route path='/addrecipie' component={AddRecipie} />
                     <Route path='/recipiedetails/:recipieId' component={RecipieDetails} />
                     <Route path='/publicrecipiedetails/:recipieId' component={PublicRecipieDetails} />
+                    <Route path='/editrecipie/:recipieId' component={EditRecipeReduxForm} />
                 </Switch>
             </div>
         </Router> 
@@ -74,5 +76,4 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-// Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
 export default withRouter(connect(mapStateToProps)(App));

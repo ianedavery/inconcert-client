@@ -15,6 +15,7 @@ export const addRecipieError = error => ({
 
 export const addRecipie = (recipie) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
+    console.log(recipie);
     return fetch(`${API_BASE_URL}/recipies/`, {
         method: 'POST',
         headers: {
