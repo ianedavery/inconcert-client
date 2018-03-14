@@ -15,7 +15,6 @@ export class AltNavigation extends React.Component {
 	    	<nav className='navigation' id='alt-navigation'>
 	      		<p><Link to='/'>RecipeBox</Link></p>
         		 <HamburgerMenu search={this.props.search}
-        		 				edit={this.props.edit}
         		 				delete={this.props.delete}
         		 				id={this.props.id}
         		 				public={this.props.public} 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {slide as Menu} from 'react-burger-menu';
+import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
@@ -60,7 +61,7 @@ export class HamburgerMenu extends React.Component {
 
       <Menu right>
 			<div className='search menu-item' onClick={this.props.search} />
-			<div className='edit menu-item' onClick={this.props.edit} />
+			<Link className='edit menu-item' to={'/editrecipie/' + this.props.id} />
 			<div className='delete menu-item' onClick={this.props.delete} />
         	{makePublic}
         	{makePrivate}

@@ -5,7 +5,7 @@ import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {deleteRecipie} from '../actions/deleteRecipie';
 import Media from 'react-media';
 
-import EditRecipieForm from './EditRecipieForm';
+import EditRecipeReduxForm from './EditRecipeReduxForm';
 import BottomNav from './BottomNav';
 import AltNavigation from './AltNavigation';
 
@@ -42,6 +42,8 @@ export class RecipieName extends React.Component {
 
 	render() {
 
+		console.log(this.props.recipie);
+
 		window.addEventListener('scroll', bringmenu);
 
 		function bringmenu() {
@@ -52,26 +54,10 @@ export class RecipieName extends React.Component {
     		}
 		}
 
-		if(this.state.isEditing) {
-			return(
-				<div>
-					<EditRecipieForm  
-						toggle={this.toggleEdit} 
-						name={this.props.recipie.name}
-						instructions={this.props.recipie.instructions}
-						ingredients={this.props.recipie.ingredients}
-						id={this.props.id}
-					/>
-				</div>
-			)
-		}
-
-		let newArray = this.props.recipie.ingredients;
-
 		let ingredient;
 
-		if (newArray !== undefined) {
-			ingredient = newArray.map((ingredients, index) => (
+		if (this.props.recipie.ingredients !== undefined) {
+			ingredient = this.props.recipie.ingredients.map((ingredients, index) => (
 				<li key={index}>
 					{ingredients.measurement} {ingredients.ingredient}
 				</li>
@@ -98,7 +84,7 @@ export class RecipieName extends React.Component {
 		        <section>
 		        	<p>{this.props.recipie.instructions}</p>
 	        	</section>
-	        	<BottomNav edit={this.toggleEdit}
+	        	<BottomNav
 	        			   delete={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}
 	        			   search={e => this.handleSearchButtonClick(e)}
 	        			   id={this.props.id}

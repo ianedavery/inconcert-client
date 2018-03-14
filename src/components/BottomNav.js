@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {publicRecipie} from '../actions/makeRecipiePublic';
 import {privateRecipie} from '../actions/makeRecipiePrivate';
@@ -35,7 +36,7 @@ export class BottomNav extends React.Component {
 
 		return (
 			<div id='bottom-nav' className='bottom-nav'>
-				<div className='edit' onClick={this.props.edit} />
+				<Link className='edit' to={'/editrecipie/' + this.props.id} />
 				<div className='delete' onClick={this.props.delete} />
 				<div className='search' onClick={this.props.search} />
 	        	{makePublic}
