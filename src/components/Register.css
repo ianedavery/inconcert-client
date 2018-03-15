@@ -47,6 +47,10 @@ input {
 	background: transparent;
 }
 
+.registration-button:hover {
+	cursor: pointer;
+}
+
 .button-container {
 	height: 30px;
 	margin-top: 40px;

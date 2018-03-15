@@ -29,7 +29,7 @@ export class RegistrationForm extends React.Component {
 					<Field component={Input} type='password' name='confirm' validate={[required, nonEmpty, matchesPassword]} autocomplete='off' />
 
 					<div className='button-container'>	
-						<button type='submit' disabled={this.props.pristine || this.props.submitting}>signup</button>
+						<button className='registration-button' type='submit' disabled={this.props.pristine || this.props.submitting}>signup</button>
 					</div>
 				</form>
 				<div className='login-bottom-nav' id='bottom-nav' />
