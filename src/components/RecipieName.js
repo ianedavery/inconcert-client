@@ -5,7 +5,6 @@ import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {deleteRecipie} from '../actions/deleteRecipie';
 import Media from 'react-media';
 
-import EditRecipeReduxForm from './EditRecipeReduxForm';
 import BottomNav from './BottomNav';
 import AltNavigation from './AltNavigation';
 

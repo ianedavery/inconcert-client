@@ -30,7 +30,7 @@ export class EditRecipeReduxForm extends React.Component {
 		                    <div key={index} className='field-container'>
 		                    		<div className='ingredient-field'>
 		                    			<label className='ingredient-label'>Ingredient {index + 1}</label>
-		                        		<Field name={`${ingredient}.ingredient`} type='text' component='input' />
+		                        		<Field name={`${ingredient}.ingredient`} type='text' component='input' autoFocus />
 		                        	</div>
 		                        	<div className='measurement-field'>
 		                        		<label className='measurement-label'>Measurement {index + 1}</label>
