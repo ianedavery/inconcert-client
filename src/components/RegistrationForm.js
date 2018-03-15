@@ -17,21 +17,23 @@ export class RegistrationForm extends React.Component {
 
 	render() {
 		return (
-			<form className='registration-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-				<label className='username' htmlFor='username'>username</label>
-				<Field component={Input} type='text' name='username' validate={[required, nonEmpty, isTrimmed]} />
+			<div>
+				<form className='registration-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+					<label className='username' htmlFor='username'>username</label>
+					<Field component={Input} type='text' name='username' validate={[required, nonEmpty, isTrimmed]} />
 
-				<label className='password' htmlFor='password'>password</label>
-				<Field component={Input} type='password' name='password' validate={[required, nonEmpty, isTrimmed]}autocomplete='off' />
+					<label className='password' htmlFor='password'>password</label>
+					<Field component={Input} type='password' name='password' validate={[required, nonEmpty, isTrimmed]}autocomplete='off' />
 
-				<label className='confirm' htmlFor='confirm'>confirm</label>
-				<Field component={Input} type='password' name='confirm' validate={[required, nonEmpty, matchesPassword]} autocomplete='off' />
+					<label className='confirm' htmlFor='confirm'>confirm</label>
+					<Field component={Input} type='password' name='confirm' validate={[required, nonEmpty, matchesPassword]} autocomplete='off' />
 
-				<div className='button-container'>	
-					<button type='submit' disabled={this.props.pristine || this.props.submitting}>signup</button>
-				</div>
-
-			</form>
+					<div className='button-container'>	
+						<button type='submit' disabled={this.props.pristine || this.props.submitting}>signup</button>
+					</div>
+				</form>
+				<div className='login-bottom-nav' id='bottom-nav' />
+			</div>
 		);
 	}
 }

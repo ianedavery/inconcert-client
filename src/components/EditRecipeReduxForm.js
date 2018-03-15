@@ -36,7 +36,7 @@ export class EditRecipeReduxForm extends React.Component {
 		                        		<label className='measurement-label'>Measurement {index + 1}</label>
 		                        		<Field name={`${ingredient}.measurement`} type='text' component='input' autoFocus />
 		                    		</div>
-		                    	<div className='remove-ingredients-button-container'>
+		                    	<div className='remove-edit-ingredients-button-container'>
 		                    		<button className='remove-ingredients-button' type='button' onClick={() => fields.remove(index)}>-</button>
 		                    	</div>
 		                    </div>
@@ -68,11 +68,10 @@ export class EditRecipeReduxForm extends React.Component {
 
 					<div className='edit-button-container'>
 						<button className='edit-button' type='submit' disabled={this.props.pristine || this.props.submitting}>edit recipe</button>
+						<button className='cancel-button' type='button' onClick={e => this.handleCancel(e)}>cancel</button>
 					</div>
 				</form>
-				<div className='cancel-edit-button-container'>
-					<button className='cancel-button' type='button' onClick={e => this.handleCancel(e)}>cancel</button>
-		    	</div>
+
 				<div className='bottom-nav' id='bottom-nav' />
 			</div>
 		)

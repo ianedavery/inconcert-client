@@ -84,6 +84,9 @@ div .form-input {
 		padding: 220px 250px 20px 250px;
 		font-size: 32px;
 	}
+	.login-form .password {
+		margin-top: 30px;
+	}
 }
 
 @media screen and (min-height: 812px) {

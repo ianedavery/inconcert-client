@@ -53,10 +53,18 @@ input {
 	text-align: center;
 }
 
+.registration-form .bottom-nav {
+	height: 0;
+	width: 0;
+}
+
 @media screen and (min-width: 768px) {
 	.registration-form {
 		padding: 220px 250px 20px 250px;
 		font-size: 32px;
+	}
+	.registration-form .password, .registration-form .confirm {
+		margin-top: 30px;
 	}
 }
 
