@@ -50,7 +50,7 @@ export class App extends React.Component {
     }
     render() {
     return (
-      	<Router>
+      	<Router history={hashHistory}>
             <div>
       	    	<Navigation />
                 <Switch>
