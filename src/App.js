@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {BrowserRouter as Router, Route, withRouter, Switch} from 'react-router-dom';
+import {HashRouter as Router, Route, withRouter, Switch} from 'react-router-dom';
 
 import Dashboard from './components/Dashboard';
 import LandingPage from './components/LandingPage';
@@ -50,7 +50,7 @@ export class App extends React.Component {
     }
     render() {
     return (
-      	<Router history={hashHistory}>
+      	<Router>
             <div>
       	    	<Navigation />
                 <Switch>

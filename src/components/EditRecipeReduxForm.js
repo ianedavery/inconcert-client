@@ -30,11 +30,11 @@ export class EditRecipeReduxForm extends React.Component {
 		                    <div key={index} className='field-container'>
 		                    		<div className='ingredient-field'>
 		                    			<label className='ingredient-label'>Ingredient {index + 1}</label>
-		                        		<Field name={`${ingredient}.ingredient`} type='text' component='input' autoFocus />
+		                        		<Field name={`${ingredient}.ingredient`} type='text' component='input' />
 		                        	</div>
 		                        	<div className='measurement-field'>
 		                        		<label className='measurement-label'>Measurement {index + 1}</label>
-		                        		<Field name={`${ingredient}.measurement`} type='text' component='input' autoFocus />
+		                        		<Field name={`${ingredient}.measurement`} type='text' component='input' />
 		                    		</div>
 		                    	<div className='remove-edit-ingredients-button-container'>
 		                    		<button className='remove-ingredients-button' type='button' onClick={() => fields.remove(index)}>-</button>
