@@ -52,7 +52,7 @@ export class PublicRecipieName extends React.Component {
 		if (newArray !== undefined) {
 			ingredient = newArray.map((ingredients, index) => (
 				<li key={index}>
-					{ingredients.ingredient} {ingredients.measurement}
+					{ingredients.measurement} {ingredients.ingredient}
 				</li>
 			));
 		}
