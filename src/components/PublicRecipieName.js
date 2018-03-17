@@ -27,7 +27,7 @@ export class PublicRecipieName extends React.Component {
 
 	handleSearchButtonClick(e) {
 		e.preventDefault();
-		this.props.history('/publicrecipielist');
+		this.props.history.push('/publicrecipielist');
 	}
 
 	render() {
