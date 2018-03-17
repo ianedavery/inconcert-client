@@ -1,5 +1,6 @@
 import React from 'react';
 import RequiresLogin from './RequiresLogin';
+import {withRouter} from 'react-router-dom';
 
 import RecipieName from './RecipieName';
 
@@ -12,4 +13,4 @@ export class RecipieDetails extends React.Component {
 	}
 }
 
-export default RequiresLogin()(RecipieDetails);
+export default withRouter(RequiresLogin()(RecipieDetails));

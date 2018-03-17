@@ -4,6 +4,7 @@ import RequiresLogin from './RequiresLogin';
 import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {editRecipie} from '../actions/editRecipie';
+import {withRouter} from 'react-router-dom';
 
 import './EditRecipeReduxForm.css';
 
@@ -88,4 +89,4 @@ const myForm = reduxForm({
 	form: 'myForm'
 })(EditRecipeReduxForm);
 
-export default RequiresLogin()(connect(mapStateToProps)(myForm));
+export default withRouter(RequiresLogin()(connect(mapStateToProps)(myForm)));

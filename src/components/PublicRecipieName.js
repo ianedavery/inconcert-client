@@ -5,8 +5,9 @@ import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {rateRecipie} from '../actions/rateRecipie';
 import ReactStars from 'react-stars';
 import Media from 'react-media';
+import {withRouter} from 'react-router-dom';
 
-import PublicRecipeBottomNav from './PublicRecipeBottomNav';
+//import PublicRecipeBottomNav from './PublicRecipeBottomNav';
 
 import './PublicRecipieName.css';
 
@@ -84,7 +85,10 @@ export class PublicRecipieName extends React.Component {
 	                	size={24}
 	                	color2={'#ffd700'} />
             	</section>
-	        	<PublicRecipeBottomNav search={e => this.handleSearchButtonClick(e)} />
+	        	{/*<PublicRecipeBottomNav search={e => this.handleSearchButtonClick(e)} />*/}
+				<div id='bottom-nav' className='bottom-nav'>
+					<div className='search' onClick={e => this.handleSearchButtonClick(e)} />				
+				</div>
 	        </div>
 		)
 	}
@@ -100,4 +104,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default RequiresLogin()(connect(mapStateToProps)(PublicRecipieName));
+export default withRouter(RequiresLogin()(connect(mapStateToProps)(PublicRecipieName)));

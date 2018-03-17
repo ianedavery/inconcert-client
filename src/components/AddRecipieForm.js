@@ -4,6 +4,7 @@ import Input from './Input';
 import RequiresLogin from './RequiresLogin';
 import {required, nonEmpty} from '../validators';
 import {addRecipie} from '../actions/addRecipie';
+import {withRouter} from 'react-router-dom';
 
 export class AddRecipieForm extends React.Component {
 
@@ -65,6 +66,6 @@ export class AddRecipieForm extends React.Component {
 	}
 }
 
-export default RequiresLogin()(reduxForm({
+export default withRouter(RequiresLogin()(reduxForm({
 	form: 'new'
-})(AddRecipieForm));
+})(AddRecipieForm)));

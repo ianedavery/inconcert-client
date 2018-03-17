@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {deleteRecipie} from '../actions/deleteRecipie';
 import Media from 'react-media';
+import {withRouter} from 'react-router-dom';
 
 import BottomNav from './BottomNav';
 import AltNavigation from './AltNavigation';
@@ -108,4 +109,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default RequiresLogin()(connect(mapStateToProps)(RecipieName));
+export default withRouter(RequiresLogin()(connect(mapStateToProps)(RecipieName)));

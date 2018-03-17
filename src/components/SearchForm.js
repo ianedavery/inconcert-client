@@ -1,5 +1,6 @@
 import React from 'react';
 import RequiresLogin from './RequiresLogin';
+import {withRouter} from 'react-router-dom';
 
 export function SearchForm(props) {
 	return (
@@ -10,4 +11,4 @@ export function SearchForm(props) {
 	)
 }
 
-export default RequiresLogin()(SearchForm);
+export default withRouter(RequiresLogin()(SearchForm));

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {publicRecipie} from '../actions/makeRecipiePublic';
 import {privateRecipie} from '../actions/makeRecipiePrivate';
@@ -46,4 +46,4 @@ export class BottomNav extends React.Component {
 	}
 }
 
-export default connect()(BottomNav);
+export default withRouter(connect()(BottomNav));

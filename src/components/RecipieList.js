@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import RequiresLogin from './RequiresLogin';
 import {fetchRecipies} from '../actions/recipies';
 import {recipiesSearchTerm} from '../actions/liveSearch';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 import './RecipieList.css';
 
@@ -75,4 +75,4 @@ const mapStateToProps = state => {
 	}
 };
 
-export default RequiresLogin()(connect(mapStateToProps)(RecipieList));
+export default withRouter(RequiresLogin()(connect(mapStateToProps)(RecipieList)));

@@ -1,5 +1,6 @@
 import React from 'react';
 import RequiresLogin from './RequiresLogin';
+import {withRouter} from 'react-router-dom';
 
 import AddRecipieForm from './AddRecipieForm';
 
@@ -17,4 +18,4 @@ export class AddRecipie extends React.Component {
 	}
 }
 
-export default RequiresLogin()(AddRecipie);
+export default withRouter(RequiresLogin()(AddRecipie));

@@ -1,5 +1,6 @@
 import React from 'react';
 import RequiresLogin from './RequiresLogin';
+import {withRouter} from 'react-router-dom';
 
 export function NameList(props) {
 	return (
@@ -9,4 +10,4 @@ export function NameList(props) {
 	)
 }
 
-export default RequiresLogin()(NameList);
+export default withRouter(RequiresLogin()(NameList));

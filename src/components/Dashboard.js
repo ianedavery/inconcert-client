@@ -1,6 +1,6 @@
 import React from 'react';
 import RequiresLogin from './RequiresLogin';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 import './Dashboard.css';
 
@@ -24,4 +24,4 @@ export class Dashboard extends React.Component {
 	}
 }
 
-export default RequiresLogin()(Dashboard);
+export default withRouter(RequiresLogin()(Dashboard));
