@@ -4,7 +4,7 @@
 
 .login-form {
 	padding: 240px 60px 20px 60px;
-	height: 100%;
+	height: 110%;
 	background: url('images/lukas-blazek-261682-unsplash-rescaled.jpg') no-repeat;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
@@ -92,5 +92,9 @@ div .form-input {
 @media screen and (min-height: 812px) {
 	.login-form {
 		padding: 320px 60px 20px 60px;
+	}
+
+	.test-user-container {
+		top: 575px;
 	}
 }

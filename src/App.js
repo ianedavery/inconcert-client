@@ -1,8 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
 import {HashRouter as Router, Route, withRouter, Switch} from 'react-router-dom';
-
 import Dashboard from './components/Dashboard';
 import LandingPage from './components/LandingPage';
 import Login from './components/Login';
@@ -48,7 +46,9 @@ export class App extends React.Component {
 
         clearInterval(this.refreshInterval);
     }
+   
     render() {
+
     return (
       	<Router>
             <div>
