@@ -8,6 +8,7 @@ import {required, nonEmpty, matches, isTrimmed} from '../validators';
 const matchesPassword = matches('password');
 
 export class RegistrationForm extends React.Component {
+	
 	onSubmit(values) {
 		const {username, password} = values;
 		const user = {username, password};

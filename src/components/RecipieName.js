@@ -36,12 +36,12 @@ export class RecipieName extends React.Component {
 
 	handleSearchButtonClick(e) {
 		e.preventDefault();
-		this.props.history('/recipielist');
+		this.props.history.push('/recipielist');
 	}
 
 	deleteRecipie(id) {
 		this.props.dispatch(deleteRecipie(this.props.id));
-		this.props.history('/recipielist');
+		this.props.history.push('/recipielist');
 	}
 
 	render() {

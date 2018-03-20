@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "enzyme-adapter-react-16": "^1.1.1",
     "react-scripts": "1.1.0"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
     "immutability-helper": "^2.6.5",
     "jwt-decode": "^2.2.0",
     "react": "^16.2.0",

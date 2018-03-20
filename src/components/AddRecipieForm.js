@@ -11,7 +11,7 @@ export class AddRecipieForm extends React.Component {
 	onSubmit(recipie) {
 		console.log(recipie);
 		this.props.dispatch(addRecipie(recipie));
-		this.props.history('/recipielist');
+		this.props.history.push('/recipielist');
 	}
 
 	renderIngredient = ({fields}) => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import {withRouter} from 'react-router-dom';
 
 import './LandingPage.css';
 
@@ -14,11 +13,11 @@ export class LandingPage extends React.Component {
 	render() {
 
 	    if (this.props.loggedIn) {
-	        return <Redirect to="/dashboard" />;
+	        return <Redirect className='dashboard-redirect' to='/dashboard' />;
 	    }
 
 		return (
-			<div>
+			<div className='landing-page'>
 			    <main role-='main' className='main'>
 			      	<header role='banner' className='header'>
 			        	<h1>All your recipes.<br />One app.</h1>
@@ -60,4 +59,4 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-export default withRouter(connect(mapStateToProps)(LandingPage));
+export default connect(mapStateToProps)(LandingPage);

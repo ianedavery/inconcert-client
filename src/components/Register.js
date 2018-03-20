@@ -1,24 +1,30 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Redirect, withRouter} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 import RegistrationForm from './RegistrationForm';
 
 import './Register.css';
 
-export function Register(props) {
-	if(props.loggedIn) {
+export class Register extends React.Component {
+
+	render() {
+
+		if(this.props.loggedIn) {
+			return (
+				<Redirect className='dashboard-redirect' to='/dashboard' />
+			);
+		}
+
 		return (
-			<Redirect to='/dashboard' />
+			<RegistrationForm className='registration-form' />
 		);
+
 	}
-	return (
-		<RegistrationForm className='registration-form' />
-	);
 }
 
 const mapStateToProps = state => ({
 	loggedIn: state.auth.currentUser !== null
 });
 
-export default withRouter(connect(mapStateToProps)(Register));
+export default connect(mapStateToProps)(Register);
