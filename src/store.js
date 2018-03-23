@@ -7,7 +7,6 @@ import recipiesReducer from './reducers/recipies';
 import publicRecipiesReducer from './reducers/publicRecipies';
 import liveSearchReducer from './reducers/liveSearch';
 import recipieDetailsReducer from './reducers/recipieDetails';
-import deleteRecipieReducer from './reducers/deleteRecipie';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
 const store = createStore(
@@ -17,7 +16,6 @@ const store = createStore(
         recipies: recipiesReducer,
         searchTerm: liveSearchReducer,
         recipie: recipieDetailsReducer,
-        deleteRecipie: deleteRecipieReducer,
         publicRecipies: publicRecipiesReducer
     }),
     applyMiddleware(thunk)

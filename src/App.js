@@ -11,7 +11,7 @@ import PublicRecipieList from './components/PublicRecipieList';
 import AddRecipie from './components/AddRecipie';
 import RecipieDetails from './components/RecipieDetails';
 import PublicRecipieDetails from './components/PublicRecipieDetails';
-import EditRecipeReduxForm from './components/EditRecipeReduxForm';
+import EditRecipe from './components/EditRecipe';
 
 import {refreshAuthToken} from './actions/auth';
 
@@ -71,7 +71,7 @@ export class App extends React.Component {
                         <Route path='/addrecipie' component={AddRecipie} />
                         <Route path='/recipiedetails/:recipieId' component={RecipieDetails} />
                         <Route path='/publicrecipiedetails/:recipieId' component={PublicRecipieDetails} />
-                        <Route path='/editrecipie/:recipieId' component={EditRecipeReduxForm} />
+                        <Route path='/editrecipie/:recipieId' component={EditRecipe} />
                     </Switch>
                 </div>
             </Router>

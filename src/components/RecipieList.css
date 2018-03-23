@@ -20,7 +20,7 @@ input:-moz-placeholder {
 	opacity: 1;
 }
 
-.recipie-list {
+.recipie-list, .no-recipe-message {
 	list-style-type: none;
 	padding-top: 20px;
 }

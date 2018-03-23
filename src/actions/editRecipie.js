@@ -2,9 +2,8 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './util';
 
 export const EDIT_RECIPIE_SUCCESS = 'EDIT_RECIPIE_SUCCESS';
-export const editRecipieSuccess = editRecipie => ({
-    type: EDIT_RECIPIE_SUCCESS,
-    editRecipie
+export const editRecipieSuccess = () => ({
+    type: EDIT_RECIPIE_SUCCESS
 });
 
 export const EDIT_RECIPIE_ERROR = 'EDIT_RECIPIE_ERROR';
@@ -26,7 +25,7 @@ export const editRecipie = (recipie) => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then((editRecipie) => dispatch(editRecipieSuccess(editRecipie)))
+        .then(() => dispatch(editRecipieSuccess()))
         .catch(err => {
             dispatch(editRecipieError(err));
         });

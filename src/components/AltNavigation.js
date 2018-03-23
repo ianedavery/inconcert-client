@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {withRouter} from 'react-router-dom';
 
 import HamburgerMenu from './HamburgerMenu';
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
@@ -14,8 +13,7 @@ export class AltNavigation extends React.Component {
 		return (
 	    	<nav className='navigation' id='alt-navigation'>
 	      		<p><Link to='/'>RecipeBox</Link></p>
-        		 <HamburgerMenu search={this.props.search}
-        		 				delete={this.props.delete}
+        		 <HamburgerMenu delete={this.props.delete}
         		 				id={this.props.id}
         		 				public={this.props.public} 
         		 				/>
@@ -25,4 +23,4 @@ export class AltNavigation extends React.Component {
 }
 
 
-export default withRouter(connect()(AltNavigation));
+export default connect()(AltNavigation);

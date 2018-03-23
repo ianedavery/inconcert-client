@@ -16,13 +16,17 @@ describe('<RegistrationForm />', () => {
 		let props = {
 			handleSubmit: function (){console.log('hello')}
 		};
+		let values = {
+			username: 'ian',
+			password: '123'
+		}
 		const registerUser = jest.fn();
-		const wrapper = shallow(<RegistrationForm dispatch={registerUser()} {...props} />);
+		const wrapper = shallow(<RegistrationForm dispatch={registerUser(values)} {...props} />);
 		const link = wrapper.find('.registration-form');
 		link.simulate('submit', {
 			preventDefault() {}
 		});
-		expect(registerUser).toHaveBeenCalled();
+		expect(registerUser).toHaveBeenCalledWith(values);
 	});
 
 });

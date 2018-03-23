@@ -1,5 +1,4 @@
 import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './util';
 
 export const ADD_RECIPIE_SUCCESS = 'ADD_RECIPIE_SUCCESS';
 export const addRecipieSuccess = newRecipie => ({
@@ -15,7 +14,6 @@ export const addRecipieError = error => ({
 
 export const addRecipie = (recipie) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    console.log(recipie);
     return fetch(`${API_BASE_URL}/recipies/`, {
         method: 'POST',
         headers: {
@@ -24,7 +22,6 @@ export const addRecipie = (recipie) => (dispatch, getState) => {
         },
         body: JSON.stringify(recipie)
     })
-        .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((newRecipie) => dispatch(addRecipieSuccess(newRecipie)))
         .catch(err => {

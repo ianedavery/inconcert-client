@@ -12,19 +12,6 @@ import AltNavigation from './AltNavigation';
 import './RecipieName.css';
 
 export class RecipieName extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isEditing: false
-		}
-		this.toggleEdit = this.toggleEdit.bind(this)
-	}
-
-	toggleEdit() {
-		this.setState({
-			isEditing: !this.state.isEditing
-		})
-	}
 
 	componentWillMount() {
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
@@ -32,11 +19,6 @@ export class RecipieName extends React.Component {
 
 	componentDidMount () {
   		window.scrollTo(0, 0)
-	}
-
-	handleSearchButtonClick(e) {
-		e.preventDefault();
-		this.props.history.push('/recipielist');
 	}
 
 	deleteRecipie(id) {
@@ -62,7 +44,7 @@ export class RecipieName extends React.Component {
 
 		if (this.props.recipie.ingredients !== undefined) {
 			ingredient = this.props.recipie.ingredients.map((ingredients, index) => (
-				<li key={index}>
+				<li key={index} className='recipie-name-ingredient-list'>
 					{ingredients.measurement} {ingredients.ingredient}
 				</li>
 			));
@@ -72,8 +54,7 @@ export class RecipieName extends React.Component {
 			<div className='recipie-details'>
 				<Media
 					query='(min-width: 768px)'
-					render={() => <AltNavigation search={e => this.handleSearchButtonClick(e)}
-												 edit={this.toggleEdit}
+					render={() => <AltNavigation className='alt-navigation' 
 												 delete={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}} 
 						 	        			 id={this.props.id}
 	        			   						 public={this.props.recipie.public} 
@@ -88,9 +69,8 @@ export class RecipieName extends React.Component {
 		        <section>
 		        	<p>{this.props.recipie.instructions}</p>
 	        	</section>
-	        	<BottomNav
+	        	<BottomNav className='bottom-nav'
 	        			   delete={id => {if(window.confirm('Are you sure you want to delete?')) {this.deleteRecipie(id)};}}
-	        			   search={e => this.handleSearchButtonClick(e)}
 	        			   id={this.props.id}
 	        			   public={this.props.recipie.public} 
 	        			   />

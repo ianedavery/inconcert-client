@@ -26,13 +26,17 @@ describe('<LoginForm />', () => {
 		let props = {
 			handleSubmit: function (){console.log('hello')}
 		};
+		let values = {
+			username: 'ian',
+			password: '123'
+		}
 		const logIn = jest.fn();
-		const wrapper = shallow(<LoginForm dispatch={logIn()} {...props} />);
+		const wrapper = shallow(<LoginForm dispatch={logIn(values)} {...props} />);
 		const link = wrapper.find('.login-form');
 		link.simulate('submit', {
 			preventDefault() {}
 		});
-		expect(logIn).toHaveBeenCalled();
+		expect(logIn).toHaveBeenCalledWith(values);
 	});
 
 });

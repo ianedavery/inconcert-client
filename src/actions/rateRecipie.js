@@ -2,9 +2,8 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './util';
 
 export const RATE_RECIPIE_SUCCESS = 'RATE_RECIPIE_SUCCESS';
-export const rateRecipieSuccess = rateRecipie => ({
-    type: RATE_RECIPIE_SUCCESS,
-    rateRecipie
+export const rateRecipieSuccess = () => ({
+    type: RATE_RECIPIE_SUCCESS
 });
 
 export const RATE_RECIPIE_ERROR = 'RATE_RECIPIE_ERROR';
@@ -26,7 +25,7 @@ export const rateRecipie = (id, data) => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then((recipie) => dispatch(rateRecipieSuccess(recipie)))
+        .then(() => dispatch(rateRecipieSuccess()))
         .catch(err => {
             dispatch(rateRecipieError(err));
         });

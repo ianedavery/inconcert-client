@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {slide as Menu} from 'react-burger-menu';
 import {Link} from 'react-router-dom';
-import {withRouter} from 'react-router-dom';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
@@ -28,9 +27,9 @@ export class HamburgerMenu extends React.Component {
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
 	}
 
-  showSettings (event) {
-    event.preventDefault();
-  }
+    showSettings (event) {
+    	event.preventDefault();
+  	}
 
   render () {
 
@@ -60,7 +59,7 @@ export class HamburgerMenu extends React.Component {
     return (
 
       <Menu right>
-			<div className='search menu-item' onClick={this.props.search} />
+      		<Link className='search menu-item' to={'/recipielist'} />
 			<Link className='edit menu-item' to={'/editrecipie/' + this.props.id} />
 			<div className='delete menu-item' onClick={this.props.delete} />
         	{makePublic}
@@ -76,4 +75,4 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-export default withRouter(connect(mapStateToProps)(HamburgerMenu));
+export default connect(mapStateToProps)(HamburgerMenu);

@@ -2,9 +2,8 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './util';
 
 export const PUBLIC_RECIPIE_SUCCESS = 'PUBLIC_RECIPIE_SUCCESS';
-export const publicRecipieSuccess = publicRecipie => ({
-    type: PUBLIC_RECIPIE_SUCCESS,
-    publicRecipie
+export const publicRecipieSuccess = () => ({
+    type: PUBLIC_RECIPIE_SUCCESS
 });
 
 export const PUBLIC_RECIPIE_ERROR = 'PUBLIC_RECIPIE_ERROR';
@@ -26,7 +25,7 @@ export const publicRecipie = (id) => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then((recipie) => dispatch(publicRecipieSuccess(recipie)))
+        .then(() => dispatch(publicRecipieSuccess()))
         .catch(err => {
             dispatch(publicRecipieError(err));
         });

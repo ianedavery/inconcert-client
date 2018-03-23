@@ -11,17 +11,17 @@ import './EditRecipeReduxForm.css';
 export class EditRecipeReduxForm extends React.Component {
 
 	componentWillMount() {
-		this.props.dispatch(fetchRecipieDetails(this.props.location.pathname.slice(13)));
+		this.props.dispatch(fetchRecipieDetails(this.props.id));
 	}
 
 	onSubmit(recipie) {
 		this.props.dispatch(editRecipie(recipie));
-		this.props.history.push('/recipiedetails/' + this.props.location.pathname.slice(13));
+		this.props.history('/recipiedetails/' + this.props.id);
 	}
 
 	handleCancel(e) {
 		e.preventDefault();
-		this.props.history.push('/recipiedetails/' + this.props.location.pathname.slice(13));		
+		this.props.history('/recipiedetails/' + this.props.id);		
 	}
 
 	renderIngredients = ({fields}) => {
@@ -89,4 +89,4 @@ const myForm = reduxForm({
 	form: 'myForm'
 })(EditRecipeReduxForm);
 
-export default withRouter(RequiresLogin()(connect(mapStateToProps)(myForm)));
+export default RequiresLogin()(connect(mapStateToProps)(myForm));

@@ -5,9 +5,7 @@ import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {rateRecipie} from '../actions/rateRecipie';
 import ReactStars from 'react-stars';
 import Media from 'react-media';
-import {withRouter} from 'react-router-dom';
-
-//import PublicRecipeBottomNav from './PublicRecipeBottomNav';
+import {Link, withRouter} from 'react-router-dom';
 
 import './PublicRecipieName.css';
 
@@ -24,11 +22,6 @@ export class PublicRecipieName extends React.Component {
         	numberOfRatings: this.props.recipie.numberOfRatings + 1
         }));
     }
-
-	handleSearchButtonClick(e) {
-		e.preventDefault();
-		this.props.history.push('/publicrecipielist');
-	}
 
 	render() {
 
@@ -52,7 +45,7 @@ export class PublicRecipieName extends React.Component {
 
 		if (newArray !== undefined) {
 			ingredient = newArray.map((ingredients, index) => (
-				<li key={index}>
+				<li key={index} className='public-recipie-name-ingredient-list'>
 					{ingredients.measurement} {ingredients.ingredient}
 				</li>
 			));
@@ -79,15 +72,14 @@ export class PublicRecipieName extends React.Component {
 	        	</section>
 	        	<section className='rate'>
 	        		<p>Rate this recipie</p>
-	            	<ReactStars
+	            	<ReactStars className='react-stars'
 	                	count={5}
 	                	onChange={newRating => this.ratingChanged(newRating)}
 	                	size={24}
 	                	color2={'#ffd700'} />
             	</section>
-	        	{/*<PublicRecipeBottomNav search={e => this.handleSearchButtonClick(e)} />*/}
 				<div id='bottom-nav' className='bottom-nav'>
-					<div className='search' onClick={e => this.handleSearchButtonClick(e)} />				
+					<Link className='search' to={'/publicrecipielist'} />				
 				</div>
 	        </div>
 		)

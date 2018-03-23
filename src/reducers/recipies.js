@@ -1,7 +1,7 @@
 import {FETCH_RECIPIES_SUCCESS, FETCH_RECIPIES_ERROR} from '../actions/recipies';
 
 const initialState = {
-    recipies: 'placeholder',
+    recipies: '',
     error: null
 };
 

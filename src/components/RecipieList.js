@@ -22,10 +22,10 @@ export class RecipieList extends React.Component {
 	}
 
 	render() {
-
+		
 		let newArray = [];
 
-		function fuzz(array) {
+		const fuzz = (array) => {
 			for(let i=0; i<array.length; i++) {
 				newArray.push({id: array[i].id, name: array[i].name});
 			}
@@ -39,13 +39,23 @@ export class RecipieList extends React.Component {
 			</li>
 		));
 
-		const filteredResults = newArray[0].name === undefined ? console.log('cookin\'') : newArray.filter(item => item.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
+		const filteredResults = newArray[0].name === undefined ? undefined : newArray.filter(item => item.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
 
-		const filteredNames = filteredResults === undefined ? console.log('cookin\'') : filteredResults.map((listing, index) => (
+		const filteredNames = filteredResults === undefined ? undefined : filteredResults.map((listing, index) => (
 			<li key={index}>
 				<Link className='filtered-result' to={listing.id === undefined ? '#' : '/recipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
 		));
+
+		if(this.props.recipies === 'no recipes') {
+			return (
+				<div className='your-recipies'>
+			        <SearchForm className='search-form' onChange={searchTerm => this.recipiesSearchTerm({searchTerm})} />
+					<div className='no-recipe-message'>You currently have no recipes.</div>
+					<div className='bottom-nav' id='bottom-nav' />
+	            </div>
+			)
+		}
 
 		return (
 			<div className='your-recipies'>
@@ -70,7 +80,7 @@ const mapStateToProps = state => {
 	}
 	else {
 		return {
-			recipies: 'To add your first recipie, click "Add Recipie"'
+			recipies: 'no recipes'
 		};
 	}
 };

@@ -2,7 +2,7 @@ import jwtDecode from 'jwt-decode';
 import {SubmissionError} from 'redux-form';
 
 import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './util';
+//import {normalizeResponseErrors} from './util';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
@@ -57,7 +57,7 @@ export const login = (username, password) => dispatch => {
         })
             // Reject any requests which don't return a 200 status, creating
             // errors which follow a consistent format
-            .then(res => normalizeResponseErrors(res))
+            //.then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
             .catch(err => {
@@ -88,7 +88,7 @@ export const refreshAuthToken = () => (dispatch, getState) => {
             Authorization: `Bearer ${authToken}`
         }
     })
-        .then(res => normalizeResponseErrors(res))
+        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(({authToken}) => storeAuthInfo(authToken, dispatch))
         .catch(err => {

@@ -2,9 +2,8 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './util';
 
 export const PRIVATE_RECIPIE_SUCCESS = 'PRIVATE_RECIPIE_SUCCESS';
-export const privateRecipieSuccess = privateRecipie => ({
-    type: PRIVATE_RECIPIE_SUCCESS,
-    privateRecipie
+export const privateRecipieSuccess = () => ({
+    type: PRIVATE_RECIPIE_SUCCESS
 });
 
 export const PRIVATE_RECIPIE_ERROR = 'PRIVATE_RECIPIE_ERROR';
@@ -26,7 +25,7 @@ export const privateRecipie = (id) => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then((recipie) => dispatch(privateRecipieSuccess(recipie)))
+        .then(() => dispatch(privateRecipieSuccess()))
         .catch(err => {
             dispatch(privateRecipieError(err));
         });
