@@ -4,7 +4,6 @@ import RequiresLogin from './RequiresLogin';
 import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {editRecipie} from '../actions/editRecipie';
-import {withRouter} from 'react-router-dom';
 
 import './EditRecipeReduxForm.css';
 
