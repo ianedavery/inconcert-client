@@ -1,5 +1,5 @@
 import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './util';
+//import {normalizeResponseErrors} from './util';
 
 export const FETCH_PUBLIC_RECIPIES_SUCCESS = 'FETCH_PUBLIC_RECIPIES_SUCCESS';
 export const fetchPublicRecipiesSuccess = publicRecipies => ({
@@ -21,7 +21,7 @@ export const fetchPublicRecipies = () => (dispatch, getState) => {
             Authorization: `Bearer ${authToken}`
         }
     })
-        .then(res => normalizeResponseErrors(res))
+        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((recipies) => dispatch(fetchPublicRecipiesSuccess(recipies)))
         .catch(err => {

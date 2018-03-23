@@ -1,5 +1,5 @@
 import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './util';
+//import {normalizeResponseErrors} from './util';
 
 export const EDIT_RECIPIE_SUCCESS = 'EDIT_RECIPIE_SUCCESS';
 export const editRecipieSuccess = () => ({
@@ -23,7 +23,7 @@ export const editRecipie = (recipie) => (dispatch, getState) => {
         },
         body: JSON.stringify(recipie)
     })
-        .then(res => normalizeResponseErrors(res))
+        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => dispatch(editRecipieSuccess()))
         .catch(err => {

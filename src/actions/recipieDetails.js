@@ -1,5 +1,5 @@
 import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './util';
+//import {normalizeResponseErrors} from './util';
 
 export const FETCH_RECIPIE_DETAILS_SUCCESS = 'FETCH_RECIPIE_DETAILS_SUCCESS';
 export const fetchRecipieDetailsSuccess = recipie => ({
@@ -21,7 +21,7 @@ export const fetchRecipieDetails = (id) => (dispatch, getState) => {
             Authorization: `Bearer ${authToken}`
         }
     })
-        .then(res => normalizeResponseErrors(res))
+        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((recipie) => dispatch(fetchRecipieDetailsSuccess(recipie)))
         .catch(err => {

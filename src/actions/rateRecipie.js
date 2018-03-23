@@ -1,5 +1,5 @@
 import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './util';
+//import {normalizeResponseErrors} from './util';
 
 export const RATE_RECIPIE_SUCCESS = 'RATE_RECIPIE_SUCCESS';
 export const rateRecipieSuccess = () => ({
@@ -23,7 +23,7 @@ export const rateRecipie = (id, data) => (dispatch, getState) => {
         },
         body: JSON.stringify(data)
     })
-        .then(res => normalizeResponseErrors(res))
+        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => dispatch(rateRecipieSuccess()))
         .catch(err => {

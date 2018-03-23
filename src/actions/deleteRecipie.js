@@ -1,5 +1,5 @@
 import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './util';
+//import {normalizeResponseErrors} from './util';
 
 export const DELETE_RECIPIE_SUCCESS = 'DELETE_RECIPIE_SUCCESS';
 export const deleteRecipieSuccess = () => ({
@@ -20,7 +20,7 @@ export const deleteRecipie = (id) => (dispatch, getState) => {
             Authorization: `Bearer ${authToken}`
         }
     })
-        .then(res => normalizeResponseErrors(res))
+        //.then(res => normalizeResponseErrors(res))
         .then(() => dispatch(deleteRecipieSuccess()))
         .catch(err => {
             dispatch(deleteRecipieError(err));

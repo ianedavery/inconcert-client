@@ -1,5 +1,5 @@
 import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './util';
+//import {normalizeResponseErrors} from './util';
 
 export const PUBLIC_RECIPIE_SUCCESS = 'PUBLIC_RECIPIE_SUCCESS';
 export const publicRecipieSuccess = () => ({
@@ -23,7 +23,7 @@ export const publicRecipie = (id) => (dispatch, getState) => {
         },
         body: JSON.stringify({id: id, public: true})
     })
-        .then(res => normalizeResponseErrors(res))
+        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => dispatch(publicRecipieSuccess()))
         .catch(err => {
