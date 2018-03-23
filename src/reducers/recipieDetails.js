@@ -1,15 +1,13 @@
 import {FETCH_RECIPIE_DETAILS_SUCCESS, FETCH_RECIPIE_DETAILS_ERROR} from '../actions/recipieDetails';
 
 const initialState = {
-    recipie: '',
-    error: null
+    recipie: ''
 };
 
-export default function reducer(state = initialState, action) {
+export default function recipieDetailsReducer(state = initialState, action) {
     if (action.type === FETCH_RECIPIE_DETAILS_SUCCESS) {
         return Object.assign({}, state, {
-            recipie: action.recipie,
-            error: null
+            recipie: action.recipie
         });
     }
     else if (action.type === FETCH_RECIPIE_DETAILS_ERROR) {

@@ -1,16 +1,14 @@
 import {FETCH_PUBLIC_RECIPIES_SUCCESS, FETCH_PUBLIC_RECIPIES_ERROR} from '../actions/publicRecipies';
 
 const initialState = {
-    publicRecipies: 'placeholder',
-    error: null
+    publicRecipies: 'placeholder'
 };
 
-export default function reducer(state = initialState, action) {
+export default function publicRecipiesReducer(state = initialState, action) {
     if (action.type === FETCH_PUBLIC_RECIPIES_SUCCESS) {
         console.log(action.publicRecipies);
         return Object.assign({}, state, {
-            publicRecipies: action.publicRecipies,
-            error: null
+            publicRecipies: action.publicRecipies
         });
     } 
     else if (action.type === FETCH_PUBLIC_RECIPIES_ERROR) {

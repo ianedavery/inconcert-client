@@ -86,35 +86,4 @@ describe('<RecipieList />', () => {
 		expect(callBack).toHaveBeenCalled();
 	});
 
-	it('renders search results', () => {
-		let props = {
-			searchTerm: 'w',
-			recipies: [
-				{
-					name: 'waffles',
-			    	instructions: 'mix it all togther',
-			    	ingredients: 
-			    	{
-			    		ingredient: 'flour',
-			    		measurement: '1 cup'
-			    	}
-			    },
-			    {
-			    	name: 'lemonade',
-			    	instructions: 'mix it all together',
-			    	ingredients:
-			    	{
-			    		ingredient: 'water',
-			    		measurement: '8 cups'
-			    	}
-			    }
-			],
-			dispatch: function () {return(null)}
-		};
-		const wrapper = shallow(<RecipieList {...props} />);
-		console.log(wrapper.debug());
-		wrapper.update();
-		expect(wrapper.find('.filtered-list').length).toEqual(1);
-	});
-
 });
