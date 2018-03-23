@@ -28,8 +28,6 @@ export class RecipieName extends React.Component {
 
 	render() {
 
-		console.log(this.props.recipie);
-
 		window.addEventListener('scroll', bringmenu);
 
 		function bringmenu() {

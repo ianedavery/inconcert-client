@@ -9,7 +9,6 @@ import {withRouter} from 'react-router-dom';
 export class AddRecipieForm extends React.Component {
 
 	onSubmit(recipie) {
-		console.log(recipie);
 		this.props.dispatch(addRecipie(recipie));
 		this.props.history.push('/recipielist');
 	}

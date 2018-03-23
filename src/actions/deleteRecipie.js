@@ -13,7 +13,6 @@ export const deleteRecipieError = error => ({
 });
 
 export const deleteRecipie = (id) => (dispatch, getState) => {
-    console.log('deleteRecipie fired');
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/recipies/` + id, {
         method: 'DELETE',
