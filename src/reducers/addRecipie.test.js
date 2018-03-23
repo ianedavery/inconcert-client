@@ -24,7 +24,7 @@ describe('addRecipie', () => {
 				measurement: '1 cup'
 			}
 		}));
-		expect(state).toEqual({recipie: {
+		expect(state).toEqual({newRecipie: {
 			name: 'waffles',
 			instructions: 'mix it all together',
 			ingredients: {
