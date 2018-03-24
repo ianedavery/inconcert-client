@@ -12,16 +12,6 @@ describe('<LoginForm />', () => {
 		shallow(<LoginForm {...props} />);
 	});
 
-	it('creates new element for the error if this.props.error is true', () => {
-		let props = {
-			error: true,
-			handleSubmit: function (){console.log('hello')}
-		};
-		const wrapper = shallow(<LoginForm {...props} />);
-		console.log(wrapper.debug());
-		expect(wrapper.find('.form-error').length).toBe(1);
-	});
-
 	it('should call the login action when the form is submitted', () => {
 		let props = {
 			handleSubmit: function (){console.log('hello')}
