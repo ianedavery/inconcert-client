@@ -14,7 +14,6 @@ export class LoginForm extends React.Component {
 	render() {
 
 		//if there is an error alert the user
-		let error;
 		if(this.props.error) {
 			alert(this.props.error);
 		}

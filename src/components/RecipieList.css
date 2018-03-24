@@ -1,4 +1,4 @@
-.your-recipies, .public-recipies {
+.your-recipies, .public-recipies, .no-recipies {
 	padding: 110px 40px 0 40px;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
@@ -8,6 +8,11 @@
 	height: 100%;
 	font-family: 'Fanwood Text', serif;
 	font-size: 28px;
+}
+
+.no-recipies {
+	text-align: center;
+	height: auto;
 }
 
 input::-moz-placeholder {

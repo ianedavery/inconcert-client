@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import RequiresLogin from './RequiresLogin';
 import {fetchRecipies} from '../actions/recipies';
-import {recipiesSearchTerm} from '../actions/liveSearch';
+import {recipiesSearchTerm, clearSearchTerm} from '../actions/liveSearch';
 import {Link, withRouter} from 'react-router-dom';
 
 import './RecipieList.css';
@@ -12,45 +12,55 @@ import SearchForm from './SearchForm';
 
 export class RecipieList extends React.Component {
 
+	//when the component mounts, dispatch the fetchRecipies action
+	//and the clearSearchTerm action
 	componentWillMount() {
 		this.props.dispatch(fetchRecipies());
-		this.props.dispatch(recipiesSearchTerm(''));
+		this.props.dispatch(clearSearchTerm());
 	}
 
+	//when an onChange event occurs on .search-form, dispatch the recipiesSearchTerm action
 	recipiesSearchTerm(searchTerm) {
 		this.props.dispatch(recipiesSearchTerm(searchTerm));
 	}
 
 	render() {
 		
-		let newArray = [];
+		let listArray = [];
 
-		const fuzz = (array) => {
+		//populates listArray with the ids and names of the user's recipes
+		const listArrayGenerator = (array) => {
 			for(let i=0; i<array.length; i++) {
-				newArray.push({id: array[i].id, name: array[i].name});
+				listArray.push({id: array[i].id, name: array[i].name});
 			}
 		}
 
-		fuzz(this.props.recipies);
+		listArrayGenerator(this.props.recipies);
 
-		const names = newArray.map((listing, index) => (
+		//maps over listArray, creating <li /> elements for the name of each recipe
+		//and a link to the details of the recipe
+		const names = listArray.map((listing, index) => (
 			<li key={index} className='listed-recipie'>
 				<Link to={listing.id === undefined ? '#' : '/recipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
 		));
 
-		const filteredResults = newArray[0].name === undefined ? undefined : newArray.filter(item => item.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
+		
+		//uses the searchTerm prop to filter the listArray
+		const filteredResults = listArray[0].name === undefined ? undefined : listArray.filter(item => item.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
 
+		//maps over filteredResults, creating <li /> elements for the name of each recipe
+		//and a link to the details of the recipe
 		const filteredNames = filteredResults === undefined ? undefined : filteredResults.map((listing, index) => (
 			<li key={index}>
 				<Link className='filtered-result' to={listing.id === undefined ? '#' : '/recipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
 		));
 
+		//if the user has no recipes, return a message
 		if(this.props.recipies === 'no recipes') {
 			return (
-				<div className='your-recipies'>
-			        <SearchForm className='search-form' onChange={searchTerm => this.recipiesSearchTerm({searchTerm})} />
+				<div className='no-recipies'>
 					<div className='no-recipe-message'>You currently have no recipes.</div>
 					<div className='bottom-nav' id='bottom-nav' />
 	            </div>

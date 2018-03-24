@@ -8,6 +8,7 @@ import './Navigation.css';
 
 export class Navigation extends React.Component {
 
+	//when an onClick event occurs on .logout, dispatch clearAuth and call clearAuthToken
 	logOut() {
 		this.props.dispatch(clearAuth());
 		clearAuthToken();
@@ -19,12 +20,14 @@ export class Navigation extends React.Component {
 		let logIn;
 		let register;
 
+		//if the user is logged in assign value to logOut
 		if(this.props.loggedIn) {
 			logOut = (
 				<li className='logout' onClick={() => this.logOut()}>logout</li>
 			);
 		}
 
+		//if the user is not logged in, assign value to logIn and register
 		if(!(this.props.loggedIn)) {
 			logIn = (
 				<li className='nav-list-item-one'><Link to='/login'>login</Link></li>

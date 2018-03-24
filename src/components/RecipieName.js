@@ -22,8 +22,10 @@ export class RecipieName extends React.Component {
 	}
 
 	deleteRecipie(id) {
-		this.props.dispatch(deleteRecipie(this.props.id));
-		this.props.history.push('/recipielist');
+		return this.props
+			.dispatch(deleteRecipie(this.props.id))
+			.then(() => this.props.dispatch(fetchRecipieDetails(this.props.id)))
+			.then(() => this.props.history.push('/recipielist'));
 	}
 
 	render() {

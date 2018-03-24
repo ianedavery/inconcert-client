@@ -12,44 +12,49 @@ import './HamburgerMenu.css';
 
 export class HamburgerMenu extends React.Component {
 
+	//when an onClick event occurs on .logout-icon, dispatch clearAuth and call clearAuthToken
 	logOut() {
 		this.props.dispatch(clearAuth());
 		clearAuthToken();
 	}
 
+	//when on onClick event occurs on .public, dispath the publicRecipie action,
+	//then the fetchRecipieDetails action
 	publicRecipie(id) {
-		this.props.dispatch(publicRecipie(this.props.id));
-		this.props.dispatch(fetchRecipieDetails(this.props.id));
+		return this.props
+			.dispatch(publicRecipie(this.props.id))
+			.then(() => this.props.dispatch(fetchRecipieDetails(this.props.id)));
 	}
 
+	//when on onClick event occurs on .private, dispath the privateRecipie action,
+	//then the fetchRecipieDetails action
 	privateRecipie(id) {
-		this.props.dispatch(privateRecipie(this.props.id));
-		this.props.dispatch(fetchRecipieDetails(this.props.id));
+		return this.props
+			.dispatch(privateRecipie(this.props.id))
+			.then(() => this.props.dispatch(fetchRecipieDetails(this.props.id)));
 	}
-
-    showSettings (event) {
-    	event.preventDefault();
-  	}
 
   render () {
 
 	let logOut;
+	let makePublic;
+	let makePrivate;
 
+	//if the user is logged in assign value to logOut
 	if(this.props.loggedIn) {
 		logOut = (
 			<div className='logout-icon menu-item' onClick={() => this.logOut()} /> 
 		);
 	}
 
-	let makePublic;
-	let makePrivate;
-
+	//if the recipe is not public assign value to makePublic
 	if(this.props.public === false) {
 		makePublic = (
 			<div className='public menu-item' onClick={id => this.publicRecipie(id)} />
 		);
 	}
-
+	
+	//if the recipe is public assign value to makePrivate
 	if(this.props.public === true) {
 		makePrivate = (
 			<div className='private menu-item' onClick={id => this.privateRecipie(id)} />
