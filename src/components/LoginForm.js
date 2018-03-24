@@ -6,31 +6,30 @@ import {required, nonEmpty} from '../validators';
 
 export class LoginForm extends React.Component {
 
+	//when the login form is submitted, dispatch the login action
 	onSubmit(values) {
 		return this.props.dispatch(login(values.username, values.password));
 	}
 
 	render() {
 
+		//if there is an error alert the user
 		let error;
 		if(this.props.error) {
-			error = (
-				<div className='form-error' aria-live='polite'>
-					{this.props.error}
-				</div>
-			);
+			alert(this.props.error);
 		}
 
 		return (
 			<div>
 				<form className='login-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-					{error}
+					<div className='username-container'>
 					<label className='username' htmlFor='username'>username</label>
 					<Field component={Input} type='text' name='username' validate={[required, nonEmpty]} />
-
+					</div>
+					<div className='password-container'>
 					<label className='password' htmlFor='password'>password</label>
 					<Field component={Input} type='password' name='password' validate={[required, nonEmpty]} />
-
+					</div>
 					<div className='button-container'>
 						<button className='login-button' type='submit' disabled={this.props.pristine || this.props.submitting}>login</button>
 					</div>

@@ -20,9 +20,9 @@
 	position: relative;
 }
 
-.recipe-name-container .form-input label .form-error,
-.ingredient-field .form-input label .form-error, 
-.measurement-field .form-input label .form-error {
+.recipie-name-label .form-error,
+.ingredient-label .form-error, 
+.measurement-label .form-error {
 	height: 0;
 	position: absolute;
 	bottom: 7px;

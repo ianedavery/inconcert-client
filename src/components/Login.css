@@ -15,8 +15,19 @@
 	font-size: 24px;
 }
 
-.form-error {
-	padding-top: 180px;
+.username-container, .password-container {
+	height: auto;
+}
+
+.username-container label .form-error {
+	height: auto;
+	padding-top: 275px;
+	font-weight: 600;
+}
+
+.password-container label .form-error {
+	height: auto;
+	padding-top: 360px;
 	font-weight: 600;
 }
 
@@ -86,6 +97,12 @@ div .form-input {
 	}
 	.login-form .password {
 		margin-top: 30px;
+	}
+	.password-container label .form-error {
+		padding-top: 375px;
+	}
+	.username-container label .form-error {
+		padding-top: 269px;
 	}
 }
 
