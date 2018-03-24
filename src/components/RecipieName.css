@@ -17,7 +17,7 @@
 }
 
 .recipie-details section ul li {
-	height: 28px;
+	height: auto;
 	font-weight: 600;
 }
 

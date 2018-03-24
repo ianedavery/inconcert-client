@@ -6,12 +6,14 @@ import './LandingPage.css';
 
 export class LandingPage extends React.Component {
 
+ 	//ensures the component is always scrolled to the top when mounted
 	componentDidMount () {
   		window.scrollTo(0, 0)
 	}
 
 	render() {
 
+		//if the user is logged in, redirect them directly to their dashboard
 	    if (this.props.loggedIn) {
 	        return <Redirect className='dashboard-redirect' to='/dashboard' />;
 	    }
