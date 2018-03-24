@@ -21,17 +21,15 @@ export class HamburgerMenu extends React.Component {
 	//when on onClick event occurs on .public, dispath the publicRecipie action,
 	//then the fetchRecipieDetails action
 	publicRecipie(id) {
-		return this.props
-			.dispatch(publicRecipie(this.props.id))
-			.then(() => this.props.dispatch(fetchRecipieDetails(this.props.id)));
+		this.props.dispatch(publicRecipie(this.props.id));
+		this.props.dispatch(fetchRecipieDetails(this.props.id));
 	}
 
 	//when on onClick event occurs on .private, dispath the privateRecipie action,
 	//then the fetchRecipieDetails action
 	privateRecipie(id) {
-		return this.props
-			.dispatch(privateRecipie(this.props.id))
-			.then(() => this.props.dispatch(fetchRecipieDetails(this.props.id)));
+		this.props.dispatch(privateRecipie(this.props.id));
+		this.props.dispatch(fetchRecipieDetails(this.props.id));
 	}
 
   render () {
