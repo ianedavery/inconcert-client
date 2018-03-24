@@ -47,6 +47,28 @@ input {
 	background: transparent;
 }
 
+.registration-username-container, .registration-password-conatiner, .registration-confirm-container {
+	height: auto;
+}
+
+.registration-username-container label .form-error {
+	height: auto;
+	padding-top: 274px;
+	font-weight: 600;
+}
+
+.registration-password-conatiner label .form-error {
+	height: auto;
+	padding-top: 359px;
+	font-weight: 600;
+}
+
+.registration-confirm-container label .form-error {
+	height: auto;
+	padding-top: 442px;
+	font-weight: 600;
+}
+
 .registration-button:hover {
 	cursor: pointer;
 }
@@ -69,6 +91,17 @@ input {
 	}
 	.registration-form .password, .registration-form .confirm {
 		margin-top: 30px;
+	}
+	.registration-username-container label .form-error {
+		padding-top: 269px;
+	}
+
+	.registration-password-conatiner label .form-error {
+		padding-top: 374px;
+	}
+
+	.registration-confirm-container label .form-error {
+		padding-top: 480px;
 	}
 }
 

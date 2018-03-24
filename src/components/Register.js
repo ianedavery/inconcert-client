@@ -10,6 +10,7 @@ export class Register extends React.Component {
 
 	render() {
 
+		//if the user is logged in, redirect them directly to their dashboard
 		if(this.props.loggedIn) {
 			return (
 				<Redirect className='dashboard-redirect' to='/dashboard' />
