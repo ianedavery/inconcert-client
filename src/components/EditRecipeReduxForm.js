@@ -9,20 +9,25 @@ import './EditRecipeReduxForm.css';
 
 export class EditRecipeReduxForm extends React.Component {
 
+	//when component mounts, dispatch the fetchRecipieDetails action	
 	componentWillMount() {
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
 	}
 
+	//when redux form is submitted, dispatch the editRecipie action,
+	//then direct the user back to the recipie details page	
 	onSubmit(recipie) {
 		this.props.dispatch(editRecipie(recipie));
 		this.props.history('/recipiedetails/' + this.props.id);
 	}
 
+	//when an onClick event occurs on .cancel-button, direct the user back to the recipie details page
 	handleCancel(e) {
 		e.preventDefault();
 		this.props.history('/recipiedetails/' + this.props.id);		
 	}
 
+	//render ingredient and measurement fields along with button to remove and add fields	
 	renderIngredients = ({fields}) => {
 		return (
 		    <div className='add-ingredients-container'>

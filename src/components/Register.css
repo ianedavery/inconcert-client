@@ -51,22 +51,23 @@ input {
 	height: auto;
 }
 
-.registration-username-container label .form-error {
+.registration-username-container label .form-error,
+.registration-password-conatiner label .form-error,
+.registration-confirm-container label .form-error {
 	height: auto;
+	font-weight: 400;
+}
+
+.registration-username-container label .form-error {
 	padding-top: 274px;
-	font-weight: 600;
 }
 
 .registration-password-conatiner label .form-error {
-	height: auto;
 	padding-top: 359px;
-	font-weight: 600;
 }
 
 .registration-confirm-container label .form-error {
-	height: auto;
 	padding-top: 442px;
-	font-weight: 600;
 }
 
 .registration-button:hover {

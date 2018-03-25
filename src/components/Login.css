@@ -19,16 +19,18 @@
 	height: auto;
 }
 
-.username-container label .form-error {
+.username-container label .form-error,
+.password-container label .form-error {
 	height: auto;
+	font-weight: 400;	
+}
+
+.username-container label .form-error {
 	padding-top: 275px;
-	font-weight: 600;
 }
 
 .password-container label .form-error {
-	height: auto;
 	padding-top: 360px;
-	font-weight: 600;
 }
 
 .login-form .password, .login-form .username {

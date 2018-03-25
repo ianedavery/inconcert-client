@@ -8,27 +8,34 @@ import {withRouter} from 'react-router-dom';
 
 export class AddRecipieForm extends React.Component {
 
+	//when redux form is submitted, dispatch the addRecipie action,
+	//then direct the user back to /recipielist
 	onSubmit(recipie) {
 		this.props.dispatch(addRecipie(recipie));
 		this.props.history.push('/recipielist');
 	}
 
+	//render ingredient and measurement fields along with button to remove and add fields
 	renderIngredient = ({fields}) => {
 		return (
 		    <div className='add-ingredients-container'>
 		            {fields.map((ingredient, index) => (
 		                    <div className='field-container' key={index}>
+		                    	
 		                    	<div className='ingredient-field'>
 		                    		<label className='ingredient-label'>Ingredient {index + 1}</label>
 		                        	<Field name={`${ingredient}.ingredient`} type='text' component={Input} validate={[required, nonEmpty]} />
 		                        </div>
+		                        
 		                        <div className='measurement-field'>
 		                        	<label className='measurement-label'>Measurement {index + 1}</label>
 		                        	<Field name={`${ingredient}.measurement`} type='text' component={Input} validate={[required, nonEmpty]} />
 		                    	</div>
+		                    	
 		                    	<div className='remove-ingredients-button-container'>
 		                    		<button className='remove-ingredients-button' onClick={() => fields.remove(index)}>-</button>
 		                    	</div>
+		                    
 		                    </div>
 		                )
 		            )}

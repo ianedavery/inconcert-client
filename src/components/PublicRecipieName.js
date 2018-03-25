@@ -41,9 +41,11 @@ export class PublicRecipieName extends React.Component {
     		}
 		}
 
+		//calculate the average rating for a recipe
 		let average = this.props.recipie.rating/this.props.recipie.numberOfRatings;
 
-		let roundedAverage = Math.max( Math.round(average * 10) / 10, 2.8 ).toFixed(1);
+		//round the average rating to the nearest first decimal
+		let roundedAverage = Math.max( Math.round(average * 10) / 10, 0 ).toFixed(1);
 
 		let ingredient;
 
