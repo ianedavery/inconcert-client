@@ -19,7 +19,8 @@
   	border: 0;
 	position: fixed;
 	top: 27px;
-	right: 90px;
+	right: 90px;	
+	z-index: 1;
 }
 
 .top-nav-search:hover {
@@ -32,6 +33,7 @@
 	right: 80px;	
 	color: #5A0300;
 	font-weight: 600;
+	z-index: 1;
 }
 
 .public-recipie-details section h1 {

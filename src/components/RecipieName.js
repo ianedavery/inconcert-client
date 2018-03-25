@@ -13,14 +13,19 @@ import './RecipieName.css';
 
 export class RecipieName extends React.Component {
 
+	//when component mounts, dispatch the fetchRecipieDetails action
 	componentWillMount() {
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
 	}
 
+	//when component mounts, scroll to top of screen
 	componentDidMount () {
   		window.scrollTo(0, 0)
 	}
 
+	//when an onClick event occures on .delete, dispatch the deleteRecipie action
+	//then dispatch the fetchRecipieDetails action
+	//then direct user back to recipielist.
 	deleteRecipie(id) {
 		return this.props
 			.dispatch(deleteRecipie(this.props.id))
@@ -30,8 +35,11 @@ export class RecipieName extends React.Component {
 
 	render() {
 
+		//when the window scroll, call the bringmenu function
 		window.addEventListener('scroll', bringmenu);
 
+		//if the user is not at the top of the screen, hide bottom-nav
+		//else, show bottom-nav
 		function bringmenu() {
     		if (document.documentElement.scrollTop > 0) {
     			document.getElementById('bottom-nav').style.bottom = "-100%";
@@ -41,9 +49,12 @@ export class RecipieName extends React.Component {
 		}
 
 		let ingredient;
-
+		let newArray = this.props.recipie.ingredients;
+		
+		//if ingredients is defined, map over the ingredients creating <li/> element for each 
+		//ingredient and measurement
 		if (this.props.recipie.ingredients !== undefined) {
-			ingredient = this.props.recipie.ingredients.map((ingredients, index) => (
+			ingredient = newArray.map((ingredients, index) => (
 				<li key={index} className='recipie-name-ingredient-list'>
 					{ingredients.measurement} {ingredients.ingredient}
 				</li>

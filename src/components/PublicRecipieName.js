@@ -11,22 +11,28 @@ import './PublicRecipieName.css';
 
 export class PublicRecipieName extends React.Component {
 
+	//when component mounts, dispatch the fetchRecipieDetails action
 	componentWillMount() {
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
 	}
 
+	//when an onChange event occurs on .react-stars dispatch the rateRecipie action    
     ratingChanged(newRating) {
-        this.props.dispatch(rateRecipie(this.props.id, {
-        	id: this.props.id,
-        	rating: this.props.recipie.rating + newRating,
-        	numberOfRatings: this.props.recipie.numberOfRatings + 1
-        }));
+        this.props
+	        .dispatch(rateRecipie(this.props.id, {
+	        	id: this.props.id,
+	        	rating: this.props.recipie.rating + newRating,
+	        	numberOfRatings: this.props.recipie.numberOfRatings + 1
+	        }));
     }
 
 	render() {
 
+		//when the window scroll, call the bringmenu function		
 		window.addEventListener('scroll', bringmenu);
 
+		//if the user is not at the top of the screen, hide bottom-nav
+		//else, show bottom-nav		
 		function bringmenu() {
     		if (document.documentElement.scrollTop > 0) {
         			document.getElementById('bottom-nav').style.bottom = "-100%";
@@ -39,11 +45,13 @@ export class PublicRecipieName extends React.Component {
 
 		let roundedAverage = Math.max( Math.round(average * 10) / 10, 2.8 ).toFixed(1);
 
-		let newArray = this.props.recipie.ingredients;
-
 		let ingredient;
 
-		if (newArray !== undefined) {
+		let newArray = this.props.recipie.ingredients;
+
+		//if ingredients is defined, map over the ingredients creating <li/> element for each 
+		//ingredient and measurement		
+		if (this.props.recipie.ingredients !== undefined) {
 			ingredient = newArray.map((ingredients, index) => (
 				<li key={index} className='public-recipie-name-ingredient-list'>
 					{ingredients.measurement} {ingredients.ingredient}
@@ -56,8 +64,8 @@ export class PublicRecipieName extends React.Component {
 				<Media
 					query='(min-width: 768px)'
 					render={() => <div className='top-nav-search-container'>
-						          	  <div className='top-nav-search' onClick={e => this.handleSearchButtonClick(e)} />
-								  	  <div className='top-nav-search-divider'>{' | '}</div>
+		          	  	      		  	<Link className='top-nav-search' to={'/publicrecipielist'} />
+								  	  	<div className='top-nav-search-divider'>{' | '}</div>
 						  		  </div>}
 				/>
 				<section className='name'>

@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import RequiresLogin from './RequiresLogin';
 import {fetchPublicRecipies} from '../actions/publicRecipies';
-import {recipiesSearchTerm} from '../actions/liveSearch';
+import {recipiesSearchTerm, clearSearchTerm} from '../actions/liveSearch';
 import {Link, withRouter} from 'react-router-dom';
 import './RecipieList.css';
 
@@ -13,35 +13,44 @@ import './RecipieList.css';
 
 export class PublicRecipieList extends React.Component {
 
+	//when the component mounts, dispatch the fetchRecipies action
+	//and the clearSearchTerm action	
 	componentWillMount() {
 		this.props.dispatch(fetchPublicRecipies());
-		this.props.dispatch(recipiesSearchTerm(''));
+		this.props.dispatch(clearSearchTerm());
 	}
 
+	//when an onChange event occurs on .search-form, dispatch the recipiesSearchTerm action	
 	recipiesSearchTerm(searchTerm) {
 		this.props.dispatch(recipiesSearchTerm(searchTerm));
 	}
 
 	render() {
 
-		let newArray = [];
+		let listArray = [];
 
-		function fuzz(array) {
+		//populates listArray with the ids and names of the user's recipes		
+		const listArrayGenerator = array => {
 			for(let i=0; i<array.length; i++) {
-				newArray.push({id: array[i].id, name: array[i].name});
+				listArray.push({id: array[i].id, name: array[i].name});
 			}
 		}
 
-		fuzz(this.props.publicRecipies);
+		listArrayGenerator(this.props.publicRecipies);
 
-		const names = newArray.map((listing, index) => (
+		//maps over listArray, creating <li /> elements for the name of each recipe
+		//and a link to the details of the recipe		
+		const names = listArray.map((listing, index) => (
 			<li key={index} className='listed-recipie'>
 				<Link to={listing.id === undefined ? '#' : '/publicrecipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
 		));
 
-		const filteredResults = newArray[0].name === undefined ? console.log('cookin\'') : newArray.filter(item => item.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
+		//uses the searchTerm prop to filter the listArray		
+		const filteredResults = listArray[0].name === undefined ? console.log('cookin\'') : listArray.filter(item => item.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
 
+		//maps over filteredResults, creating <li /> elements for the name of each recipe
+		//and a link to the details of the recipe		
 		const filteredNames = filteredResults === undefined ? console.log('cookin\'') : filteredResults.map((listing, index) => (
 			<li key={index}>
 				<Link className='filtered-result' to={listing.id === undefined ? '#' : '/publicrecipiedetails/' + listing.id}>{listing.name}</Link>

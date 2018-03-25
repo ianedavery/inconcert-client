@@ -29,7 +29,7 @@ export class RecipieList extends React.Component {
 		let listArray = [];
 
 		//populates listArray with the ids and names of the user's recipes
-		const listArrayGenerator = (array) => {
+		const listArrayGenerator = array => {
 			for(let i=0; i<array.length; i++) {
 				listArray.push({id: array[i].id, name: array[i].name});
 			}
@@ -45,7 +45,6 @@ export class RecipieList extends React.Component {
 			</li>
 		));
 
-		
 		//uses the searchTerm prop to filter the listArray
 		const filteredResults = listArray[0].name === undefined ? undefined : listArray.filter(item => item.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
 
