@@ -12,6 +12,8 @@ export const addRecipieError = error => ({
     error
 });
 
+
+//calls POST to add a new recipe to the DB
 export const addRecipie = (recipie) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/recipies/`, {

@@ -2,7 +2,6 @@ import jwtDecode from 'jwt-decode';
 import {SubmissionError} from 'redux-form';
 
 import {API_BASE_URL} from '../config';
-//import {normalizeResponseErrors} from './util';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
@@ -15,11 +14,11 @@ export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const clearAuth = () => ({
     type: CLEAR_AUTH
 });
-
+/*
 export const AUTH_REQUEST = 'AUTH_REQUEST';
 export const authRequest = () => ({
     type: AUTH_REQUEST
-});
+});*/
 
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const authSuccess = currentUser => ({
@@ -43,7 +42,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 };
 
 export const login = (username, password) => dispatch => {
-    dispatch(authRequest());
+    //dispatch(authRequest());
     return (
         fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
@@ -55,9 +54,6 @@ export const login = (username, password) => dispatch => {
                 password
             })
         })
-            // Reject any requests which don't return a 200 status, creating
-            // errors which follow a consistent format
-            //.then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
             .catch(err => {
@@ -79,7 +75,7 @@ export const login = (username, password) => dispatch => {
 };
 
 export const refreshAuthToken = () => (dispatch, getState) => {
-    dispatch(authRequest());
+    //dispatch(authRequest());
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/auth/refresh`, {
         method: 'POST',

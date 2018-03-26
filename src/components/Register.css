@@ -20,7 +20,9 @@
 	margin-top: 20px;
 }
 
-.registration-form .password, .registration-form .username, .registration-form .confirm {
+.registration-form .password,
+ .registration-form .username,
+  .registration-form .confirm {
 	font-weight: 600;
 }
 
@@ -47,7 +49,9 @@ input {
 	background: transparent;
 }
 
-.registration-username-container, .registration-password-conatiner, .registration-confirm-container {
+.registration-username-container,
+ .registration-password-conatiner,
+  .registration-confirm-container {
 	height: auto;
 }
 
@@ -110,4 +114,29 @@ input {
 	.registration-form {
 		padding: 320px 60px 20px 60px;
 	}
+	.registration-username-container label .form-error {
+		padding-top: 353px;
+	}
+
+	.registration-password-conatiner label .form-error {
+		padding-top: 437px;
+	}
+
+	.registration-confirm-container label .form-error {
+		padding-top: 522px;
+	}
+}
+
+@media screen and (min-height: 812px) and (min-width: 768px) {
+	.registration-username-container label .form-error {
+		padding-top: 363px;
+	}
+
+	.registration-password-conatiner label .form-error {
+		padding-top: 469px;
+	}
+
+	.registration-confirm-container label .form-error {
+		padding-top: 578px;
+	}	
 }

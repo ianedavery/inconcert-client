@@ -116,4 +116,24 @@ div .form-input {
 	.test-user-container {
 		top: 575px;
 	}
+	.username-container label .form-error {
+		padding-top: 354px;
+	}
+
+	.password-container label .form-error {
+		padding-top: 440px;
+	}
+}
+
+@media screen and (min-height: 812px) and (min-width: 768px) {
+	.test-user-container {
+		top: 615px;
+	}
+	.username-container label .form-error {
+		padding-top: 364px;
+	}
+
+	.password-container label .form-error {
+		padding-top: 472px;
+	}
 }
