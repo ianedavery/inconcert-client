@@ -10,15 +10,15 @@ export const setAuthToken = authToken => ({
     authToken
 });
 
+export const AUTH_REQUEST = 'AUTH_REQUEST';
+export const authRequest = () => ({
+    type: AUTH_REQUEST
+});
+
 export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const clearAuth = () => ({
     type: CLEAR_AUTH
 });
-/*
-export const AUTH_REQUEST = 'AUTH_REQUEST';
-export const authRequest = () => ({
-    type: AUTH_REQUEST
-});*/
 
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const authSuccess = currentUser => ({
@@ -42,7 +42,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 };
 
 export const login = (username, password) => dispatch => {
-    //dispatch(authRequest());
+    dispatch(authRequest());
     return (
         fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
@@ -75,7 +75,7 @@ export const login = (username, password) => dispatch => {
 };
 
 export const refreshAuthToken = () => (dispatch, getState) => {
-    //dispatch(authRequest());
+    dispatch(authRequest());
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/auth/refresh`, {
         method: 'POST',
@@ -84,7 +84,6 @@ export const refreshAuthToken = () => (dispatch, getState) => {
             Authorization: `Bearer ${authToken}`
         }
     })
-        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(({authToken}) => storeAuthInfo(authToken, dispatch))
         .catch(err => {
