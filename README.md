@@ -2,9 +2,9 @@
 
 https://recipebox.website/#/
 
-##API Documentation
+## API Documentation
 
-###Show Recipes
+### Show Recipes
 
 Returns json data about all user's recipes.
 
@@ -47,6 +47,7 @@ Returns json data about all user's recipes.
         }
       });
     ```
+
 
 ![Alt text](https://github.com/ianedavery/recipebox-client/blob/master/src/components/images/recipescreenshot.png)
 ![Alt text]()
