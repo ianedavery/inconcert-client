@@ -231,7 +231,7 @@ Edits a user's recipe.
     OR
 
     * **Code:** 400 Bad Request <br />
-      **Content:** `{'error': 'Request path id and request body id values must match'}`
+      **Content:** `{error: 'Request path id and request body id values must match'}`
 
     OR
 
@@ -247,7 +247,7 @@ Edits a user's recipe.
 
     ```javascript
       $.ajax({
-        url: 'api/recipies/:id',
+        url: 'api/recipies/' + id,
         datatype: 'json',
         type: 'PUT',
         data: JSON.stringify(
@@ -266,6 +266,47 @@ Edits a user's recipe.
       });
     ```
 
+### Delete a Recipe
+
+Delete a user's recipe.
+
+  * **URL**
+    /api/recipies/:id
+
+  * **Method:**
+    `DELETE`
+
+  * **Success Response:**
+    * **Code:** 204 No Content
+
+  * **Error Response:**
+    * **Code:** 500 <br />
+      **Content:** `{message: 'Internal Server Error'}`
+
+    OR
+
+    * **Code:** 404 Not Found <br />
+      **Content:** `{message: 'Not Found'}`
+
+    OR
+
+    * **Code:** 401 Unauthorize <br />
+      **Content:** `{message: 'Unauthorized'}`
+
+  * **Sample Call:**
+
+    ```javascript
+      $.ajax({
+        url: 'api/recipies/' + id,
+        type: 'DELETE',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        },
+        success: function(r) {
+          console.log(r);
+        }
+      });
+    ```
 
 ![Alt text](https://github.com/ianedavery/recipebox-client/blob/master/src/components/images/recipescreenshot.png)
 ![Alt text]()
