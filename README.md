@@ -318,7 +318,7 @@ Delete a user's recipe.
 
 RecipeBox Allow you to add all your personal recipes and access them anywhere.
 
-Once you have added a recipe you can make it public so anyone can see it and rate it.
+Users can edit their recipes, and make them public so anyone can see it and rate it.
 
 ## Technology Used:
 
