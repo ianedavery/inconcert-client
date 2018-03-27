@@ -39,10 +39,14 @@ Returns json data about all user's recipes.
         url: 'api/recipies',
         datatype: 'json',
         type: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        },
         success: function(r) {
           console.log(r);
         }
-      });```
+      });
+    ```
 
 ![Alt text](https://github.com/ianedavery/recipebox-client/blob/master/src/components/images/recipescreenshot.png)
 ![Alt text]()
