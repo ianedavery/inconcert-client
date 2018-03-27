@@ -21,8 +21,8 @@
 }
 
 .registration-form .password,
- .registration-form .username,
-  .registration-form .confirm {
+.registration-form .username,
+.registration-form .confirm {
 	font-weight: 600;
 }
 
@@ -110,7 +110,7 @@ input {
 	}
 }
 
-@media screen and (min-height: 812px) {
+@media screen and (height: 812px) and (width: 375px) {
 	.registration-form {
 		padding: 320px 60px 20px 60px;
 	}
@@ -127,7 +127,7 @@ input {
 	}
 }
 
-@media screen and (min-height: 812px) and (min-width: 768px) {
+@media screen and (height: 812px) and (width: 768px) {
 	.registration-username-container label .form-error {
 		padding-top: 363px;
 	}
@@ -139,4 +139,22 @@ input {
 	.registration-confirm-container label .form-error {
 		padding-top: 578px;
 	}	
+}
+
+@media screen and (width: 768px) and (height: 1024px) {
+	.registration-form {
+		padding: 320px 200px 20px 200px;
+		font-size: 32px;
+	}
+	.registration-username-container label .form-error {
+		padding-top: 362px;
+	}
+
+	.registration-password-conatiner label .form-error {
+		padding-top: 467px;
+	}
+
+	.registration-confirm-container label .form-error {
+		padding-top: 573px;
+}
 }
