@@ -210,5 +210,62 @@ Adds a new recipe to the user's account.
         }
       });
     ```
+
+### Edit a Recipe
+
+Edits a user's recipe.
+
+  * **URL**
+    /api/recipies/:id
+
+  * **Method:**
+    `PUT`
+
+  * **Success Response:**
+    * **Code:** 204 No Content
+
+  * **Error Response:**
+    * **Code:** 500 <br />
+      **Content:** `{error: 'Something went wrong'}`
+
+    OR
+
+    * **Code:** 400 Bad Request <br />
+      **Content:** `{'error': 'Request path id and request body id values must match'}`
+
+    OR
+
+    * **Code:** 404 Not Found <br />
+      **Content:** `{message: 'Not Found'}`
+
+    OR
+
+    * **Code:** 401 Unauthorize <br />
+      **Content:** `{message: 'Unauthorized'}`
+
+  * **Sample Call:**
+
+    ```javascript
+      $.ajax({
+        url: 'api/recipies/:id',
+        datatype: 'json',
+        type: 'PUT',
+        data: JSON.stringify(
+          {
+            'id': '1234567890',
+            'name': 'waffles'
+          }
+        ),
+        headers: {
+          'Authorization': 'Bearer ' + token
+        },
+        contentType: 'application/json',
+        success: function(r) {
+          console.log(r);
+        }
+      });
+    ```
+
+
 ![Alt text](https://github.com/ianedavery/recipebox-client/blob/master/src/components/images/recipescreenshot.png)
 ![Alt text]()
