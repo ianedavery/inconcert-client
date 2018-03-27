@@ -1,7 +1,5 @@
 # [RecipeBox](https://recipebox.website/#/)
 
-https://recipebox.website/#/
-
 ## API Documentation
 
 ### Show Recipes
@@ -318,3 +316,10 @@ Delete a user's recipe.
 
 ## App Summary:
 
+RecipeBox Allow you to add all your personal recipes and access them anywhere.
+
+Once you have added a recipe you can make it public so anyone can see it and rate it.
+
+## Technology Used:
+
+This app was built with HTML, CSS, JavaScript, MongoDB, Node.js, React and Redux.
