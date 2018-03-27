@@ -18,7 +18,7 @@ export class Login extends React.Component {
 		}
 
 		return (
-			<div>
+			<div className='login-form-container'>
 				<LoginForm />
 				<div className='test-user-container'>
 					<p className='test-user'>Test User<br />username: 123<br />password: 456</p>

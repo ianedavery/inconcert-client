@@ -2,9 +2,9 @@
     outline: none;
 }
 
-.login-form {
-	padding: 240px 60px 20px 60px;
-	height: 100%;
+.login-form-container {
+
+	height: 120%;
 	background: url('../images/lukas-blazek-261682-unsplash-rescaled.jpg') no-repeat;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
