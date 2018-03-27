@@ -5,7 +5,7 @@ import {fetchRecipies} from '../actions/recipies';
 import {recipiesSearchTerm, clearSearchTerm} from '../actions/liveSearch';
 import {Link, withRouter} from 'react-router-dom';
 
-import './RecipieList.css';
+import './styling/RecipieList.css';
 
 import NameList from './NameList';
 import SearchForm from './SearchForm';

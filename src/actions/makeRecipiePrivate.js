@@ -1,5 +1,4 @@
 import {API_BASE_URL} from '../config';
-//import {normalizeResponseErrors} from './util';
 
 export const PRIVATE_RECIPIE_SUCCESS = 'PRIVATE_RECIPIE_SUCCESS';
 export const privateRecipieSuccess = () => ({
@@ -12,6 +11,7 @@ export const privateRecipieError = error => ({
     error
 });
 
+//send a put request to the server to set 'public' to false
 export const privateRecipie = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/recipies/` +  id, {
@@ -23,7 +23,6 @@ export const privateRecipie = (id) => (dispatch, getState) => {
         },
         body: JSON.stringify({id: id, public: false})
     })
-        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => dispatch(privateRecipieSuccess()))
         .catch(err => {

@@ -1,5 +1,4 @@
 import {API_BASE_URL} from '../config';
-//import {normalizeResponseErrors} from './util';
 
 export const FETCH_RECIPIES_SUCCESS = 'FETCH_RECIPIES_SUCCESS';
 export const fetchRecipiesSuccess = recipies => ({
@@ -13,6 +12,8 @@ export const fetchRecipiesError = error => ({
     error
 });
 
+
+//send a 'get' request to the server to fetch all reicpes 
 export const fetchRecipies = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/recipies/`, {
@@ -21,7 +22,6 @@ export const fetchRecipies = () => (dispatch, getState) => {
             Authorization: `Bearer ${authToken}`
         }
     })
-        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((recipies) => dispatch(fetchRecipiesSuccess(recipies)))
         .catch(err => {

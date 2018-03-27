@@ -1,0 +1,142 @@
+*:focus {
+    outline: none;
+}
+
+.registration-form {
+	padding: 240px 60px 20px 60px;
+	height: 100%;
+	background: url('../images/lukas-blazek-261682-unsplash-rescaled.jpg') no-repeat;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	background-position: right 15px;
+	height: 100%;
+	font-family: 'Fanwood Text', serif;
+	font-size: 24px;
+}
+
+.registration-form .password, .registration-form .confirm {
+	margin-top: 20px;
+}
+
+.registration-form .password,
+ .registration-form .username,
+  .registration-form .confirm {
+	font-weight: 600;
+}
+
+div .form-input {
+	height: 20px;
+}
+
+input::-webkit-input-placeholder {
+	color: black;
+}
+
+.registration-form .button-container button {
+	background-color: transparent;
+	border: 0 solid;
+  	-webkit-box-shadow: 2px 2px 1px 1px #6E6E6E;
+  	-moz-box-shadow:    2px 2px 1px 1px #6E6E6E;
+  	box-shadow:         2px 2px 1px 1px #6E6E6E;
+} 
+
+input {
+	width: 100%;
+	border: 0 solid;
+	border-bottom: 1px solid black;
+	background: transparent;
+}
+
+.registration-username-container,
+ .registration-password-conatiner,
+  .registration-confirm-container {
+	height: auto;
+}
+
+.registration-username-container label .form-error,
+.registration-password-conatiner label .form-error,
+.registration-confirm-container label .form-error {
+	height: auto;
+	font-weight: 400;
+}
+
+.registration-username-container label .form-error {
+	padding-top: 274px;
+}
+
+.registration-password-conatiner label .form-error {
+	padding-top: 359px;
+}
+
+.registration-confirm-container label .form-error {
+	padding-top: 442px;
+}
+
+.registration-button:hover {
+	cursor: pointer;
+}
+
+.button-container {
+	height: 30px;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.registration-form .bottom-nav {
+	height: 0;
+	width: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.registration-form {
+		padding: 220px 250px 20px 250px;
+		font-size: 32px;
+	}
+	.registration-form .password, .registration-form .confirm {
+		margin-top: 30px;
+	}
+	.registration-username-container label .form-error {
+		padding-top: 269px;
+	}
+
+	.registration-password-conatiner label .form-error {
+		padding-top: 374px;
+	}
+
+	.registration-confirm-container label .form-error {
+		padding-top: 480px;
+	}
+}
+
+@media screen and (min-height: 812px) {
+	.registration-form {
+		padding: 320px 60px 20px 60px;
+	}
+	.registration-username-container label .form-error {
+		padding-top: 353px;
+	}
+
+	.registration-password-conatiner label .form-error {
+		padding-top: 437px;
+	}
+
+	.registration-confirm-container label .form-error {
+		padding-top: 522px;
+	}
+}
+
+@media screen and (min-height: 812px) and (min-width: 768px) {
+	.registration-username-container label .form-error {
+		padding-top: 363px;
+	}
+
+	.registration-password-conatiner label .form-error {
+		padding-top: 469px;
+	}
+
+	.registration-confirm-container label .form-error {
+		padding-top: 578px;
+	}	
+}

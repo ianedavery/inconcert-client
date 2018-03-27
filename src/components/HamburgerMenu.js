@@ -8,7 +8,7 @@ import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {publicRecipie} from '../actions/makeRecipiePublic';
 import {privateRecipie} from '../actions/makeRecipiePrivate';
 
-import './HamburgerMenu.css';
+import './styling/HamburgerMenu.css';
 
 export class HamburgerMenu extends React.Component {
 

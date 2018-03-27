@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 
 import AddRecipieForm from './AddRecipieForm';
 
-import './AddRecipe.css';
+import './styling/AddRecipe.css';
 
 export class AddRecipie extends React.Component {
 

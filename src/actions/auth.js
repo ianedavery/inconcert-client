@@ -63,8 +63,7 @@ export const login = (username, password) => dispatch => {
                         ? 'Incorrect username or password'
                         : 'Unable to login, please try again';
                 dispatch(authError(err));
-                // Could not authenticate, so return a SubmissionError for Redux
-                // Form
+                // Could not authenticate, so return error
                 return Promise.reject(
                     new SubmissionError({
                         _error: message
@@ -87,8 +86,7 @@ export const refreshAuthToken = () => (dispatch, getState) => {
         .then(res => res.json())
         .then(({authToken}) => storeAuthInfo(authToken, dispatch))
         .catch(err => {
-            // We couldn't get a refresh token because our current credentials
-            // are invalid or expired, or something else went wrong, so clear
+            // We couldn't get a refresh token so clear
             // them and sign us out
             dispatch(authError(err));
             dispatch(clearAuth());

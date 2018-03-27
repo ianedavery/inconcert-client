@@ -1,5 +1,4 @@
 import {API_BASE_URL} from '../config';
-//import {normalizeResponseErrors} from './util';
 
 export const EDIT_RECIPIE_SUCCESS = 'EDIT_RECIPIE_SUCCESS';
 export const editRecipieSuccess = () => ({
@@ -12,6 +11,7 @@ export const editRecipieError = error => ({
     error
 });
 
+//put call to the server to edit a recipe
 export const editRecipie = (recipie) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/recipies/` + recipie.id, {
@@ -23,7 +23,6 @@ export const editRecipie = (recipie) => (dispatch, getState) => {
         },
         body: JSON.stringify(recipie)
     })
-        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => dispatch(editRecipieSuccess()))
         .catch(err => {

@@ -1,5 +1,4 @@
 import {API_BASE_URL} from '../config';
-//import {normalizeResponseErrors} from './util';
 
 export const DELETE_RECIPIE_SUCCESS = 'DELETE_RECIPIE_SUCCESS';
 export const deleteRecipieSuccess = () => ({
@@ -12,6 +11,7 @@ export const deleteRecipieError = error => ({
     error
 });
 
+//delete call to the server to delete a recipe
 export const deleteRecipie = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/recipies/` + id, {
@@ -20,7 +20,6 @@ export const deleteRecipie = (id) => (dispatch, getState) => {
             Authorization: `Bearer ${authToken}`
         }
     })
-        //.then(res => normalizeResponseErrors(res))
         .then(() => dispatch(deleteRecipieSuccess()))
         .catch(err => {
             dispatch(deleteRecipieError(err));

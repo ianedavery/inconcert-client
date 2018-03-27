@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {fetchRecipieDetails} from '../actions/recipieDetails';
 import {editRecipie} from '../actions/editRecipie';
 
-import './EditRecipeReduxForm.css';
+import './styling/EditRecipeReduxForm.css';
 
 export class EditRecipeReduxForm extends React.Component {
 

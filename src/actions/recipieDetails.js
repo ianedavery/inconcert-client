@@ -1,5 +1,4 @@
 import {API_BASE_URL} from '../config';
-//import {normalizeResponseErrors} from './util';
 
 export const FETCH_RECIPIE_DETAILS_SUCCESS = 'FETCH_RECIPIE_DETAILS_SUCCESS';
 export const fetchRecipieDetailsSuccess = recipie => ({
@@ -13,6 +12,7 @@ export const fetchRecipieDetailsError = error => ({
     error
 });
 
+//send a 'get' request to the server to fetch recipe details for a single recipe
 export const fetchRecipieDetails = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/recipies/` + id, {
@@ -21,7 +21,6 @@ export const fetchRecipieDetails = (id) => (dispatch, getState) => {
             Authorization: `Bearer ${authToken}`
         }
     })
-        //.then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((recipie) => dispatch(fetchRecipieDetailsSuccess(recipie)))
         .catch(err => {

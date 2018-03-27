@@ -7,7 +7,7 @@ import ReactStars from 'react-stars';
 import Media from 'react-media';
 import {Link, withRouter} from 'react-router-dom';
 
-import './PublicRecipieName.css';
+import './styling/PublicRecipieName.css';
 
 export class PublicRecipieName extends React.Component {
 

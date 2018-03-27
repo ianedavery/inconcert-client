@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom';
 
 import RegistrationForm from './RegistrationForm';
 
-import './Register.css';
+import './styling/Register.css';
 
 export class Register extends React.Component {
 

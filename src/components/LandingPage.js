@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
-import './LandingPage.css';
+import './styling/LandingPage.css';
 
 export class LandingPage extends React.Component {
 

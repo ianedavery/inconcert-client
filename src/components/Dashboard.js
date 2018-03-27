@@ -2,7 +2,7 @@ import React from 'react';
 import RequiresLogin from './RequiresLogin';
 import {Link} from 'react-router-dom';
 
-import './Dashboard.css';
+import './styling/Dashboard.css';
 
 export class Dashboard extends React.Component {
 

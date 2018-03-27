@@ -9,7 +9,7 @@ import {withRouter} from 'react-router-dom';
 import BottomNav from './BottomNav';
 import AltNavigation from './AltNavigation';
 
-import './RecipieName.css';
+import './styling/RecipieName.css';
 
 export class RecipieName extends React.Component {
 
