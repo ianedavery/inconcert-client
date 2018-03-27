@@ -136,6 +136,79 @@ Returns json data about public recipes.
       });
     ```
 
+### Create a New Recipe
 
+Adds a new recipe to the user's account.
+
+  * **URL**
+    /api/recipies
+
+  * **Method:**
+    `POST`
+
+  * **Success Response:**
+    * **Code:** 201 Created <br />
+      **Content:** `{
+                        "id": "5abac2a958803b2d096b6a79",
+                        "name": "waffles",
+                        "ingredients": [
+                            {
+                                "_id": "5abac2a958803b2d096b6a7a",
+                                "ingredient": "flour",
+                                "measurement": "1 cup"
+                            }
+                        ],
+                        "instructions": "mix",
+                        "createdBy": "123",
+                        "public": false,
+                        "rating": 0,
+                        "numberOfRatings": 0
+                    }`
+
+  * **Error Response:**
+    * **Code:** 500 <br />
+      **Content:** `{message: 'Internal Server Error'}`
+
+    OR
+
+    * **Code:** 404 Not Found <br />
+      **Content:** `{message: 'Not Found'}`
+
+    OR
+
+    * **Code:** 401 Unauthorize <br />
+      **Content:** `{message: 'Unauthorized'}`
+
+    OR
+
+    * **Code:** 422 Unprocessable Entity <br />
+      **Content:** `{'[field] is missing from your request.'}`
+
+  * **Sample Call:**
+
+    ```javascript
+      $.ajax({
+        url: 'api/recipies/public',
+        datatype: 'json',
+        type: 'POST',
+        data: JSON.stringify(
+          {
+            'name': 'waffles',
+            'instructions': 'mix it all together',
+            'ingredients': {
+              'ingredient': 'flour',
+              'measurement': '1 cup'
+            }
+          }
+        ),
+        headers: {
+          'Authorization': 'Bearer ' + token
+        },
+        contentType: 'application/json',
+        success: function(r) {
+          console.log(r);
+        }
+      });
+    ```
 ![Alt text](https://github.com/ianedavery/recipebox-client/blob/master/src/components/images/recipescreenshot.png)
 ![Alt text]()
