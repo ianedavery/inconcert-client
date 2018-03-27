@@ -2,8 +2,9 @@
     outline: none;
 }
 
-.login-form-container {
-	height: 120%;
+.login-form {
+	padding: 250px 60px 20px 60px;
+	height: 100%;
 	background: url('../images/lukas-blazek-261682-unsplash-rescaled.jpg') no-repeat;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
@@ -13,11 +14,6 @@
 	font-family: 'Fanwood Text', serif;
 	font-size: 24px;
 }
-
-.login-form {
-	padding: 240px 60px 20px 60px;
-}
-
 
 .username-container, .password-container {
 	height: auto;
@@ -97,9 +93,6 @@ div .form-input {
 }
 
 @media screen and (min-width: 768px) {
-	.login-form-container{
-		height: 100%;
-	}
 	.login-form {
 		padding: 220px 250px 20px 250px;
 		font-size: 32px;
@@ -143,4 +136,17 @@ div .form-input {
 	.password-container label .form-error {
 		padding-top: 472px;
 	}
+}
+
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+	.login-form {
+		padding: 320px 60px 20px 60px;
+	}
+	.test-user-container {
+		top: 572px;
+	}	
 }
