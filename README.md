@@ -310,5 +310,5 @@ Delete a user's recipe.
 
 ## Screenshots:
 
-![Alt text](https://github.com/ianedavery/recipebox-client/blob/master/src/components/images/recipescreenshot.png)
+![Recipe](https://github.com/ianedavery/recipebox-client/blob/master/src/components/images/recipescreenshot.png)
 ![Alt text]()
