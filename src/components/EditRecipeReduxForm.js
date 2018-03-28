@@ -90,7 +90,7 @@ const mapStateToProps = state => {
 };
 
 const myForm = reduxForm({
-	form: 'myForm'
+	form: 'editedrecipe'
 })(EditRecipeReduxForm);
 
 export default RequiresLogin()(connect(mapStateToProps)(myForm));
