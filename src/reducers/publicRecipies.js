@@ -6,7 +6,6 @@ const initialState = {
 
 export default function publicRecipiesReducer(state = initialState, action) {
     if (action.type === FETCH_PUBLIC_RECIPIES_SUCCESS) {
-        console.log(action.publicRecipies);
         return Object.assign({}, state, {
             publicRecipies: action.publicRecipies
         });

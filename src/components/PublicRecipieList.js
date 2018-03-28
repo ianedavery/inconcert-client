@@ -46,11 +46,11 @@ export class PublicRecipieList extends React.Component {
 		));
 
 		//uses the searchTerm prop to filter the listArray		
-		const filteredResults = listArray[0].name === undefined ? console.log('cookin\'') : listArray.filter(item => item.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
+		const filteredResults = listArray[0].name === undefined ? console.log('') : listArray.filter(item => item.name.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
 
 		//maps over filteredResults, creating <li /> elements for the name of each recipe
 		//and a link to the details of the recipe		
-		const filteredNames = filteredResults === undefined ? console.log('cookin\'') : filteredResults.map((listing, index) => (
+		const filteredNames = filteredResults === undefined ? console.log('') : filteredResults.map((listing, index) => (
 			<li key={index}>
 				<Link className='filtered-result' to={listing.id === undefined ? '#' : '/publicrecipiedetails/' + listing.id}>{listing.name}</Link>
 			</li>
