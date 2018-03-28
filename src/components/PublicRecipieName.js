@@ -12,7 +12,7 @@ import './styling/PublicRecipieName.css';
 export class PublicRecipieName extends React.Component {
 
 	//when component mounts, dispatch the fetchRecipieDetails action
-	componentWillMount() {
+	componentDidMount() {
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
 	}
 

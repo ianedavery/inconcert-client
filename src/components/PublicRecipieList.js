@@ -14,7 +14,7 @@ export class PublicRecipieList extends React.Component {
 
 	//when the component mounts, dispatch the fetchRecipies action
 	//and the clearSearchTerm action	
-	componentWillMount() {
+	componentDidMount() {
 		this.props.dispatch(fetchPublicRecipies());
 		this.props.dispatch(clearSearchTerm());
 	}

@@ -14,13 +14,10 @@ import './styling/RecipieName.css';
 export class RecipieName extends React.Component {
 
 	//when component mounts, dispatch the fetchRecipieDetails action
-	componentWillMount() {
+	componentDidMount() {
+  		window.scrollTo(0, 0);
 		this.props.dispatch(fetchRecipieDetails(this.props.id));
-	}
 
-	//when component mounts, scroll to top of screen
-	componentDidMount () {
-  		window.scrollTo(0, 0)
 	}
 
 	//when an onClick event occures on .delete, dispatch the deleteRecipie action
